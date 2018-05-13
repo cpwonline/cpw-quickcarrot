@@ -1,0 +1,77 @@
+#sgac .gen_modal {
+	opacity: 0;
+	position:fixed;
+	top:-50%;
+	visibility: hidden;
+	width:50%;
+	box-shadow:0 3px 7px rgba(0,0,0,.25);
+	box-sizing:border-box;
+	transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+	z-index:10000;
+}
+#sgac .gen_modal  .header,
+#sgac .gen_modal  .footer {
+	border-bottom: 1px solid #e7e7e7;
+	border-radius: 5px 5px 0 0;
+}
+#sgac .gen_modal .footer {
+	border:none;
+	border-top: 1px solid #e7e7e7;
+	border-radius: 0 0 5px 5px;
+	background:#ddd;
+	overflow:hidden;
+}
+#sgac .gen_modal  h2 {
+	margin:0;
+}
+#sgac .gen_modal  .btn-gen,
+#sgac .gen_modal  .btn-gen2{
+	float:none;
+}
+#sgac .gen_modal  section.cont_a{
+	text-align:right;
+}
+#sgac .gen_modal  .copy,
+#sgac .gen_modal  .header, 
+#sgac .gen_modal .footer {
+	padding:15px;
+}
+#sgac .modal-content {
+	background: #f7f7f7;
+	position: relative;
+	z-index: 20;
+	border-radius:5px;
+}
+#sgac .gen_modal  .copy {
+	background: #fff;
+}
+ 
+#sgac .gen_modal  .overlay {
+	background-color: #000;
+	background: rgba(0,0,0,.5);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+/*Targets_______*/
+#sgac #m_int:target {
+	opacity: 1;
+	top:80%;
+	visibility: visible;
+}
+#sgac #conf_borrar_menu,
+#sgac #conf_borrar_menu:target{
+	width:80%;
+	top:25%;
+	left:10%;
+	right:10%;
+	margin:0;
+	opacity: 1;
+	display:none;
+	visibility: visible;
+}

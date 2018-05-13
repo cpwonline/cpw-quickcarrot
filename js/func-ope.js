@@ -117,10 +117,16 @@ $(document).ready(function(){
 				//Recolección de datos
 					var m_m = $(this).attr("tag");
 					var tipo = "menus";
-				//Llamada AJAX
-					$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
-						$('#sgac div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+				//Confirmación
+					$("#sgac #conf_borrar_menu").css("display", "block");
+					$("#sgac #conf_borrar_menu a[tag='si']").click(function(e){
+						$("#sgac #conf_borrar_menu").css("display", "none");
+						//Llamada AJAX
+							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
+								$('#sgac div.espera').html(r);
+								var retrasar = setTimeout(mov, 3000);
+							});
 					});
+				
 			});
 });

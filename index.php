@@ -12,6 +12,7 @@
 			session_start();
 		?>
 		<!--Links de CSS-->
+			<link rel="stylesheet" href="css/estilo-mod.css"/>
 			<link rel="stylesheet" href="css/estilo-gen.css"/>
 			<link rel="stylesheet" href="css/estilo-mi_info.css"/>
 		<!--Links de JS-->
@@ -649,5 +650,25 @@
 	<?php
 		}
 	?>
+	<!--MODALES-->
+		<!--Modal de conf_borrar_menu------------------------------------------------>
+			<div class="gen_modal" id="conf_borrar_menu">
+				<div class="modal-content">
+					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
+					<div class="copy" id="copy">
+						<p style="text-align: center;">
+							¿Est&aacute; seguro de borrar el men&uacute;?
+						</p>
+					</div>
+					<div class="cf footer">
+						<section class="cont_a">
+							<a class="btn-gen2" onclick="$('#conf_borrar_menu').css('display','none');">Cancelar</a>
+							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
+						</section>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		<!--Fin Modal de Modal de ver plan1------------------------------------------------>
 	</body>
 </html>
