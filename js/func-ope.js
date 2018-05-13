@@ -110,15 +110,17 @@ $(document).ready(function(){
 			});
 	//Borrar------------------------------------------------------------------------------
 		//Menus-------------------------------------------------
-			$('#sgac i.editar_menu').click(function(e){
+			$('#sgac i.borrar_menu').click(function(e){
 				//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
-					var m_id = $(this).attr("tag");
+					var m_m = $(this).attr("tag");
 					var tipo = "menus";
+					alert(m_m);
+				alert(m_titulo);
 				//Llamada AJAX
-					$.post("enlaces/borar.php", {m_id:m_id, tipo:tipo},function(r){
+					$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
 						$('#sgac div.espera').html(r);
 						var retrasar = setTimeout(mov, 3000);
 					});

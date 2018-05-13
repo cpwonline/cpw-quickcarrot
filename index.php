@@ -181,7 +181,7 @@
 													<?php
 														if($m_borrable){
 													?>
-															<div class="cam"><i class="img_col borrar neg boton borrar_menu" tag="<?=$m_id?>"></i></div>
+															<div class="cam"><i class="img_col borrar neg boton borrar_menu" tag="<?=$m_id?>-<?=$m_titulo?>"></i></div>
 													<?php
 														}
 													?>

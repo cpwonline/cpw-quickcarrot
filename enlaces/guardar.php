@@ -12,23 +12,30 @@
 				}
 				$m_usuario = $_SESSION['u_nombre'];
 				$m_url = "m/".$m_titulo."/p/";
-				//$dir1 = "../".$m_url;
-				$dir1 = "ho/la/que";
+				$dir1 = "../../".$m_url;
 				$dir2 = "../../m_s_base.php";
+				$dir3 = $dir1."index.php";
 			
 			//Condiciones para guardar el menú
-				if(mkdir($dir1, 0700)){
-					if(copy($dir2, $dir1)){
-						$con = $mysqli->query("INSERT INTO menus (m_titulo, m_posicion, m_usuario, m_url, m_freg) VALUES ('".$m_titulo."', '".$m_posicion."', '".$m_usuario."', '".$m_url."', NOW())");
-						if($con){
-							echo "El men&uacute; se ha guardado correctamente | <span>CPW Online</span>";
-						}else{
-							echo "Fallo al guardar | <span>CPW Online</span>";
-						}
+				//Creado de la carpeta
+					if(mkdir($dir1, 0700, true)){
+						//Copiado del archivo base
+							if(copy($dir2, $dir3)){
+								//Creado del archivo de información
+									$FP = FOPEN($dir1."datos_ind.php", "w");
+									FPUTS($FP, $m_titulo);
+									FCLOSE($FP);
+									//Guardado en la base de datos
+										$con = $mysqli->query("INSERT INTO menus (m_titulo, m_posicion, m_usuario, m_url, m_freg) VALUES ('".$m_titulo."', '".$m_posicion."', '".$m_usuario."', '".$m_url."', NOW())");
+										if($con){
+											echo "El men&uacute; se ha guardado correctamente | <span>CPW Online</span>";
+										}else{
+											echo "Fallo al guardar | <span>CPW Online</span>";
+										}
+							}else
+								echo "Fallo al guardar (Copiado) | <span>CPW Online</span>";
 					}else
-						echo "Fallo al guardar (Copiado) | <span>CPW Online</span>";
-				}else
-					echo "Fallo al guardar (Carpeta) | <span>CPW Online</span>";
+						echo "Fallo al guardar (Carpeta) | <span>CPW Online</span>";
 		break;
 		case 'sub': 
 			$s_titulo = $_POST['s_titulo'];
