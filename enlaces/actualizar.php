@@ -11,7 +11,7 @@
 					<div class="cam">Creado por:</div>
 				</div>
 <?php
-					$con = $mysqli->query("SELECT * FROM menus ORDER BY m_freg DESC");
+					$con = $mysqli->query("SELECT * FROM menus ORDER BY m_posicion DESC");
 					if($con->num_rows === 0){
 						echo "<div class='uni'>No hay resultados.</div>";
 						exit;
@@ -21,14 +21,21 @@
 						$m_posicion = $ro['m_posicion'];
 						$m_freg = $ro['m_freg'];
 						$m_usuario = $ro['m_usuario'];
+						$m_borrable = $ro['m_borrable'];
 ?>
 						<div class="fil">
 							<div class="cam"><?=$m_titulo?></div>
 							<div class="cam"><?=$m_posicion?></div>
 							<div class="cam"><?=$m_freg?></div>
 							<div class="cam"><?=$m_usuario?></div>
-							<div class="cam"><i class="img_col editar neg boton" tag="editar_menu"></i></div>
-							<div class="cam"><i class="img_col borrar neg boton" tag="borrar_menu"></i></div>
+							<div class="cam"><i class="img_col editar neg boton editar_menu" tag="<?=$m_id?>"></i></div>
+							<?php
+								if($m_borrable){
+							?>
+									<div class="cam"><i class="img_col borrar neg boton borrar_menu" tag="<?=$m_id?>-<?=$m_titulo?>"></i></div>
+							<?php
+								}
+							?>
 						</div>
 <?php
 					}

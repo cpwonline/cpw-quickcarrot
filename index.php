@@ -160,7 +160,7 @@
 											<div class="cam">Creado por:</div>
 										</div>
 										<?php
-											$con = $mysqli->query("SELECT * FROM menus ORDER BY m_freg DESC");
+											$con = $mysqli->query("SELECT * FROM menus ORDER BY m_posicion DESC");
 											if($con->num_rows === 0){
 												echo "<div class='uni'>No hay resultados.</div>";
 											}

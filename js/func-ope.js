@@ -117,8 +117,6 @@ $(document).ready(function(){
 				//Recolección de datos
 					var m_m = $(this).attr("tag");
 					var tipo = "menus";
-					alert(m_m);
-				alert(m_titulo);
 				//Llamada AJAX
 					$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
 						$('#sgac div.espera').html(r);
