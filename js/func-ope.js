@@ -3,7 +3,7 @@ function mov(){
 }
 $(document).ready(function(){
 	$('#sgac div.espera').css('right', '.5cm');
-	$('#sgac div.espera').html("Preferiblemente, visualice esta secci&oacute;n desde un PC de escritorio.");
+	$('#sgac div.espera').html("Preferiblemente, visualice estas secci&oacute;n desde un PC de escritorio.");
 	var retrasar = setTimeout(mov, 3000);
 	//Iniciar sesión//
 		//General
@@ -110,7 +110,7 @@ $(document).ready(function(){
 			});
 	//Borrar------------------------------------------------------------------------------
 		//Menus-------------------------------------------------
-			$('#sgac i.borrar_menu').click(function(e){
+			/*$('#sgac i.borrar_menu').click(function(e){
 				//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
@@ -127,6 +127,42 @@ $(document).ready(function(){
 								var retrasar = setTimeout(mov, 3000);
 							});
 					});
-				
+			});*/
+	
+	//Pedida de las partes-----------------------------------------------------------------------------
+		//MENÚS: Llamada AJAX
+			var tipo = "";
+			$.post("partes_act/menus.php", {tipo:tipo}, function(r){
+				$('#sgac div.tabla_gen.menus').html(r);
+					//Borrar
+						$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
+							boton_borrar_menu(this);
+						});
+					//Editar
 			});
+	
+	//---------------------------------------------------------------------------
 });
+
+//Funciones de Actualización (ON)
+	//Menus
+		//Borrar
+			function boton_borrar_menu(objeto){
+				alert(objeto);
+				//Animación
+					$('#sgac div.espera').css('right', '.5cm');
+					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
+				//Recolección de datos
+					var m_m = $(this).attr("tag");
+					var tipo = "menus";
+				//Confirmación
+					$("#sgac #conf_borrar_menu").css("display", "block");
+					$("#sgac #conf_borrar_menu a[tag='si']").click(function(e){
+						$("#sgac #conf_borrar_menu").css("display", "none");
+						//Llamada AJAX
+							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
+								$('#sgac div.espera').html(r);
+								var retrasar = setTimeout(mov, 3000);
+							});
+					});
+			}

@@ -2,12 +2,9 @@ function mov(){
 	$('#sgac div.espera').css('right', '-50%');
 }
 $(document).ready(function(){
-	//Tecla enter en inciar sesión
-	
 	//Pedida de los menus
 		lista = new Array(7);
 		lista = lista_menus();
-		
 		//Función click de los menus de la cabecera
 			$('#sgac .cabecera nav.menu ul.menu_prin li').click(function(e){
 				var estoy = $(this).attr("tag");
