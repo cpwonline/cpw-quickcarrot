@@ -1,24 +1,33 @@
 <?php
 	require_once('../mysqli_db.php');
+	function delTree($dir){
+		$files = array_diff(scandir($dir), array('.','..'));
+		foreach($files as $file){
+			(is_dir("$dir/$file"))? delTree("$dir/$file") : unlink("$dir/$file");
+		}
+		return rmdir($dir);
+	}
 	switch($_POST['tipo']){
 		case 'menus': 
 			$m_m = explode("-", $_POST['m_m']);
-			echo "El id es: ".$m_m[0];
-			echo "<br>El titulo es: ".$m_m[1];
 			//Condiciones
 				$dir = "../../m/".$m_m[1];
 				//Borrar archivos
-					unlink($dir."/p/index.php");
-					unlink($dir."/p/datos_ind.php");
-					rmdir($dir."/p/");
-					if(rmdir($dir)){
-						$con = $mysqli->query("DELETE FROM menus WHERE m_id = '".$m_m[0]."' ");
-						if($con)
-							echo "El men&uacute; ha sido borrado con &eacute;xito.";
-						else
-							echo "Ha habido un error al borrar.";
-					}else
-						echo "Ha habido un error al borrar (Carpeta).";
+					if(!delTree($dir)){
+						echo "Ha habido un error al borrar (&Aacute;rbol de archivos).";
+					}else{
+						//Borrar registros del menú
+							$con = $mysqli->query("DELETE FROM menus WHERE m_id = '".$m_m[0]."' ");
+							if($con){
+								//Borrar registros del submenú
+									$con1 = $mysqli->query("DELETE FROM submenus WHERE s_menu = '".$m_m[1]."' ");
+									if($con1)
+										echo "El men&uacute; ha sido borrado con &eacute;xito.";
+									else
+										echo "Ha habido un error al borrar (Registro: Submen&uacute;s).";
+							}else
+								echo "Ha habido un error al borrar (Registro: Men&uacute;s).";
+					}
 		break;
 		case 'submenus': 
 			$s_id = $_POST['s_id'];
