@@ -30,12 +30,20 @@
 					}
 		break;
 		case 'submenus': 
-			$s_id = $_POST['s_id'];
-			$con = $mysqli->query("DELETE FROM submenus WHERE s_id = '".$s_id."' ");
-			if($con)
-				echo "El submen&uacute; ha sido borrado con &eacute;xito.";
-			else
-				echo "Ha habido un error al borrar.";
+			$m_m = explode("-", $_POST['m_m']);
+			//Condiciones
+				$dir = "../../m/".$m_m[1]."/".$m_m[2];
+				//Borrar archivos
+					if(!delTree($dir)){
+						echo "Ha habido un error al borrar (&Aacute;rbol de archivos).";
+					}else{
+						//Borrar registros del submenú
+							$con = $mysqli->query("DELETE FROM submenus WHERE s_id = '".$m_m[0]."' ");
+							if($con){
+								echo "El submen&uacute; ha sido borrado con &eacute;xito.";
+							}else
+								echo "Ha habido un error al borrar (Registro: Submen&uacute;s).";
+					}
 		break;
 		case 'informacion': 
 			$i_id = $_POST['i_id'];

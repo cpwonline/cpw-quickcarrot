@@ -27,7 +27,7 @@
 			<div class="cam"><?=$s_freg?></div>
 			<div class="cam"><?=$s_usuario?></div>
 			<div class="cam"><i class="img_col editar neg boton" tag="editar_sub"></i></div>
-			<div class="cam"><i class="img_col borrar neg boton borrar_sub" tag="<?=$s_id?>-<?=$s_menu?>"></i></div>
+			<div class="cam"><i class="img_col borrar neg boton borrar_sub" tag="<?=$s_id?>-<?=$s_menu?>-<?=$s_titulo?>"></i></div>
 		</div>
 <?php
 	}
