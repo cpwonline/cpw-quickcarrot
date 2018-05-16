@@ -32,11 +32,8 @@ $(document).ready(function(){
 				//Recolección de datos
 					var tipo = $(this).attr("tag");
 				//Llamada AJAX
-					$.post("enlaces/actualizar.php", {tipo:tipo},function(r){
-						$("#sgac div.tabla_gen."+tipo).html(r)
-						$('#sgac div.espera').html("Listo.");
-						var retrasar = setTimeout(mov, 3000);
-					});
+					pedidas(tipo);
+					var retrasar = setTimeout(mov, 3000);
 			});
 	//Guardar------------------------------------------------------------------------------
 		//Menus-------------------------------------------------
@@ -108,29 +105,50 @@ $(document).ready(function(){
 						var retrasar = setTimeout(mov, 3000);
 					});
 			});
-	//Pedida de las partes-----------------------------------------------------------------------------
-		//MENÚS: Llamada AJAX
-			var tipo = "";
-			$.post("partes_act/menus.php", {tipo:tipo}, function(r){
-				$('#sgac div.tabla_gen.menus').html(r);
-					//Borrar
-						$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
-							boton_borrar_menu(this);
-						});
-			});
-		//SUBMENÚS: Llamada AJAX
-			var tipo = "";
-			$.post("partes_act/submenus.php", {tipo:tipo}, function(r){
-				$('#sgac div.tabla_gen.submenus').html(r);
-					//Borrar
-						$("#sgac div.tabla_gen.submenus i.borrar_sub").on("click", function(){
-							boton_borrar_sub(this);
-						});
-			});
-	
-	//---------------------------------------------------------------------------
+	//Pedida de las partes
+	pedidas("todo");
 });
 
+//Pedida de las partes-----------------------------------------------------------------------------
+	function pedidas(valor){
+		var tipo = "";
+		switch(valor){
+			case "menus":
+				$.post("partes_act/menus.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.menus').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
+								boton_borrar_menu(this);
+							});
+				});
+			break;
+			case "submenus":
+				$.post("partes_act/submenus.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.submenus').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.submenus i.borrar_sub").on("click", function(){
+								boton_borrar_sub(this);
+							});
+				});
+			break;
+			case "todo":
+				$.post("partes_act/menus.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.menus').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
+								boton_borrar_menu(this);
+							});
+				});
+				$.post("partes_act/submenus.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.submenus').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.submenus i.borrar_sub").on("click", function(){
+								boton_borrar_sub(this);
+							});
+				});
+			break;
+		}
+	}
 //Funciones de Actualización (ON)
 	//Menus
 		//Borrar
