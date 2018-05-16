@@ -139,7 +139,7 @@ $(document).ready(function(){
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
-					var m_m = $(this).attr("tag");
+					var m_m = $(objeto).attr("tag");
 					var tipo = "menus";
 				//Confirmación
 					$("#sgac #conf_borrar_menu").css("display", "block");
@@ -159,7 +159,7 @@ $(document).ready(function(){
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
-					var m_m = $(this).attr("tag");
+					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
 				//Confirmación
 					$("#sgac #conf_borrar_sub").css("display", "block");
