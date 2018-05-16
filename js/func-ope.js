@@ -108,9 +108,33 @@ $(document).ready(function(){
 						var retrasar = setTimeout(mov, 3000);
 					});
 			});
-	//Borrar------------------------------------------------------------------------------
-		//Menus-------------------------------------------------
-			/*$('#sgac i.borrar_menu').click(function(e){
+	//Pedida de las partes-----------------------------------------------------------------------------
+		//MENÚS: Llamada AJAX
+			var tipo = "";
+			$.post("partes_act/menus.php", {tipo:tipo}, function(r){
+				$('#sgac div.tabla_gen.menus').html(r);
+					//Borrar
+						$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
+							boton_borrar_menu(this);
+						});
+			});
+		//SUBMENÚS: Llamada AJAX
+			var tipo = "";
+			$.post("partes_act/submenus.php", {tipo:tipo}, function(r){
+				$('#sgac div.tabla_gen.submenus').html(r);
+					//Borrar
+						$("#sgac div.tabla_gen.submenus i.borrar_sub").on("click", function(){
+							boton_borrar_sub(this);
+						});
+			});
+	
+	//---------------------------------------------------------------------------
+});
+
+//Funciones de Actualización (ON)
+	//Menus
+		//Borrar
+			function boton_borrar_menu(objeto){
 				//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
@@ -127,38 +151,20 @@ $(document).ready(function(){
 								var retrasar = setTimeout(mov, 3000);
 							});
 					});
-			});*/
-	
-	//Pedida de las partes-----------------------------------------------------------------------------
-		//MENÚS: Llamada AJAX
-			var tipo = "";
-			$.post("partes_act/menus.php", {tipo:tipo}, function(r){
-				$('#sgac div.tabla_gen.menus').html(r);
-					//Borrar
-						$("#sgac div.tabla_gen.menus i.borrar_menu").on("click", function(){
-							boton_borrar_menu(this);
-						});
-					//Editar
-			});
-	
-	//---------------------------------------------------------------------------
-});
-
-//Funciones de Actualización (ON)
-	//Menus
+			}
+	//Submenús
 		//Borrar
-			function boton_borrar_menu(objeto){
-				alert(objeto);
+			function boton_borrar_sub(objeto){
 				//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
 					var m_m = $(this).attr("tag");
-					var tipo = "menus";
+					var tipo = "submenus";
 				//Confirmación
-					$("#sgac #conf_borrar_menu").css("display", "block");
-					$("#sgac #conf_borrar_menu a[tag='si']").click(function(e){
-						$("#sgac #conf_borrar_menu").css("display", "none");
+					$("#sgac #conf_borrar_sub").css("display", "block");
+					$("#sgac #conf_borrar_sub a[tag='si']").click(function(e){
+						$("#sgac #conf_borrar_sub").css("display", "none");
 						//Llamada AJAX
 							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
 								$('#sgac div.espera').html(r);
