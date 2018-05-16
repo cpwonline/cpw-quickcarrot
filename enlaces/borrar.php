@@ -40,7 +40,16 @@
 						//Borrar registros del submenú
 							$con = $mysqli->query("DELETE FROM submenus WHERE s_id = '".$m_m[0]."' ");
 							if($con){
-								echo "El submen&uacute; ha sido borrado con &eacute;xito.";
+								//Comprobar que no hayan más submenús
+									$con1 = $mysqli->query("SELECT s_id FROM submenus WHERE s_menu = '".$m_m[1]."' ");
+									if($con1->num_rows===0){
+										$con1 = $mysqli->query("UPDATE menus SET m_sub = 0 WHERE menus.m_titulo = '".$m_m[1]."'");
+										if($con1)
+											echo "El submen&uacute; ha sido borrado con &eacute;xito.";
+										else
+											echo "Ha habido un error al borrar (Registro: Submen&uacute;s del men&uacute;).";
+									}else
+										echo "El submen&uacute; ha sido borrado con &eacute;xito.";
 							}else
 								echo "Ha habido un error al borrar (Registro: Submen&uacute;s).";
 					}
