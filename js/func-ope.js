@@ -131,6 +131,15 @@ $(document).ready(function(){
 							});
 				});
 			break;
+			case "articulos":
+				$.post("partes_act/articulos.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.articulos').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.submenus i.borrar_art").on("click", function(){
+								boton_borrar_art(this);
+							});
+				});
+			break;
 			case "todo":
 				$.post("partes_act/menus.php", {tipo:tipo}, function(r){
 					$('#sgac div.tabla_gen.menus').html(r);
@@ -144,6 +153,13 @@ $(document).ready(function(){
 						//Borrar
 							$("#sgac div.tabla_gen.submenus i.borrar_sub").on("click", function(){
 								boton_borrar_sub(this);
+							});
+				});
+				$.post("partes_act/articulos.php", {tipo:tipo}, function(r){
+					$('#sgac div.tabla_gen.articulos').html(r);
+						//Borrar
+							$("#sgac div.tabla_gen.submenus i.borrar_art").on("click", function(){
+								boton_borrar_art(this);
 							});
 				});
 			break;
@@ -184,6 +200,26 @@ $(document).ready(function(){
 					$("#sgac #conf_borrar_sub").css("display", "block");
 					$("#sgac #conf_borrar_sub a[tag='si']").click(function(e){
 						$("#sgac #conf_borrar_sub").css("display", "none");
+						//Llamada AJAX
+							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
+								$('#sgac div.espera').html(r);
+								var retrasar = setTimeout(mov, 3000);
+							});
+					});
+			}
+	//Artículos
+		//Borrar
+			function boton_borrar_art(objeto){
+				//Animación
+					$('#sgac div.espera').css('right', '.5cm');
+					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
+				//Recolección de datos
+					var m_m = $(objeto).attr("tag");
+					var tipo = "articulos";
+				//Confirmación
+					$("#sgac #conf_borrar_art").css("display", "block");
+					$("#sgac #conf_borrar_art a[tag='si']").click(function(e){
+						$("#sgac #conf_borrar_art").css("display", "none");
 						//Llamada AJAX
 							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
 								$('#sgac div.espera').html(r);

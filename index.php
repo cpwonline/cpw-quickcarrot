@@ -198,33 +198,7 @@
 										<i class="img_col actualizar neg boton" tag="articulos"></i>
 									</h4>
 									<div class="tabla_gen articulos">
-										<div class="fil pr">
-											<div class="cam">T&iacute;tulo:</div>
-											<div class="cam">Creado el:</div>
-											<div class="cam">Creado por:</div>
-										</div>
-										<?php
-											$con = $mysqli->query("SELECT * FROM articulos ORDER BY a_freg DESC");
-											if($con->num_rows === 0){
-												echo "<div class='uni'>No hay resultados.</div>";
-											}
-											while($ro = $con->fetch_assoc()){
-												$a_titulo = $ro['a_titulo'];
-												$a_contenido = $ro['a_contenido'];
-												$a_freg = $ro['a_freg'];
-												$a_usuario = $ro['a_usuario'];
-										?>
-												<div class="fil">
-													<div class="cam"><?=$a_titulo?></div>
-													<div class="cam"><?=$a_contenido?></div>
-													<div class="cam"><?=$a_freg?></div>
-													<div class="cam"><?=$a_usuario?></div>
-													<div class="cam"><i class="img_col editar neg boton" tag="editar_articulo"></i></div>
-													<div class="cam"><i class="img_col borrar neg boton" tag="borrar_articulo"></i></div>
-												</div>
-										<?php
-											}
-										?>
+										<!--PARTE: ARTÍCULOS-->
 									</div>
 								</article>
 					</section>
@@ -625,5 +599,25 @@
 				<div class="overlay"></div>
 			</div>
 		<!--Modal de conf_borrar_sub------------------------------------------------->
+		
+		<!--Modal de conf_borrar_art-------------------------------------------------->
+			<div class="gen_modal" id="conf_borrar_art">
+				<div class="modal-content">
+					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
+					<div class="copy" id="copy">
+						<p style="text-align: center;">
+							¿Est&aacute; seguro de borrar el art&iacute;culo?
+						</p>
+					</div>
+					<div class="cf footer">
+						<section class="cont_a">
+							<a class="btn-gen2" onclick="$('#conf_borrar_art').css('display','none');">Cancelar</a>
+							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
+						</section>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		<!--Modal de conf_borrar_art------------------------------------------------->
 	</body>
 </html>
