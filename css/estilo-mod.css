@@ -64,12 +64,8 @@
 	top:80%;
 	visibility: visible;
 }
-#sgac #conf_borrar_menu,
-#sgac #conf_borrar_menu:target,
-#sgac #conf_borrar_sub,
-#sgac #conf_borrar_sub:target,
-#sgac #conf_borrar_art,
-#sgac #conf_borrar_art:target{
+#sgac #conf_borrar_gen,
+#sgac #conf_borrar_gen:target{
 	width:80%;
 	top:25%;
 	left:10%;

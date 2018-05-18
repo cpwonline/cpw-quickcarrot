@@ -106,7 +106,7 @@ $(document).ready(function(){
 					});
 			});
 	//Pedida de las partes
-	pedidas("todo", false);
+		pedidas("todo", false);
 });
 
 //Pedida de las partes-----------------------------------------------------------------------------
@@ -166,26 +166,18 @@ $(document).ready(function(){
 		}
 		if(retorno == true){$('#sgac div.espera').html('Listo.');}
 	}
-//Funciones de Actualización (ON)
+//Funciones que se Actualizaron (ON)
 	//Menus
 		//Borrar
 			function boton_borrar_menu(objeto){
-				//Animación
+			//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "menus";
-				//Confirmación
-					$("#sgac #conf_borrar_menu").css("display", "block");
-					$("#sgac #conf_borrar_menu a[tag='si']").click(function(e){
-						$("#sgac #conf_borrar_menu").css("display", "none");
-						//Llamada AJAX
-							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
-								$('#sgac div.espera').html(r);
-								var retrasar = setTimeout(mov, 3000);
-							});
-					});
+					var frase = "el men&uacute;";
+					borrar_general(m_m, tipo, frase);
 			}
 	//Submenús
 		//Borrar
@@ -196,16 +188,8 @@ $(document).ready(function(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
-				//Confirmación
-					$("#sgac #conf_borrar_sub").css("display", "block");
-					$("#sgac #conf_borrar_sub a[tag='si']").click(function(e){
-						$("#sgac #conf_borrar_sub").css("display", "none");
-						//Llamada AJAX
-							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
-								$('#sgac div.espera').html(r);
-								var retrasar = setTimeout(mov, 3000);
-							});
-					});
+					var frase = "el submen&uacute;";
+					borrar_general(m_m, tipo, frase);
 			}
 	//Artículos
 		//Borrar
@@ -216,14 +200,21 @@ $(document).ready(function(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "articulos";
-				//Confirmación
-					$("#sgac #conf_borrar_art").css("display", "block");
-					$("#sgac #conf_borrar_art a[tag='si']").click(function(e){
-						$("#sgac #conf_borrar_art").css("display", "none");
-						//Llamada AJAX
-							$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
-								$('#sgac div.espera').html(r);
-								var retrasar = setTimeout(mov, 3000);
-							});
-					});
+					var frase = "el art&iacute;culo";
+					borrar_general(m_m, tipo, frase);
 			}
+
+//Función general para borrar
+	function borrar_general(m_m, tipo, frase){
+		//Confirmación
+			$("#sgac #conf_borrar_gen span[tag='2']").html(frase);
+			$("#sgac #conf_borrar_gen").css("display", "block");
+			$("#sgac #conf_borrar_gen a[tag='si']").click(function(e){
+				$("#sgac #conf_borrar_gen").css("display", "none");
+				//Llamada AJAX
+					$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
+						$('#sgac div.espera').html(r);
+						var retrasar = setTimeout(mov, 3000);
+					});
+			});
+	}

@@ -7,6 +7,7 @@
 		}
 		return rmdir($dir);
 	}
+echo $_POST['tipo'];
 	switch($_POST['tipo']){
 		case 'menus': 
 			$m_m = explode("-", $_POST['m_m']);
@@ -55,10 +56,11 @@
 					}
 		break;
 		case 'articulos': 
-			$m_id = $_POST['m_id'];
-			$con = $mysqli->query("DELETE FROM menus WHERE m_id = '".$m_id."' ");
+			$a_id = $_POST['a_id'];
+			//Borrado de la imagen
+			$con = $mysqli->query("DELETE FROM aticulos WHERE a_id = '".$a_id."' ");
 			if($con)
-				echo "El men&uacute; ha sido borrado con &eacute;xito.";
+				echo "El art&iacute;culo ha sido borrado con &eacute;xito.";
 			else
 				echo "Ha habido un error al borrar.";
 		break;

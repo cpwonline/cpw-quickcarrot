@@ -80,7 +80,9 @@
 				#sgac i.img_col.borrar.neg{background:url(../images/32x32_negro/borrar.png)no-repeat;}
 				#sgac i.img_col.editar.neg{background:url(../images/32x32_negro/editar.png)no-repeat;}
 				#sgac i.img_col.actualizar.neg{background:url(../images/32x32_negro/actualizar.png)no-repeat;}
-				
+	#sgac input[type="file"]{
+		display:none;
+	}
 	/*BLOQUE:Inicio de sesion---------------------------------------------------------*/
 		#sgac section.inicio_sesion{
 			position:fixed;

@@ -560,64 +560,26 @@
 		}
 	?>
 	<!--MODALES-->
-		<!--Modal de conf_borrar_menu------------------------------------------------>
-			<div class="gen_modal" id="conf_borrar_menu">
+		<!--Modal de conf_borrar_gen------------------------------------------------>
+			<div class="gen_modal" id="conf_borrar_gen">
 				<div class="modal-content">
 					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
 					<div class="copy" id="copy">
 						<p style="text-align: center;">
-							¿Est&aacute; seguro de borrar el men&uacute;?
+							<span tag="1">¿Est&aacute; seguro de borrar</span>
+							<span tag="2"></span>
 						</p>
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#conf_borrar_menu').css('display','none');">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#conf_borrar_gen').css('display','none');">Cancelar</a>
 							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
 						</section>
 					</div>
 				</div>
 				<div class="overlay"></div>
 			</div>
-		<!--Modal de conf_borrar_menu------------------------------------------------->
+		<!--Modal de conf_borrar_gen------------------------------------------------->
 		
-		<!--Modal de conf_borrar_sub-------------------------------------------------->
-			<div class="gen_modal" id="conf_borrar_sub">
-				<div class="modal-content">
-					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
-					<div class="copy" id="copy">
-						<p style="text-align: center;">
-							¿Est&aacute; seguro de borrar el submen&uacute;?
-						</p>
-					</div>
-					<div class="cf footer">
-						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#conf_borrar_sub').css('display','none');">Cancelar</a>
-							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
-						</section>
-					</div>
-				</div>
-				<div class="overlay"></div>
-			</div>
-		<!--Modal de conf_borrar_sub------------------------------------------------->
-		
-		<!--Modal de conf_borrar_art-------------------------------------------------->
-			<div class="gen_modal" id="conf_borrar_art">
-				<div class="modal-content">
-					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
-					<div class="copy" id="copy">
-						<p style="text-align: center;">
-							¿Est&aacute; seguro de borrar el art&iacute;culo?
-						</p>
-					</div>
-					<div class="cf footer">
-						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#conf_borrar_art').css('display','none');">Cancelar</a>
-							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
-						</section>
-					</div>
-				</div>
-				<div class="overlay"></div>
-			</div>
-		<!--Modal de conf_borrar_art------------------------------------------------->
 	</body>
 </html>
