@@ -32,7 +32,7 @@ $(document).ready(function(){
 				//Recolección de datos
 					var tipo = $(this).attr("tag");
 				//Llamada AJAX
-					pedidas(tipo);
+					pedidas(tipo, true);
 					var retrasar = setTimeout(mov, 3000);
 			});
 	//Guardar------------------------------------------------------------------------------
@@ -106,11 +106,11 @@ $(document).ready(function(){
 					});
 			});
 	//Pedida de las partes
-	pedidas("todo");
+	pedidas("todo", false);
 });
 
 //Pedida de las partes-----------------------------------------------------------------------------
-	function pedidas(valor){
+	function pedidas(valor, retorno){
 		var tipo = "";
 		switch(valor){
 			case "menus":
@@ -148,6 +148,7 @@ $(document).ready(function(){
 				});
 			break;
 		}
+		if(retorno == true){$('#sgac div.espera').html('Listo.');}
 	}
 //Funciones de Actualización (ON)
 	//Menus
