@@ -122,6 +122,12 @@
 		#sgac section.inicio_sesion input:hover{
 			border:1px solid #f60;
 		}
+		#sgac progress{
+			background:none;
+			background:#444;
+			border:none;
+			height:.5cm;
+		}
 	/*BLOQUE:Cabecera---------------------------------------------------------*/
 		#sgac header.cabecera{
 			position:fixed;
