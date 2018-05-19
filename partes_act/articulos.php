@@ -24,8 +24,8 @@
 			<?php
 				if(empty($a_imagen)){
 					echo '<div class="cam" tag="'.$a_id.'">
-							<input type="file" name="a_imagen" tag="imagen_'.$a_id.'"/>
-							<a class="btn-gen subir_imagen"  tag="'.$a_id.'" href="art">Subir</a>
+							<input type="file" name="imagen" tag="imagen_'.$a_id.'"/>
+							<a class="btn-gen subir_imagen"  tag="'.$a_id.'">Subir</a>
 						</div>';
 				}else{
 					echo '<div class="cam">S&iacute;</div>';

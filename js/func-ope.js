@@ -138,6 +138,11 @@ $(document).ready(function(){
 							$("#sgac div.tabla_gen.submenus i.borrar_art").on("click", function(){
 								boton_borrar_art(this);
 							});
+						//Subir imagen
+							$('#sgac a.subir_imagen').on("click", function(){
+								e.preventDefault();
+								boton_SubirImagen_art(this);
+							});
 				});
 			break;
 			case "todo":
@@ -160,6 +165,11 @@ $(document).ready(function(){
 						//Borrar
 							$("#sgac div.tabla_gen.submenus i.borrar_art").on("click", function(){
 								boton_borrar_art(this);
+							});
+						//Subir imagen
+							$('#sgac a.subir_imagen').on("click", function(){
+								e.preventDefault();
+								boton_SubirImagen_art(this);
 							});
 				});
 			break;
@@ -202,6 +212,13 @@ $(document).ready(function(){
 					var tipo = "articulos";
 					var frase = "el art&iacute;culo";
 					borrar_general(m_m, tipo, frase);
+			}
+		//Subir imagen
+			function boton_subirImagen_art(objeto){
+				var id = $(this).attr('tag');
+				$('#sgac input[tag="imagen_'+a_id+'"]').click();
+				var tipo = $(this).attr('href');
+				iniciar(id, tipo);
 			}
 
 //Función general para borrar
