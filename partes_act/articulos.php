@@ -25,9 +25,9 @@
 				//En este caso se les colocará a cada etiqueta un codigo que contendra el id titulo y tipo 
 				//Para luego separarlos con Js y así obtener con más presición las etiquetas
 					if(empty($a_imagen)){
-						echo '<div class="cam" tag="'.$a_id.'_'.$a_titulo.'_articulos">
-								<input type="file" name="imagen" tag="'.$a_id.'_'.$a_titulo.'_articulos"/>
-								<a class="btn-gen subir_imagen"  tag="'.$a_id.'_'.$a_titulo.'_articulos">Subir</a>
+						echo '<div class="cam" tag="'.$a_id.'_'.$a_titulo.'_articulo">
+								<input type="file" name="imagen" tag="'.$a_id.'_'.$a_titulo.'_articulo"/>
+								<a class="btn-gen subir_imagen"  tag="'.$a_id.'_'.$a_titulo.'_articulo">Subir</a>
 							</div>';
 					}else{
 						echo '<div class="cam">S&iacute;</div>';
