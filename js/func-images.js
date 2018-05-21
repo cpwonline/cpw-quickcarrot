@@ -1,5 +1,5 @@
 
-/*Guardado de la imagen del pago*/
+/*Guardado de la imagen del pago
 	function iniciar(v_id, v_tipo){
 		id = v_id;
 		tipo = v_tipo;
@@ -37,7 +37,7 @@
 	function mostrar(e){
 		cajadatos.innerHTML='Imagen guardada';
 	}
-/*fin Guardado de la imagen del pago*/
+/*fin Guardado de la imagen del pago
 
 $(document).ready(function(){
 	//Click al boton de subir imagen
@@ -49,4 +49,4 @@ $(document).ready(function(){
 				var tipo = $(this).attr('href');
 				iniciar(id, tipo);
 			});
-});
+});*/

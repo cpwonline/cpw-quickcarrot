@@ -2,6 +2,7 @@
 	require_once('../mysqli_db.php');
 	session_start();
 	$id = $_POST['id'];
+	$titulo = $_POST['titulo'];
 	$tipo = $_POST['tipo'];
 	switch($tipo){
 		case 'articulo':
