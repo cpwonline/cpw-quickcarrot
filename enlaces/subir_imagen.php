@@ -7,13 +7,12 @@
 	$imagen = $_FILES['archivo'];
 	switch($tipo){
 		case 'articulo':
-			$url =  '../../articulos/img/'.$_SESSION['o_usuario'];
+			$url =  '../../articulos/img/'.$_SESSION['u_nombre']."/";
 			$nombre_imagen = $id."_".$imagen['name'];
-			$nombre_completo = $url.'/'.$nombre_imagen;
+			$nombre_completo = $url.$nombre_imagen;
 			if(!is_dir($url))
-				mkdir($url);
-			//if(copy($imagen['tmp_name'], $url.'/'.$nombre_imagen)){
-			if(copy($imagen['tmp_name'], $imagen['name'])){
+				mkdir($url, 0777, true);
+			if(copy($imagen['tmp_name'], $nombre_completo)){
 				$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$nombre_completo."' WHERE a_id='".$id."' ");
 			}
 		break;
