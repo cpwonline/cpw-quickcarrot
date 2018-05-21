@@ -22,14 +22,16 @@
 		<div class="fil">
 			<div class="cam"><?=$a_titulo?></div>
 			<?php
-				if(empty($a_imagen)){
-					echo '<div class="cam" tag="'.$a_id.'">
-							<input type="file" name="imagen" tag="imagen_'.$a_id.'"/>
-							<a class="btn-gen subir_imagen"  tag="'.$a_id.'">Subir</a>
-						</div>';
-				}else{
-					echo '<div class="cam">S&iacute;</div>';
-				}
+				//En este caso se les colocará a cada etiqueta un codigo que contendra el id titulo y tipo 
+				//Para luego separarlos con Js y así obtener con más presición las etiquetas
+					if(empty($a_imagen)){
+						echo '<div class="cam" tag="'.$a_id.'_'.$a_titulo.'_articulos">
+								<input type="file" name="imagen" tag="'.$a_id.'_'.$a_titulo.'_articulos"/>
+								<a class="btn-gen subir_imagen"  tag="'.$a_id.'_'.$a_titulo.'_articulos">Subir</a>
+							</div>';
+					}else{
+						echo '<div class="cam">S&iacute;</div>';
+					}
 			?>
 			<div class="cam"><?=$a_freg?></div>
 			<div class="cam"><?=$a_usuario?></div>

@@ -57,29 +57,29 @@
 				border:1px solid #f60;
 			}
 			/*Blanco*/
-				#sgac i.img_col.menus.blan{background:url(../images/32x32_blanco/menus.png)no-repeat;}
-				#sgac i.img_col.articulos.blan{background:url(../images/32x32_blanco/articulos.png)no-repeat;}
-				#sgac i.img_col.informaciones.blan{background:url(../images/32x32_blanco/informaciones.png)no-repeat;}
-				#sgac i.img_col.diagnostico.blan{background:url(../images/32x32_blanco/diagnostico.png)no-repeat;}
-				#sgac i.img_col.estadisticas.blan{background:url(../images/32x32_blanco/estadisticas.png)no-repeat;}
-				#sgac i.img_col.ajustes.blan{background:url(../images/32x32_blanco/ajustes.png)no-repeat;}
-				#sgac i.img_col.ayuda.blan{background:url(../images/32x32_blanco/ayuda.png)no-repeat;}
-				#sgac i.img_col.acercade.blan{background:url(../images/32x32_blanco/acercade.png)no-repeat;}
-				#sgac i.img_col.borrar.blan{background:url(../images/32x32_blanco/borrar.png)no-repeat;}
-				#sgac i.img_col.editar.blan{background:url(../images/32x32_blanco/editar.png)no-repeat;}
-				#sgac i.img_col.actualizar.blan{background:url(../images/32x32_negro/actualizar.png)no-repeat;}
+				#sgac i.img_col.menus.blan{background:url(../images/32x32_blanco/menus.png)no-repeat center;}
+				#sgac i.img_col.articulos.blan{background:url(../images/32x32_blanco/articulos.png)no-repeat center;}
+				#sgac i.img_col.informaciones.blan{background:url(../images/32x32_blanco/informaciones.png)no-repeat center;}
+				#sgac i.img_col.diagnostico.blan{background:url(../images/32x32_blanco/diagnostico.png)no-repeat center;}
+				#sgac i.img_col.estadisticas.blan{background:url(../images/32x32_blanco/estadisticas.png)no-repeat center;}
+				#sgac i.img_col.ajustes.blan{background:url(../images/32x32_blanco/ajustes.png)no-repeat center;}
+				#sgac i.img_col.ayuda.blan{background:url(../images/32x32_blanco/ayuda.png)no-repeat center;}
+				#sgac i.img_col.acercade.blan{background:url(../images/32x32_blanco/acercade.png)no-repeat center;}
+				#sgac i.img_col.borrar.blan{background:url(../images/32x32_blanco/borrar.png)no-repeat center;}
+				#sgac i.img_col.editar.blan{background:url(../images/32x32_blanco/editar.png)no-repeat center;}
+				#sgac i.img_col.actualizar.blan{background:url(../images/32x32_negro/actualizar.png)no-repeat center;}
 			/*Negro*/
-				#sgac i.img_col.menus.neg{background:url(../images/32x32_negro/menus.png)no-repeat;}
-				#sgac i.img_col.articulos.neg{background:url(../images/32x32_negro/articulos.png)no-repeat;}
-				#sgac i.img_col.informaciones.neg{background:url(../images/32x32_negro/informaciones.png)no-repeat;}
-				#sgac i.img_col.diagnostico.neg{background:url(../images/32x32_negro/diagnostico.png)no-repeat;}
-				#sgac i.img_col.estadisticas.neg{background:url(../images/32x32_negro/estadisticas.png)no-repeat;}
-				#sgac i.img_col.ajustes.neg{background:url(../images/32x32_negro/ajustes.png)no-repeat;}
-				#sgac i.img_col.ayuda.neg{background:url(../images/32x32_negro/ayuda.png)no-repeat;}
-				#sgac i.img_col.acercade.neg{background:url(../images/32x32_negro/acercade.png)no-repeat;}
-				#sgac i.img_col.borrar.neg{background:url(../images/32x32_negro/borrar.png)no-repeat;}
-				#sgac i.img_col.editar.neg{background:url(../images/32x32_negro/editar.png)no-repeat;}
-				#sgac i.img_col.actualizar.neg{background:url(../images/32x32_negro/actualizar.png)no-repeat;}
+				#sgac i.img_col.menus.neg{background:url(../images/32x32_negro/menus.png)no-repeat center;}
+				#sgac i.img_col.articulos.neg{background:url(../images/32x32_negro/articulos.png)no-repeat center;}
+				#sgac i.img_col.informaciones.neg{background:url(../images/32x32_negro/informaciones.png)no-repeat center;}
+				#sgac i.img_col.diagnostico.neg{background:url(../images/32x32_negro/diagnostico.png)no-repeat center;}
+				#sgac i.img_col.estadisticas.neg{background:url(../images/32x32_negro/estadisticas.png)no-repeat center;}
+				#sgac i.img_col.ajustes.neg{background:url(../images/32x32_negro/ajustes.png)no-repeat center;}
+				#sgac i.img_col.ayuda.neg{background:url(../images/32x32_negro/ayuda.png)no-repeat center;}
+				#sgac i.img_col.acercade.neg{background:url(../images/32x32_negro/acercade.png)no-repeat center;}
+				#sgac i.img_col.borrar.neg{background:url(../images/32x32_negro/borrar.png)no-repeat center;}
+				#sgac i.img_col.editar.neg{background:url(../images/32x32_negro/editar.png)no-repeat center;}
+				#sgac i.img_col.actualizar.neg{background:url(../images/32x32_negro/actualizar.png)no-repeat center;}
 	#sgac input[type="file"]{
 		display:none;
 	}
