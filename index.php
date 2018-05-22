@@ -573,7 +573,7 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#conf_borrar_gen').css('display','none');">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
 							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
 						</section>
 					</div>
