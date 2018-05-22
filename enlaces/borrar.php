@@ -56,13 +56,27 @@ echo $_POST['tipo'];
 					}
 		break;
 		case 'articulos': 
-			$a_id = $_POST['a_id'];
-			//Borrado de la imagen
-			$con = $mysqli->query("DELETE FROM aticulos WHERE a_id = '".$a_id."' ");
-			if($con)
-				echo "El art&iacute;culo ha sido borrado con &eacute;xito.";
-			else
-				echo "Ha habido un error al borrar.";
+			$a_id = $_POST['m_m'];
+			//Borrado de la imagen	
+				$con = $mysqli->query("SELECT a_imagen FROM articulos WHERE a_id = '".$a_id."'");
+				$r = $con->fetch_array();
+				$a_imagen = $r['a_imagen'];
+				$b = true;
+				if(!empty($a_imagen)){
+					if(unlink($a_imagen))
+						$b = true;
+					else
+						$b = false;
+				}
+				if($b){
+					$con = $mysqli->query("DELETE FROM articulos WHERE a_id = '".$a_id."' ");
+					if($con)
+						echo "El art&iacute;culo ha sido borrado con &eacute;xito.";
+					else
+						echo "Ha habido un error al borrar (Registro).";
+				}else
+					echo "Ha habido un error al borrar (Imagen).";
+					
 		break;
 		case 'informacion': 
 			$i_id = $_POST['i_id'];

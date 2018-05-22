@@ -70,7 +70,7 @@ function mov(){
 				$.post("partes_act/articulos.php", {tipo:tipo}, function(r){
 					$('#sgac div.tabla_gen.articulos').html(r);
 						//Borrar
-							$("#sgac div.tabla_gen.submenus i.borrar_art").on("click", function(){
+							$("#sgac div.tabla_gen.articulos i.borrar_art").on("click", function(){
 								boton_borrar_art(this);
 							});
 						//Subir imagen
@@ -98,7 +98,6 @@ function mov(){
 					$('#sgac div.tabla_gen.articulos').html(r);
 						//Borrar
 							$("#sgac div.tabla_gen.articulos i.borrar_art").on("click", function(){
-								alert("hola");
 								boton_borrar_art(this);
 							});
 						//Subir imagen
