@@ -84,8 +84,10 @@
 	}
 	#sgac section.mi_info div.line[tag="5"]{
 		display:inline-block;
-		height:1.5cm;
-		width:2px;
+		height:90%;
+		margin-top:5%;
+		width:1cm;
+		background:#453;
 		border-right:1px solid #FFF;
 		float:left;
 	}
@@ -106,7 +108,8 @@
 	}
 	#sgac section.mi_info div.line[tag="6"]{
 		display:inline-block;
-		height:1.5cm;
+		height:90%;
+		margin-top:5%;
 		width:2px;
 		border-right:1px solid #FFF;
 		float:left;
