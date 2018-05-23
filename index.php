@@ -287,6 +287,10 @@
 											<div class="cam">Color de letra: <input type="color" name="i_colorLetra"/></div>
 										</div>
 										<div class="fil">
+											<div class="cam">URL del bot&oacute;n: <input type="url" name="i_url"/></div>
+											<div class="cam">Texto del bot&oacute;n: <input type="url" name="i_texto_url"/></div>
+										</div>
+										<div class="fil">
 											<div class="cam"><a class="btn-gen" tag="agrega_inf">Agregar informaci&oacute;n</a></div>
 										</div>
 									</div>

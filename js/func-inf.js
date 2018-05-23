@@ -60,8 +60,32 @@ $(document).ready(function(){
 						}else{
 							$("#sgac select[name='i_posicion']").html(num);
 							$("#sgac article.bloque[tag='rep_inf_2']").css("display", "block");
-							$('#sgac div.espera').html("Listo");
-							var retrasar = setTimeout(mov, 3000);
+							//Mostramos y quitamos elementos de la inf. según el diseño
+								/******************************************************************/
+								$("#sgac input[name='i_titulo']").css("display", "none");
+								$("#sgac textarea[name='i_contenido']").css("display", "none");
+								$("#sgac input[name='i_colorFondo']").css("display", "none");
+								$("#sgac input[name='i_colorLetra']").css("display", "none");
+								$("#sgac input[name='i_url']").css("display", "none");
+								$("#sgac input[name='i_texto_url']").css("display", "none");
+								/********************************************************************/
+								switch($("#sgac select[name='i_disegno']").val()){
+									case "1":
+										$("#sgac textarea[name='i_contenido']").css("display", "block");
+										$("#sgac input[name='i_colorFondo']").css("display", "inline-block");
+										$("#sgac input[name='i_colorLetra']").css("display", "inline-block");
+										break;
+									case "2":
+										$("#sgac textarea[name='i_contenido']").css("display", "block");
+										$("#sgac input[name='i_colorFondo']").css("display", "inline-block");
+										$("#sgac input[name='i_colorLetra']").css("display", "inline-block");
+										$("#sgac input[name='i_url']").css("display", "inline-block");
+										$("#sgac input[name='i_texto_url']").css("display", "inline-block");
+										break;
+								}
+							//Animación final
+								$('#sgac div.espera').html("Listo, elija la posici&oacute;n");
+								var retrasar = setTimeout(mov, 3000);
 						}
 				});
 			//PASO 3
@@ -76,23 +100,49 @@ $(document).ready(function(){
 						var i_contenido = $("#sgac textarea[name='i_contenido']").val();
 						var i_colorFondo = $("#sgac input[name='i_colorFondo']").val();
 						var i_colorLetra = $("#sgac input[name='i_colorLetra']").val();
-					//Fusionamos el contenido con el diseño
-						var res = fusion_inf(i_disegno, i_titulo, i_contenido, i_colorFondo, i_colorLetra);
-						alert(res);
+						var i_url = $("#sgac input[name='i_url']").val();
+						var i_texto_url = $("#sgac input[name='i_texto_url']").val();
 					//Creamos la información
+						var primero = document.createElement('article');
+						primero.setAttribute("class", "movible");
 						//Creamos el elemento y su contenido
-							var primero = document.createElement('article');
-							var contenido = document.createTextNode(res);
-							primero.appendChild(contenido);
-						//Asignamos el diseño
-							var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;";
-							primero.setAttribute("style", disegno);
+							switch(i_disegno){
+								case "1":
+									//Estructura
+										//Creamos texto
+											var contenido = document.createTextNode(i_contenido);
+										//Asignamos texto
+											primero.appendChild(contenido);
+									//Diseño
+										var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;";
+										primero.setAttribute("style", disegno);
+									break;
+								case "2":
+									//Estructura
+										//Creamos texto
+											var d_parrafo = document.createTextNode(i_contenido);
+											var d_boton = document.createTextNode(i_texto_url);
+										//Creamos elementos internos
+											var parrafo = primero.createElement('p');
+									alert("estamos en el 2.5");
+											var boton = primero.createElement('a');
+										//Asignamos texto
+											parrafo.appendChild(d_parrafo);
+											boton.appendChild(d_boton);
+									//Diseño
+										var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;";
+										primero.setAttribute("style", disegno);
+										boton.setAttribute("href", i_url);
+										boton.setAttribute("class", "btn-gen");
+									break;
+							}
 					if(i_contenido == ""){
 						$('#sgac div.espera').html("El contenido no debe de estar vac&iacute;o");
 						var retrasar = setTimeout(mov, 3000);
 					}else{
 						//Agregamos la información
 							doc.insertBefore(primero, cant[i_posicion]);
+						alert("un p");
 						//Notificación final
 							$('#sgac div.espera').html("Listo");
 							var retrasar = setTimeout(mov, 3000);
@@ -100,17 +150,6 @@ $(document).ready(function(){
 				});
 			//PASO 4
 });
-function fusion_inf(dis, tit, cont, fondo, letra){
-	var res = "jas";
-	alert("este es dis: "+dis);
-	switch(dis){
-		case "1":
-			res = cont;
-			break;
-	}
-	return res;
-}
-
 
 
 
