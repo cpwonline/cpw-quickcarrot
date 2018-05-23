@@ -123,17 +123,19 @@ $(document).ready(function(){
 											var d_parrafo = document.createTextNode(i_contenido);
 											var d_boton = document.createTextNode(i_texto_url);
 										//Creamos elementos internos
-											var parrafo = primero.createElement('p');
-									alert("estamos en el 2.5");
-											var boton = primero.createElement('a');
+											var parrafo = document.createElement('p');
+											var boton = document.createElement('a');
+											primero.appendChild(parrafo);
+											primero.appendChild(boton);
 										//Asignamos texto
 											parrafo.appendChild(d_parrafo);
 											boton.appendChild(d_boton);
 									//Diseño
-										var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;";
+										var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;overflow:hidden;";
 										primero.setAttribute("style", disegno);
+										parrafo.setAttribute("style", "display:inline-block;margin-right:.2cm;width:50%;float:none;");
 										boton.setAttribute("href", i_url);
-										boton.setAttribute("class", "btn-gen");
+										boton.setAttribute("class", "btn-gen btn-1 btn-1c");
 									break;
 							}
 					if(i_contenido == ""){

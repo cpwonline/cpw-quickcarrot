@@ -16,7 +16,7 @@
 		case 'carga_sub':
 			$s_url = $_POST['s_url'];
 			$dir = "../".$s_url."index.php";
-			echo "<object data='".$dir."' width='100%' height='100%' type='text/html' tag='t'></object>";
+			echo "<object data='".$dir."' width='100%' height='500px' type='text/html' tag='t'></object>";
 			break;
 	}
 ?>
