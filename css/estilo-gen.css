@@ -80,9 +80,46 @@
 				#sgac i.img_col.borrar.neg{background:url(../images/32x32_negro/borrar.png)no-repeat center;}
 				#sgac i.img_col.editar.neg{background:url(../images/32x32_negro/editar.png)no-repeat center;}
 				#sgac i.img_col.actualizar.neg{background:url(../images/32x32_negro/actualizar.png)no-repeat center;}
-	#sgac input[type="file"]{
-		display:none;
-	}
+		/*Tabla general*/
+			#sgac div.tabla_gen{
+				padding:.7cm .5cm .7cm .5cm;
+				display:table;
+				width:85%;
+				font-size:12pt;
+				overflow:hidden;
+				text-align:left;
+				border-spacing:7px;
+			}
+			#sgac div.tabla_gen select,
+			#sgac div.tabla_gen input{
+				padding:8px 12px;
+				border:none;
+				color:#444;
+				border:1px solid #ccc;
+				max-width:4cm;
+			}
+			#sgac div.tabla_gen textarea{
+				width:93%;
+				padding:.7cm;
+				resize:none;
+				height:5cm;
+				font-size:10pt;
+			}
+			#sgac div.tabla_gen input[type="file"]{
+				display:none;
+			}
+			#sgac div.tabla_gen  div.fil{
+				display:table-row;
+			}
+			#sgac div.tabla_gen  div.fil.pr div.cam{
+				border-bottom:1px solid #ccc;
+				border-spacing: 3px;
+				font-weight:bold;
+			}
+			#sgac div.tabla_gen  div.cam{
+				display:table-cell;
+			}
+		/*Fin de tabla general*/
 	/*BLOQUE:Inicio de sesion---------------------------------------------------------*/
 		#sgac section.inicio_sesion{
 			position:fixed;
@@ -233,43 +270,6 @@
 		#sgac section.contenedor article.art_gen section.dentro_art article.bloque h4:nth-child(1) i{
 			float:right;
 		}
-		/*Tabla general*/
-			#sgac div.tabla_gen{
-				padding:.7cm .5cm .7cm .5cm;
-				display:table;
-				width:85%;
-				font-size:12pt;
-				overflow:hidden;
-				text-align:left;
-				border-spacing:7px;
-			}
-			#sgac div.tabla_gen select,
-			#sgac div.tabla_gen input{
-				padding:8px 12px;
-				border:none;
-				color:#444;
-				border:1px solid #ccc;
-				max-width:4cm;
-			}
-			#sgac div.tabla_gen textarea{
-				width:93%;
-				padding:.7cm;
-				resize:none;
-				height:5cm;
-				font-size:10pt;
-			}
-			#sgac div.tabla_gen  div.fil{
-				display:table-row;
-			}
-			#sgac div.tabla_gen  div.fil.pr div.cam{
-				border-bottom:1px solid #ccc;
-				border-spacing: 3px;
-				font-weight:bold;
-			}
-			#sgac div.tabla_gen  div.cam{
-				display:table-cell;
-			}
-		/*Fin de tabla general*/
 		#sgac div.espera{
 			z-index:10000;
 			overflow:hidden;

@@ -216,99 +216,30 @@
 							<!--Añadir una información-->
 								<article class="bloque b2">
 									<h4>A&ntilde;adir una informaci&oacute;n</h4>
-									<!--Sección Mi información-->
-										<section class="mi_info"><div class="cent prue"><h3 tag="1">Contenido centrado</h3></div></section>
-									
-									<!--Tabla Gen para añadir una información-->
-										<div class="tabla_gen">
-										<!--Menú de la inf-->
-											<div class="fil">
-												<div class="cam">Men&uacute;:</div>
-												<div class="cam">
-													<select name="i_menu">
-														<?php
-															$con = $mysqli->query("SELECT m_titulo FROM menus ORDER BY m_freg DESC");
-															if($con->num_rows === 0){
-																echo "<div class='uni'><option>No hay resultados.</option></div>";
-															}
-															while($ro = $con->fetch_assoc()){
-																$m_titulo = $ro['m_titulo'];
-														?>
-																<option value="<?=$m_titulo?>"><?=$m_titulo?></option>
-														<?php
-															}
-														?>
-													</select>
-												</div>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
+											<div class="cam">
+												<select name="i_menu">
+													<option value="">Seleccione...</option>
+													<?php
+														$con = $mysqli->query("SELECT * FROM menus ORDER BY m_posicion, m_freg DESC");
+														while($ro = $con->fetch_array()){
+															$m_id = $ro['m_id'];
+															$m_titulo = $ro['m_titulo'];
+															echo '<option value="'.$m_titulo.'">'.$m_titulo.'</option>';
+														}
+													?>
+												</select>
 											</div>
-										<!--Submenú de la inf-->
-											<div class="fil">
-												<div class="cam">Submen&uacute;:</div>
-												<div class="cam">
-													<select name="i_menu">
-														<?php
-															$con = $mysqli->query("SELECT s_titulo FROM submenus ORDER BY s_freg DESC");
-															if($con->num_rows === 0){
-																echo "<div class='uni'><option>No hay resultados.</option></div>";
-															}
-															while($ro = $con->fetch_assoc()){
-																$s_titulo = $ro['s_titulo'];
-														?>
-																<option value="<?=$s_titulo?>"><?=$s_titulo?></option>
-														<?php
-															}
-														?>
-													</select>
-												</div>
+											<div class="cam"><span>Submen&uacute;: </span></div>
+											<div class="cam">
+												<select name="i_sub"><option value="">Seleccione...</option></select>
 											</div>
-										<!--Posición de la inf-->
-											<div class="fil">
-												<div class="cam">Posici&oacute;n:</div>
-												<div class="cam">
-													<select name="inf_pos">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-													</select>
-												</div>
-											</div>
-										<!--Diseño de la inf-->
-											<div class="fil">
-												<div class="cam">Diseño:</div>
-												<div class="cam">
-													<select name="inf_disegno">
-														<option value="1">Contenido centrado</option>
-														<option value="2">T&iacute;tulo arriba y contenido debajo</option>
-														<option value="3">Contenido centrado y bot&oacute;n de contacto a la derecha</option>
-														<option value="4">Contenido centrado y bot&oacute;n de contacto debajo</option>
-														<option value="5">T&iacute;tulo a la izquierda y contenido a la derecha</option>
-														<option value="6">T&iacute;tulo a la derecha y contenido a la izquierda</option>
-													</select>
-												</div>
-											</div>
-										<!--Título de la inf-->
-											<div class="fil" tag="tit">
-												<div class="cam">T&iacute;tulo:</div>
-												<div class="cam"><input type="text" name="inf_tit" placeholder="Escriba su t&iacute;tulo" maxlength="30" value="Título"/></div>
-												<div class="cam">Letra:</div>
-												<div class="cam"><input type="color" name="inf_tit_letra" value="#ffffff"/></div>
-											</div>
-										<!--Contenido de la inf-->
-											<div class="fil" tag="cont">
-												<div class="cam">Contenido:</div>
-												<div class="cam"><textarea name="inf_cont" placeholder="Escriba su informaci&oacute;n" maxlength="208">Contenido</textarea></div>
-												<div class="cam">Fondo:</div>
-												<div class="cam"><input type="color" name="inf_cont_fondo" value="#444444"/></div>
-												<div class="cam">Letra:</div>
-												<div class="cam"><input type="color" name="inf_cont_letra" value="#ffffff"/></div>
-												<div class="cam">Borde:</div>
-												<div class="cam"><input type="color" name="inf_cont_borde" value="#ffffff"/></div>
-											</div>
-											<div class="fil">
-												<div class="cam"><a class="btn-gen" id="guarda_inf">Guardar</a></div>
-											</div>
+											<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
 										</div>
-									<!--Fin Tabla Gen para añadir una información-->
+									</div>
+									<br><p style="margin-bottom:.5cm;color:#777;">Le recordamos que estas <i>informaciones</i> son muy parecidas a <i>banners</i>, bloques o secciones en donde usted podr&aacute; mostrar alguna informaci&oacute;n de manera elegante</p>
 								</article>
 							<!--Mis informaciones-->
 								<article class="bloque b2">
@@ -564,7 +495,7 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#sgac #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
 							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
 						</section>
 					</div>
@@ -572,6 +503,25 @@
 				<div class="overlay"></div>
 			</div>
 		<!--Modal de conf_borrar_gen------------------------------------------------->
+		
+		<!--Modal de conf_inf------------------------------------------------>
+			<div class="gen_modal" id="conf_inf">
+				<div class="modal-content">
+					<div class="header otro"><h2>Configuraci&oacute;n de la informaci&oacute;n</h2></div>
+					<div class="copy" id="copy">
+						<div class="cont"></div>
+					</div>
+					<div class="cf footer">
+						<section class="cont_a">
+							<a class="btn-gen2" onclick="$('#sgac #conf_inf').css('display','none');" tag="cancelar">Cancelar</a>
+							<a class="btn-gen2" tag="cambiar">cambiar</a>
+							<a class="btn-gen" tag="si" href="#">A&ntilde;adir</a>
+						</section>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		<!--Modal de conf_inf------------------------------------------------->
 		
 	</body>
 </html>

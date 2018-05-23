@@ -1,98 +1,47 @@
 $(document).ready(function(){
-	//Funciones de Mi Información
-		//Actualizar letra
-			//Título
-				$("#sgac input[name='inf_tit']").change(function(e){
-					act_todo();
-				});
-			//Contenido
-				$("#sgac textarea[name='inf_cont']").change(function(e){
-					act_todo();
-				});
-		//Actualizar color
-			//Fondo
-				$("#sgac input[name='inf_cont_fondo']").change(function(e){
-					act_todo();
-				});
-			//Letra
-				//Título
-					$("#sgac input[name='inf_tit_letra']").change(function(e){
-						act_todo();
+	//Actualización
+		//Al hacer click en el menú
+			$('#sgac select[name="i_menu"]').change(function(e){
+				//Animación
+					$('#sgac div.espera').css('right', '.5cm');
+					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
+				//Recolección de datos
+					var i_menu = $('#sgac select[name="i_menu"]').val();
+					var tipo = "submenus";
+				//Llamada AJAX
+					$.post("enlaces/actualizar.php", {i_menu:i_menu, tipo:tipo},function(r){
+						$('#sgac select[name="i_sub"]').html(r);
+						$('#sgac div.espera').html("Listo");
+						var retrasar = setTimeout(mov, 3000);
 					});
-				//Contenido
-					$("#sgac input[name='inf_cont_letra']").change(function(e){
-						act_todo();
+			});
+	//Guardar
+		//Información
+			$('#sgac a#configura_inf').click(function(e){
+				//Animación
+					$('#sgac div#conf_inf').css("display", "block");
+					$('#sgac div.espera').css('right', '.5cm');
+					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
+				//Recolección de datos
+					var s_url = $('#sgac select[name="i_sub"]').val();
+					var tipo = "carga_sub";
+				//Llamada AJAX
+					$.post("enlaces/actualizar.php", {s_url:s_url, tipo:tipo},function(r){
+						$('#sgac div#conf_inf div.cont').html(r);
+						$('#sgac div.espera').html("Listo");
+						var retrasar = setTimeout(mov, 3000);
 					});
-			//Borde
-					$("#sgac input[name='inf_cont_borde']").change(function(e){
-						act_todo();
-					});
-		//Cambiar diseño
-			$("#sgac select[name='inf_disegno']").change(function(e){
-				var disegno = $(this).val();
-				switch(disegno){
-					case "1":
-						var dis = "<h3 tag='1'>Contenido centrado</h3>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "none");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-					case "2":
-						var dis = "<h2 tag='2'>T&iacute;tulo arriba</h2><h3 tag='2'>Contenido debajo</h3>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "table-row");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-					case "3":
-						var dis = "<h3 tag='3'>Contenido izquierda</h3><a tag='3' class='btn-gen'>Contactar</a>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "none");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-					case "4":
-						var dis = "<h3 tag='4'>Contenido arriba</h3><a tag='4' class='btn-gen'>Contactar</a>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "none");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-					case "5":
-						var dis = "<h2 tag='5'>T&iacute;tulo izquierda</h2><div tag='5' class='line'></div><h3 tag='5'>Contenido derecha</h3>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "table-row");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-					case "6":
-						var dis = "<h3 tag='6'>Contenido izquierda</h3><div tag='6' class='line'></div><h2 tag='6'>T&iacute;tulo derecha</h2>";
-						$("#sgac div.tabla_gen div.fil[tag='tit']").css("display", "table-row");
-						$("#sgac div.tabla_gen div.fil[tag='cont']").css("display", "table-row");
-						break;
-				}
-				$("#sgac section.mi_info div.cent").html(dis)
-				act_todo();
+			});
+			$('#sgac a[tag="cambiar"]').click(function(e){
+				var doc = document.getElementById('t').contentWindow.document.querySelector('#l17-01 .contenedor');
+				doc.style.background="#ccc";
+				var primero = document.createElement('article').appendChild(document.createTextNode('nuevo aqui jejeje'));
+				var segundo = doc.querySelector("article.art_1");
+				segundo.style.display = "none";
+				alert(segundo);
+				doc.insertBefore(primero, segundo);
 			});
 });
-function act_todo(){
-	//Funciones de Mi Información
-		//Actualizar letra
-			//Título
-				var tit = $("#sgac input[name='inf_tit']").val();
-				$("#sgac section.mi_info div.cent h2").html(tit);
-			//Contenido
-				var cont = $("#sgac textarea[name='inf_cont']").val();
-				$("#sgac section.mi_info div.cent h3").html(cont);
-		//Actualizar color
-			//Fondo
-				var fondo = $("#sgac input[name='inf_cont_fondo']").val();
-				$("#sgac section.mi_info div.cent").css("background", fondo);
-			//Letra
-				//Título
-					var tit = $("#sgac input[name='inf_tit_letra']").val();
-					$("#sgac section.mi_info div.cent h2").css("color", tit);
-				//Contenido
-					var cont = $("#sgac input[name='inf_cont_letra']").val();
-					$("#sgac section.mi_info div.cent h3").css("color", cont);
-			//Borde
-				var borde = $("#sgac input[name='inf_cont_borde']").val();
-				$("#sgac section.mi_info div.cent").css("border-top", "1px solid "+borde);
-				$("#sgac section.mi_info div.cent").css("border-bottom", "1px solid "+borde);
-				$("#sgac section.mi_info div.cent div.line").css("border-right", "1px solid "+borde);
-}
-
 
 
 
