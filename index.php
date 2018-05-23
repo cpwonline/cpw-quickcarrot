@@ -234,13 +234,9 @@
 												</select>	
 											</div>
 										</div>
-										<div class="fil">
-											<div class="cam">
-												<input type="text" name="i_titulo" placeholder="T&iacute;tulo"/>
-											</div>
-										</div>
 									</div>
 								</article>
+							<!--Localización de la información-->
 								<article class="bloque b1">
 									<h4>Localizaci&oacute;n de la inf.</h4>
 									<div class="tabla_gen">
@@ -265,20 +261,42 @@
 											<div class="cam">
 												<select name="i_sub"><option value="">Seleccione...</option></select>
 											</div>
+										</div>
+										<div class="fil">
 											<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
 										</div>
 									</div>
 								</article>
+							<!--Añadir el contenido-->
 								<article class="bloque b2">
 									<h4>A&ntilde;adir el contenido</h4>
 									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam">
-												<textarea name="i_contenido" placeholder="Contenido"></textarea>
-											</div>
+											<div class="cam"><input type="text" name="i_titulo" placeholder="T&iacute;tulo"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam"><textarea name="i_contenido" placeholder="Contenido"></textarea></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Color de fondo: <input type="color" name="i_colorFondo"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Color de letra: <input type="color" name="i_colorLetra"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam"><a class="btn-gen" tag="agrega_inf">Agregar informaci&oacute;n</a></div>
 										</div>
 									</div>
 									<br><p style="margin-bottom:.5cm;color:#777;">Le recordamos que estas <i>informaciones</i> son muy parecidas a <i>banners</i>, bloques o secciones en donde usted podr&aacute; mostrar alguna informaci&oacute;n de manera elegante</p>
+								</article>
+							<!--Resultado de la información-->
+								<article class="bloque b2">
+									<h4>Resultado</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam" tag="object_inf"></div>
+										</div>
+									</div>
 								</article>
 							<!--Mis informaciones-->
 								<article class="bloque b2">
@@ -542,25 +560,6 @@
 				<div class="overlay"></div>
 			</div>
 		<!--Modal de conf_borrar_gen------------------------------------------------->
-		
-		<!--Modal de conf_inf------------------------------------------------>
-			<div class="gen_modal" id="conf_inf">
-				<div class="modal-content">
-					<div class="header otro"><h2>Configuraci&oacute;n de la informaci&oacute;n</h2></div>
-					<div class="copy" id="copy">
-						<div class="cont"></div>
-					</div>
-					<div class="cf footer">
-						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#sgac #conf_inf').css('display','none');" tag="cancelar">Cancelar</a>
-							<a class="btn-gen2" tag="cambiar">cambiar</a>
-							<a class="btn-gen" tag="si" href="#">A&ntilde;adir</a>
-						</section>
-					</div>
-				</div>
-				<div class="overlay"></div>
-			</div>
-		<!--Modal de conf_inf------------------------------------------------->
 		
 	</body>
 </html>

@@ -19,7 +19,6 @@ $(document).ready(function(){
 		//Información
 			$('#sgac a#configura_inf').click(function(e){
 				//Animación
-					$('#sgac div#conf_inf').css("display", "block");
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
@@ -27,28 +26,33 @@ $(document).ready(function(){
 					var tipo = "carga_sub";
 				//Llamada AJAX
 					$.post("enlaces/actualizar.php", {s_url:s_url, tipo:tipo},function(r){
-						$('#sgac div#conf_inf div.cont').html(r);
+						$('#sgac div.cam[tag="object_inf"]').html(r);
 						$('#sgac div.espera').html("Listo");
 						var retrasar = setTimeout(mov, 3000);
 					});
 			});
-			$('#sgac a[tag="cambiar"]').click(function(e){
-				var doc = document.querySelector('#sgac #t').contentWindow.document.querySelector('#l17-01');
-				/*doc.style.background="#ccc";
-				var primero = document.createElement('article').appendChild(document.createTextNode('nuevo aqui jejeje'));
-				var segundo = doc.querySelector("article.art_1");
-				segundo.style.display = "none";
-				alert(segundo);
-				doc.insertBefore(primero, segundo);*/
-				var cant = doc.querySelectorAll(".movible");
-				alert(cant.length);
-				alert(cant[3]);
-				//Creamos uno en el cuarto elemento movible
-				var primero = document.createElement('article').appendChild(document.createTextNode('nuevo aqui jejeje<br><br>'));
-				doc.insertBefore(primero, cant[1]);
+			$('#sgac a[tag="agrega_inf"]').click(function(e){
+				//Se selecciona el documento
+					var doc = document.querySelector('#sgac #t').contentWindow.document.querySelector('#l17-01');
+				//Buscamos todos los movibles
+					var cant = doc.querySelectorAll(".movible");
+				//Recolectamos datos de diseño y estructura
+					var i_disegno = $("#sgac input[name='i_disegno']").val();
+					var i_posicion = $("#sgac input[name='i_posicion']").val();
+					var i_titulo = $("#sgac input[name='i_titulo']").val();
+					var i_contenido = $("#sgac input[name='i_contenido']").val();
+					var i_colorFondo = $("#sgac input[name='i_colorFondo']").val();
+					var i_colorLetra = $("#sgac input[name='i_colorLetra']").val();
+				//Fusionamos el contenido con el diseño
+					var res = fusion_inf(i_disegno, i_titulo, i_contenido, i_colorFondo, i_colorLetra);
+				//Agregamos la información
+					var primero = document.createElement('article').appendChild(document.createTextNode(i_contenido));
+					doc.insertBefore(primero, cant[1]);
 			});
 });
-
+function funsion_inf(){
+	
+}
 
 
 
