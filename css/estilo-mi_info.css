@@ -1,21 +1,12 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#sgac div.herramientas_inf{
+	float:left;
+	background:#546;
+	padding:.2cm;
+	display:inline-block;
+	overflow:hidden;
+	text-align:center;
+}
+#sgac div.tabla_gen div.cam.2 textarea{
+	height:100px;
+	width:500px;
+}

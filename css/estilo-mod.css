@@ -65,9 +65,7 @@
 	visibility: visible;
 }
 #sgac #conf_borrar_gen,
-#sgac #conf_borrar_gen:target,
-#sgac #conf_inf,
-#sgac #conf_inf:target{
+#sgac #conf_borrar_gen:target{
 	width:80%;
 	top:25%;
 	left:10%;
@@ -87,4 +85,6 @@
 	opacity: 1;
 	display:none;
 	visibility: visible;
+	overflow:scroll;
+	height:400px;
 }

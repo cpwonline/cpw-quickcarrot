@@ -513,9 +513,41 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#sgac #conf_inf').css('display','none');" tag="cancelar">Cancelar</a>
-							<a class="btn-gen2" tag="cambiar">cambiar</a>
-							<a class="btn-gen" tag="si" href="#">A&ntilde;adir</a>
+							<!--Herramientas del diseño tipo WYSYWIG de las infos-->
+								<div class="herramientas_inf tabla_gen">
+									<div class="fil">
+										<div class="cam">
+											<select name="i_disegno">
+												<option value="">Dise&ntilde;o</option>
+												<option value="1">Contenido centrado</option>
+												<option value="2">Contenido centrado (izquierda) y bot&oacute;n de contacto (derecha)</option>
+												<option value="3">Contenido centrado (arriba) y bot&oacute;n de contacto (debajo)</option>
+												<option value="4">T&iacute;tulo (arriba)  y contenido centrado (debajo)</option>
+												<option value="5">T&iacute;tulo (izquierda)  y contenido centrado (derecha)</option>
+												<option value="6">T&iacute;tulo (derecha)  y contenido centrado (izquierda)</option>
+											</select>	
+										</div>
+										<div class="cam">
+											<select name="i_posicion">
+												<option value="">Posici&oacute;n</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+											</select>	
+										</div>
+									</div>
+									<div class="fil">
+										<div class="cam">
+											<input type="text" name="i_titulo" placeholder="T&iacute;tulo"/>
+										</div>
+										<div class="cam 1">
+											<textarea name="i_contenido" placeholder="Contenido"></textarea>
+										</div>
+									</div>
+								</div>
+							<!--Botones-->
+								<a class="btn-gen2" onclick="$('#sgac #conf_inf').css('display','none');" tag="cancelar">Cancelar</a>
+								<a class="btn-gen2" tag="cambiar">cambiar</a>
+								<a class="btn-gen" tag="si" href="#">A&ntilde;adir</a>
 						</section>
 					</div>
 				</div>

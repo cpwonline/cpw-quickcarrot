@@ -97,6 +97,7 @@
 				color:#444;
 				border:1px solid #ccc;
 				max-width:4cm;
+				background:none;
 			}
 			#sgac div.tabla_gen textarea{
 				width:93%;
@@ -104,6 +105,7 @@
 				resize:none;
 				height:5cm;
 				font-size:10pt;
+				background:none;
 			}
 			#sgac div.tabla_gen input[type="file"]{
 				display:none;
