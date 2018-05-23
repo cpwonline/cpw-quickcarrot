@@ -1,8 +1,16 @@
-#sgac div.herramientas_inf{
-	float:left;
-	background:none;
-	padding:.2cm;
-	display:inline-block;
+#sgac articles.bloques_infos{
+	padding:1.4cm;
+	display:block;
+	float:none;
 	overflow:hidden;
-	text-align:center;
+}
+#sgac articles.bloques_infos section.titulo{
+	float:left;
+	width:25%;
+	display:inline-block;
+}
+#sgac articles.bloques_infos section.contenido{
+	float:left;
+	width:65%;
+	display:inline-block;
 }

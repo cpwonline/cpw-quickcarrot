@@ -53,8 +53,6 @@ $(document).ready(function(){
 						for(var a=1; a<=cant.length;a++){
 							num = num+'<option value="'+a+'">'+a+'</option>';
 						}
-						$('#sgac div.espera').html("Listo");
-						var retrasar = setTimeout(mov, 3000);
 					//Se visualiza el siguiente paso
 						if($("#sgac select[name='i_disegno']").val() == ""){
 							$('#sgac div.espera').html("No ha elegido un dise&ntilde;o");
@@ -62,6 +60,8 @@ $(document).ready(function(){
 						}else{
 							$("#sgac select[name='i_posicion']").html(num);
 							$("#sgac article.bloque[tag='rep_inf_2']").css("display", "block");
+							$('#sgac div.espera').html("Listo");
+							var retrasar = setTimeout(mov, 3000);
 						}
 				});
 			//PASO 3
@@ -71,7 +71,7 @@ $(document).ready(function(){
 						$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 					//Recolectamos datos de diseño y estructura
 						var i_disegno = $("#sgac select[name='i_disegno']").val();
-						var i_posicion = $("#sgac select[name='i_posicion']").val();
+						var i_posicion = $("#sgac select[name='i_posicion']").val() - 1;
 						var i_titulo = $("#sgac input[name='i_titulo']").val();
 						var i_contenido = $("#sgac textarea[name='i_contenido']").val();
 						var i_colorFondo = $("#sgac input[name='i_colorFondo']").val();
@@ -82,12 +82,11 @@ $(document).ready(function(){
 					//Creamos la información
 						//Creamos el elemento y su contenido
 							var primero = document.createElement('article');
-							var contenido = document.createTextNode(i_contenido);
+							var contenido = document.createTextNode(res);
 							primero.appendChild(contenido);
 						//Asignamos el diseño
-							var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";";
+							var disegno = "background:" + i_colorFondo + ";color:" + i_colorLetra + ";padding:1.4cm;text-align:center;display:block;";
 							primero.setAttribute("style", disegno);
-					
 					if(i_contenido == ""){
 						$('#sgac div.espera').html("El contenido no debe de estar vac&iacute;o");
 						var retrasar = setTimeout(mov, 3000);
@@ -106,7 +105,7 @@ function fusion_inf(dis, tit, cont, fondo, letra){
 	alert("este es dis: "+dis);
 	switch(dis){
 		case "1":
-			res = '<div class="movible" style="background:'+fondo+';color:'+letra+';"><h4>'+cont+'</h4></div>';
+			res = cont;
 			break;
 	}
 	return res;

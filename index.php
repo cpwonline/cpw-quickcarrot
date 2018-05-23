@@ -293,8 +293,8 @@
 									<br><p style="margin-bottom:.5cm;color:#777;">Le recordamos que estas <i>informaciones</i> son muy parecidas a <i>banners</i>, bloques o secciones en donde usted podr&aacute; mostrar alguna informaci&oacute;n de manera elegante</p>
 								</article>
 							<!--Resultado de la información-->
-								<article class="bloque b2 repentino" tag="rep_inf_3">
-									<h4>PASO 4: Resultado</h4>
+								<article class="bloque b2" tag="rep_inf_3">
+									<h4>Resultado</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam" tag="object_inf"></div>
