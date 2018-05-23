@@ -254,6 +254,13 @@
 			margin:0 .2cm .2cm 0;
 			text-align:center;
 		}
+		#sgac section.contenedor article.art_gen section.dentro_art article.bloque.repentino{
+			display:none;
+			transition:.4s all;
+			-webkit-transition:.4s all;
+			-moz-transition:.4s all;
+			-o-transition:.4s all;
+		}
 		#sgac section.contenedor article.art_gen section.dentro_art article.bloque.b1{
 			width:48%;
 		}

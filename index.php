@@ -212,33 +212,9 @@
 				<article class="art_gen" id="art_3" tag="informaciones">
 					<h3>Informaciones</h3>
 					<section class="dentro_art">
-							<!--Añadir una información-->
-								<article class="bloque b1">
-									<h4>A&ntilde;adir una informaci&oacute;n</h4>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam">
-												<select name="i_disegno">
-													<option value="">Dise&ntilde;o</option>
-													<option value="1">Contenido centrado</option>
-													<option value="2">Contenido centrado (izquierda) y bot&oacute;n de contacto (derecha)</option>
-													<option value="3">Contenido centrado (arriba) y bot&oacute;n de contacto (debajo)</option>
-													<option value="4">T&iacute;tulo (arriba)  y contenido centrado (debajo)</option>
-													<option value="5">T&iacute;tulo (izquierda)  y contenido centrado (derecha)</option>
-													<option value="6">T&iacute;tulo (derecha)  y contenido centrado (izquierda)</option>
-												</select>	
-											</div>
-											<div class="cam">
-												<select name="i_posicion">
-													<option value="">Posici&oacute;n</option>
-												</select>	
-											</div>
-										</div>
-									</div>
-								</article>
 							<!--Localización de la información-->
 								<article class="bloque b1">
-									<h4>Localizaci&oacute;n de la inf.</h4>
+									<h4>PASO 1: Localizaci&oacute;n de la inf.</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
@@ -267,9 +243,36 @@
 										</div>
 									</div>
 								</article>
+							<!--Básico de una información-->
+								<article class="bloque b1 repentino" tag="rep_inf_1">
+									<h4>PASO 2: B&aacute;sico de una informaci&oacute;n</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">
+												<select name="i_disegno">
+													<option value="">Dise&ntilde;o</option>
+													<option value="1">Contenido centrado</option>
+													<option value="2">Contenido centrado (izquierda) y bot&oacute;n de contacto (derecha)</option>
+													<option value="3">Contenido centrado (arriba) y bot&oacute;n de contacto (debajo)</option>
+													<option value="4">T&iacute;tulo (arriba)  y contenido centrado (debajo)</option>
+													<option value="5">T&iacute;tulo (izquierda)  y contenido centrado (derecha)</option>
+													<option value="6">T&iacute;tulo (derecha)  y contenido centrado (izquierda)</option>
+												</select>	
+											</div>
+											<div class="cam">
+												<select name="i_posicion">
+													<option value="">Posici&oacute;n</option>
+												</select>	
+											</div>
+										</div>
+										<div class="fil">
+											<div class="cam"><a class="btn-gen" tag="busca_pos">Buscar posiciones</a></div>
+										</div>
+									</div>
+								</article>
 							<!--Añadir el contenido-->
-								<article class="bloque b2">
-									<h4>A&ntilde;adir el contenido</h4>
+								<article class="bloque b2 repentino" tag="rep_inf_2">
+									<h4>PASO 3: A&ntilde;adir el contenido</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam"><input type="text" name="i_titulo" placeholder="T&iacute;tulo"/></div>
@@ -290,8 +293,8 @@
 									<br><p style="margin-bottom:.5cm;color:#777;">Le recordamos que estas <i>informaciones</i> son muy parecidas a <i>banners</i>, bloques o secciones en donde usted podr&aacute; mostrar alguna informaci&oacute;n de manera elegante</p>
 								</article>
 							<!--Resultado de la información-->
-								<article class="bloque b2">
-									<h4>Resultado</h4>
+								<article class="bloque b2 repentino" tag="rep_inf_3">
+									<h4>PASO 4: Resultado</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam" tag="object_inf"></div>
