@@ -252,8 +252,11 @@
 				max-width:4cm;
 			}
 			#sgac div.tabla_gen textarea{
-				width:100%;
+				width:93%;
+				padding:.7cm;
+				resize:none;
 				height:5cm;
+				font-size:10pt;
 			}
 			#sgac div.tabla_gen  div.fil{
 				display:table-row;

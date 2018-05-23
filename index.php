@@ -69,7 +69,7 @@
 		<section class="contenedor">
 			<!--Principal-->
 			<section class="inf_prin">
-				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i>| SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
+				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
@@ -183,8 +183,12 @@
 											<div class="cam">T&iacute;tulo:</div>
 											<div class="cam"><input type="text" name="a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo"/></div>
 										</div>
+									</div>
+								</article>
+								<article class="bloque b2">
+									<h4>A&ntilde;adir texto del art&iacute;culo</h4>
+									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam">Contenido:</div>
 											<div class="cam"><textarea name="a_contenido" placeholder="Escriba el contenido de su art&iacute;culo"></textarea></div>
 										</div>
 										<div class="fil">
@@ -310,20 +314,7 @@
 								<article class="bloque b2">
 									<h4>Mis informaciones</h4>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">ID:</div>
-											<div class="cam">Creado el:</div>
-											<div class="cam">Creado por:</div>
-											<div class="cam">Contenido:</div>
-										</div>
-										<div class="fil">
-											<div class="cam">1</div>
-											<div class="cam">2/1/2018</div>
-											<div class="cam">Jos&eacute; Rivas</div>
-											<div class="cam">Contenido...</div>
-											<div class="cam"><i class="img_col editar neg boton" tag="editar_inf"></i></div>
-											<div class="cam"><i class="img_col borrar neg boton" tag="borrar_inf"></i></div>
-										</div>
+										<!--PARTE: INFORMACIONES-->
 									</div>
 								</article>
 					</section>

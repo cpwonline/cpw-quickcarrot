@@ -7,7 +7,6 @@
 		}
 		return rmdir($dir);
 	}
-echo $_POST['tipo'];
 	switch($_POST['tipo']){
 		case 'menus': 
 			$m_m = explode("-", $_POST['m_m']);
