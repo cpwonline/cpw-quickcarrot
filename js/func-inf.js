@@ -33,13 +33,19 @@ $(document).ready(function(){
 					});
 			});
 			$('#sgac a[tag="cambiar"]').click(function(e){
-				var doc = document.getElementById('t').contentWindow.document.querySelector('#l17-01 .contenedor');
-				doc.style.background="#ccc";
+				var doc = document.querySelector('#sgac #t').contentWindow.document.querySelector('#l17-01');
+				/*doc.style.background="#ccc";
 				var primero = document.createElement('article').appendChild(document.createTextNode('nuevo aqui jejeje'));
 				var segundo = doc.querySelector("article.art_1");
 				segundo.style.display = "none";
 				alert(segundo);
-				doc.insertBefore(primero, segundo);
+				doc.insertBefore(primero, segundo);*/
+				var cant = doc.querySelectorAll(".movible");
+				alert(cant.length);
+				alert(cant[3]);
+				//Creamos uno en el cuarto elemento movible
+				var primero = document.createElement('article').appendChild(document.createTextNode('nuevo aqui jejeje<br><br>'));
+				doc.insertBefore(primero, cant[1]);
 			});
 });
 
