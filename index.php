@@ -21,6 +21,9 @@
 			<script src="js/func-ope.js"></script>
 			<script src="js/func-inf.js"></script>
 			<script src="js/func-images.js"></script>
+			<script src="vendor/ckeditor/ckeditor.js"/></script>
+			<script src="js/ckeditor.js"/></script>
+			<script src="js/main.js"/></script>
 	</head>
 	<body id="sgac">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
