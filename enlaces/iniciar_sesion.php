@@ -1,8 +1,8 @@
 <?php
 	require_once('../mysqli_db.php');
 	session_start();
-	$u_nombre = $_POST['u_nombre'];
-	$u_clave = $_POST['u_clave'];
+	$u_nombre = palabraSegura($_POST['u_nombre']);
+	$u_clave = palabraSegura($_POST['u_clave']);
 	$contador = $_POST['contador'];
 	$con = $mysqli->query("SELECT * FROM usuarios WHERE u_nombre = '".$u_nombre."' AND u_clave = '".$u_clave."' LIMIT 1");
 	

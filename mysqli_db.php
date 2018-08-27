@@ -17,4 +17,8 @@
 				exit;
 			}
 	}
+	function palabraSegura($v) {
+		$v = addslashes(trim($v));
+		return $v;
+	}
 ?>
