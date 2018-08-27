@@ -35,7 +35,7 @@
 			?>
 			<div class="cam"><?=$a_freg?></div>
 			<div class="cam"><?=$a_usuario?></div>
-			<div class="cam"><i class="img_col editar neg boton" tag="editar_articulo"></i></div>
+			<div class="cam"><a href="enlaces/editor/articulos/?a_id=<?=$a_id?>" target="_blank"><i class="img_col editar neg boton"></i></a></div>
 			<div class="cam"><i class="img_col borrar neg boton borrar_art" tag="<?=$a_id?>"></i></div>
 		</div>
 <?php

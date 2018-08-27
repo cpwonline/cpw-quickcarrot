@@ -2,7 +2,7 @@ function mov(){
 	$('#sgac div.espera').css('right', '-50%');
 }
 
-/*Guardado de la imagen del pago*/
+/*Guardado de la imagen del artículo*/
 	function iniciar(id1, titulo1, tipo1){
 		id = id1;
 		titulo = titulo1;
@@ -85,10 +85,6 @@ function mov(){
 							$('#sgac a.subir_imagen').on("click", function(){
 								boton_subirImagen_art(this);
 							});
-						//Editar
-							$("#sgac div.tabla_gen.articulos i.editar_art").on("click", function(){
-								boton_editar_art(this);
-							});
 				});
 			break;
 			case "todo":
@@ -123,10 +119,6 @@ function mov(){
 						//Subir imagen
 							$('#sgac a.subir_imagen').on("click", function(){
 								boton_subirImagen_art(this);
-							});
-						//Editar
-							$("#sgac div.tabla_gen.articulos i.editar_art").on("click", function(){
-								boton_editar_art(this);
 							});
 				});
 			break;
@@ -213,17 +205,6 @@ function mov(){
 				$('#sgac input[tag="'+id1+'_'+titulo1+'_'+tipo1+'"]').click();
 				iniciar(id1, titulo1, tipo1);
 			}
-		//Editar
-			function boton_editar_art(objeto){
-				//Animación
-					$('#sgac div.espera').css('right', '.5cm');
-					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
-				//Recolección de datos
-					var m_m = $(objeto).attr("tag");
-					var tipo = "articulos";
-					var frase = "el art&iacute;culo?";
-					editar_general(m_m, tipo, frase);
-			}
 
 //Función general para borrar
 	function borrar_general(m_m, tipo, frase){
@@ -287,8 +268,6 @@ function mov(){
 										var retrasar = setTimeout(mov, 3000);
 									});
 							});
-						break;
-					case 'articulos':
 						break;
 				}
 			$("#sgac #conf_editar_gen a[tag='cancelar']").click(function(e){
@@ -385,7 +364,7 @@ $(document).ready(function(){
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
 					var a_titulo = $('#sgac input[name="a_titulo"]').val();
-					var a_contenido = $('#sgac textarea[name="a_contenido"]').val();
+					var a_contenido = CKEDITOR.instances.editor.getData();
 					var tipo = "articulo";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_contenido:a_contenido, tipo:tipo},function(r){

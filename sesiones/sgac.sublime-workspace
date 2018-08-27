@@ -51,7 +51,7 @@
 			"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/index.php",
 			"settings":
 			{
-				"buffer_size": 21084,
+				"buffer_size": 21010,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -60,7 +60,7 @@
 			"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/js/func-ope.js",
 			"settings":
 			{
-				"buffer_size": 15288,
+				"buffer_size": 14611,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -75,12 +75,12 @@
 			}
 		},
 		{
-			"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act/submenus.php",
+			"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/guardar.php",
 			"settings":
 			{
-				"buffer_size": 1112,
+				"buffer_size": 5892,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -116,19 +116,24 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac"
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act"
 	],
 	"file_history":
 	[
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/editor/articulos.php",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act/articulos.php",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/editor/index.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/guardar.php",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/mysqli_db.php",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/iniciar_sesion.php",
+		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act/submenus.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/borrar.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/css/estilo-mod.css",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/js/func-inf.js",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act/menus.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/actualizar.php",
-		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/iniciar_sesion.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/js/func-gen.js",
-		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/editor/index.php",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/vendor/ckeditor/ckeditor.js",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/js/main.js",
 		"/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/js/ck-editor.js",
@@ -187,15 +192,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21084,
+						"buffer_size": 21010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20722,
-								20722
+								7110,
+								7110
 							]
 						],
 						"settings":
@@ -205,7 +210,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7633.0,
+						"translation.y": 2711.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -217,15 +222,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15288,
+						"buffer_size": 14611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7137,
-								7137
+								8495,
+								8495
 							]
 						],
 						"settings":
@@ -235,7 +240,7 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2901.0,
+						"translation.y": 3486.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -254,8 +259,8 @@
 						"selection":
 						[
 							[
-								481,
-								481
+								59,
+								59
 							]
 						],
 						"settings":
@@ -264,27 +269,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 42.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/partes_act/submenus.php",
+					"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/guardar.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1112,
+						"buffer_size": 5892,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								967,
-								967
+								3911,
+								3911
 							]
 						],
 						"settings":
@@ -293,10 +298,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 168.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

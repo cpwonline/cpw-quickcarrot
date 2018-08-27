@@ -21,4 +21,10 @@
 		$v = addslashes(trim($v));
 		return $v;
 	}
+	function calcDimension($lug, $di){
+		for($a = 0; $a < $di; $a++){
+			$lug= "../".$lug;
+		}
+		return $lug;
+	}
 ?>
