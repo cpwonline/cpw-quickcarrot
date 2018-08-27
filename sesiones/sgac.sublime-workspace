@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"m_ur",
+				"m_url2"
+			],
+			[
 				"ti",
 				"m_titulo"
 			],
@@ -80,13 +84,10 @@
 			}
 		},
 		{
-			"contents": "\n<?php\n\trequire_once('../mysqli_db.php');\n\tsession_start();\n\tswitch($_POST['tipo']){\n\t\tcase 'menus': \n\t\t\t$m_m = explode(\"-\", $_POST['m_m']);\n\t\t\t$m_titulo = $_POST['m_titulo'];\n\t\t\t$m_posicion = $_POST['m_posicion'];\n\t\t\t$m_url = \"m/\".$m_titulo.\"/p/\"\n\n\t\t\t$dir1 = \"m/\".$m_m[1];\n\t\t\t$dir2 = $dir1.\"/p/datos_ind.php\";\n\t\t\tif(!rmdir(dir1)){\n\t\t\t\techo \"Fallo al editar (Eliminado) | <span>CPW Online</span>\";\n\t\t\t}else{\n\t\t\t\t$con = $mysqli->query(\"UPDATE menus SET m_titulo = '\".$m_titulo.\"', m_posicion = '\".$m_posicion.\"' WHERE menus.m_id = '\".$m_m.\"'\");\n\t\t\t\tif($con)\n\t\t\t\t\t//Creado del archivo de información\n\t\t\t\t\t\t$FP = FOPEN($dir1.\"datos_ind.php\", \"w\");\n\t\t\t\t\t\tFPUTS($FP, $m_titulo);\n\t\t\t\t\t\tFCLOSE($FP);\n\t\t\t\t\techo 'Edici&oacute;n realizada correctamente.';\n\t\t\t\telse\n\t\t\t\t\techo 'Edici&oacute;n realizada correctamente.';\n\t\t\t\tbreak;\n\t\t\t}\n\n\t}\n?>",
 			"file": "/var/www/pr_oficial/websites_cpwonline/L17-01/sgac/enlaces/editar.php",
-			"file_size": 476,
-			"file_write_time": 131798817465861968,
 			"settings":
 			{
-				"buffer_size": 830,
+				"buffer_size": 963,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -153,7 +154,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -309,10 +310,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 168.0,
+						"translation.y": 112.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -321,35 +322,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 830,
+						"buffer_size": 963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								99,
-								194
-							],
-							[
-								195,
-								195
-							],
-							[
-								234,
-								234
-							],
-							[
-								248,
-								513
-							],
-							[
-								556,
-								556
-							],
-							[
-								618,
-								830
+								763,
+								763
 							]
 						],
 						"settings":
@@ -358,7 +339,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -377,8 +358,8 @@
 						"selection":
 						[
 							[
-								292,
-								292
+								225,
+								225
 							]
 						],
 						"settings":
@@ -387,10 +368,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 84.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
