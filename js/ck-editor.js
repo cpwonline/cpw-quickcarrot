@@ -50,4 +50,3 @@ var initCkEditor = ( function() {
 		return !!CKEDITOR.plugins.get( 'wysiwygarea' );
 	}
 } )();
-

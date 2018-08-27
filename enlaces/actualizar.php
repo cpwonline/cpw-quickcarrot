@@ -1,3 +1,4 @@
+
 <?php
 	require_once('../mysqli_db.php');
 	session_start();
@@ -12,12 +13,6 @@
 				$s_url = $ro['s_url'];
 				echo "<option value='".$s_url."'>".$s_titulo."</option>";
 			}
-			break;
-		case 'carga_sub':
-			$s_url = $_POST['s_url'];
-			$dir = "../".$s_url."index.php";
-			echo "<object data='".$dir."' width='100%' height='500px' type='text/html' tag='t'></object>";
-			//echo '<div id="editor">Hola</div>';
 			break;
 	}
 ?>

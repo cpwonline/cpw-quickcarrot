@@ -22,7 +22,7 @@
 			<script src="js/func-inf.js"></script>
 			<script src="js/func-images.js"></script>
 			<script src="vendor/ckeditor/ckeditor.js"/></script>
-			<script src="js/ckeditor.js"/></script>
+			<script src="js/ck-editor.js"/></script>
 			<script src="js/main.js"/></script>
 	</head>
 	<body id="sgac">
@@ -217,96 +217,36 @@
 					<section class="dentro_art">
 							<!--Localización de la información-->
 								<article class="bloque b1">
-									<h4>PASO 1: Localizaci&oacute;n de la inf.</h4>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
-											<div class="cam">
-												<select name="i_menu">
-													<option value="">Seleccione...</option>
-													<?php
-														$con = $mysqli->query("SELECT * FROM menus ORDER BY m_posicion, m_freg DESC");
-														while($ro = $con->fetch_array()){
-															$m_id = $ro['m_id'];
-															$m_titulo = $ro['m_titulo'];
-															echo '<option value="'.$m_titulo.'">'.$m_titulo.'</option>';
-														}
-													?>
-												</select>
+									<form name="enviar_inf" method="GET" action="enlaces/editor/">
+										<h4>PASO 1: Localizaci&oacute;n de la inf.</h4>
+										<div class="tabla_gen">
+											<div class="fil">
+												<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
+												<div class="cam">
+													<select name="i_menu">
+														<option value="">Seleccione...</option>
+														<?php
+															$con = $mysqli->query("SELECT * FROM menus ORDER BY m_posicion, m_freg DESC");
+															while($ro = $con->fetch_array()){
+																$m_id = $ro['m_id'];
+																$m_titulo = $ro['m_titulo'];
+																echo '<option value="'.$m_titulo.'">'.$m_titulo.'</option>';
+															}
+														?>
+													</select>
+												</div>
+											</div>
+											<div class="fil">
+												<div class="cam"><span>Submen&uacute;: </span></div>
+												<div class="cam">
+													<select name="i_sub"><option value="">Seleccione...</option></select>
+												</div>
+											</div>
+											<div class="fil">
+												<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
 											</div>
 										</div>
-										<div class="fil">
-											<div class="cam"><span>Submen&uacute;: </span></div>
-											<div class="cam">
-												<select name="i_sub"><option value="">Seleccione...</option></select>
-											</div>
-										</div>
-										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
-										</div>
-									</div>
-								</article>
-							<!--Básico de una información-->
-								<article class="bloque b1 repentino" tag="rep_inf_1">
-									<h4>PASO 2: B&aacute;sico de una informaci&oacute;n</h4>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam">
-												<select name="i_disegno">
-													<option value="">Dise&ntilde;o</option>
-													<option value="1">Contenido centrado</option>
-													<option value="2">Contenido centrado (izquierda) y bot&oacute;n de contacto (derecha)</option>
-													<option value="3">Contenido centrado (arriba) y bot&oacute;n de contacto (debajo)</option>
-													<option value="4">T&iacute;tulo (arriba)  y contenido centrado (debajo)</option>
-													<option value="5">T&iacute;tulo (izquierda)  y contenido centrado (derecha)</option>
-													<option value="6">T&iacute;tulo (derecha)  y contenido centrado (izquierda)</option>
-												</select>	
-											</div>
-											<div class="cam">
-												<select name="i_posicion">
-													<option value="">Posici&oacute;n</option>
-												</select>	
-											</div>
-										</div>
-										<div class="fil">
-											<div class="cam"><a class="btn-gen" tag="busca_pos">Buscar posiciones</a></div>
-										</div>
-									</div>
-								</article>
-							<!--Añadir el contenido-->
-								<article class="bloque b2 repentino" tag="rep_inf_2">
-									<h4>PASO 3: A&ntilde;adir el contenido</h4>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam"><input type="text" name="i_titulo" placeholder="T&iacute;tulo"/></div>
-										</div>
-										<div class="fil">
-											<div class="cam"><textarea name="i_contenido" placeholder="Contenido"></textarea></div>
-										</div>
-										<div class="fil">
-											<div class="cam">Color de fondo: <input type="color" name="i_colorFondo"/></div>
-										</div>
-										<div class="fil">
-											<div class="cam">Color de letra: <input type="color" name="i_colorLetra"/></div>
-										</div>
-										<div class="fil">
-											<div class="cam">URL del bot&oacute;n: <input type="url" name="i_url"/></div>
-											<div class="cam">Texto del bot&oacute;n: <input type="url" name="i_texto_url"/></div>
-										</div>
-										<div class="fil">
-											<div class="cam"><a class="btn-gen" tag="agrega_inf">Agregar informaci&oacute;n</a></div>
-										</div>
-									</div>
-									<br><p style="margin-bottom:.5cm;color:#777;">Le recordamos que estas <i>informaciones</i> son muy parecidas a <i>banners</i>, bloques o secciones en donde usted podr&aacute; mostrar alguna informaci&oacute;n de manera elegante</p>
-								</article>
-							<!--Resultado de la información-->
-								<article class="bloque b2" tag="rep_inf_3">
-									<h4>Resultado</h4>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam" tag="object_inf"></div>
-										</div>
-									</div>
+									</form>
 								</article>
 							<!--Mis informaciones-->
 								<article class="bloque b2">
@@ -524,6 +464,7 @@
 				</article>
 
 		</section>
+	<!--Pie-->
 		<footer class="pie">
 			<!--
 			//Tabla general
@@ -570,6 +511,53 @@
 				<div class="overlay"></div>
 			</div>
 		<!--Modal de conf_borrar_gen------------------------------------------------->
+		
+		<!--Modal de conf_editar_gen------------------------------------------------>
+			<div class="gen_modal" id="conf_editar_gen">
+				<div class="modal-content">
+					<div class="header otro"><h2>Edici&oacute;n</h2></div>
+					<div class="copy" id="copy">
+						<p style="text-align: center;">
+
+							<!--Edición de menús-->
+								<div tag="editar_menus">
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">T&iacute;tulo:</div>
+											<div class="cam"><input type="text" name="e_m_titulo" placeholder="Escriba el t&iacute;tulo de su men&uacute;"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Posici&oacute;n:</div>
+											<div class="cam">
+												<select name="e_m_posicion">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+												</select>
+											</div>
+										</div>
+										<div class="fil">
+											<span tag="1">¿Est&aacute; seguro de editar </span>
+											<span tag="2"></span>
+											<div class="cam"><a class="btn-gen" tag="e_guarda_menu">Guardar</a></div>
+										</div>
+									</div>
+								</div>
+						</p>
+					</div>
+					<div class="cf footer">
+						<section class="cont_a">
+							<a class="btn-gen2" onclick="$('#sgac #conf_editar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+						</section>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</div>
+		<!--Modal de conf_editar_gen------------------------------------------------->
 		
 	</body>
 </html>

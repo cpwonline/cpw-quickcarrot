@@ -27,7 +27,7 @@
 			<div class="cam"><?=$m_sub?></div>
 			<div class="cam"><?=$m_freg?></div>
 			<div class="cam"><?=$m_usuario?></div>
-			<div class="cam"><i class="img_col editar neg boton editar_menu" tag="<?=$m_id?>"></i></div>
+			<div class="cam"><i class="img_col editar neg boton editar_menu" tag="<?=$m_id?>-<?=$m_titulo?>"></i></div>
 			<?php
 				if($m_borrable){
 			?>
