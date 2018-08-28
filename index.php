@@ -520,7 +520,7 @@
 						<p style="text-align: center;">
 
 							<!--Edición de menús-->
-								<div tag="editar_menus">
+								<div class="div_ediciones" tag="editar_menus">
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
@@ -544,6 +544,34 @@
 											<span tag="1">¿Est&aacute; seguro de editar </span>
 											<span tag="2"></span>
 											<div class="cam"><a class="btn-gen" tag="e_guarda_menu">Guardar</a></div>
+										</div>
+									</div>
+								</div>
+							<!--Edición de submenús-->
+								<div class="div_ediciones" tag="editar_sub">
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">T&iacute;tulo:</div>
+											<div class="cam"><input type="text" name="e_s_titulo" placeholder="Escriba el t&iacute;tulo de su submen&uacute;"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Posici&oacute;n:</div>
+											<div class="cam">
+												<select name="e_s_posicion">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+												</select>
+											</div>
+										</div>
+										<div class="fil">
+											<span tag="1">¿Est&aacute; seguro de editar </span>
+											<span tag="2"></span>
+											<div class="cam"><a class="btn-gen" tag="e_guarda_sub">Guardar</a></div>
 										</div>
 									</div>
 								</div>

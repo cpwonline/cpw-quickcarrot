@@ -4,18 +4,24 @@
 	session_start();
 	switch($_POST['tipo']){
 		case 'menus': 
-			$m_m = explode("-", $_POST['m_m']);
-			$m_titulo = $_POST['m_titulo'];
-			$m_posicion = $_POST['m_posicion'];
-			$m_url = "m/".$m_titulo."/";
-			$m_url1 = "../../".$m_url;
-			$m_url2= "../../m/".$m_titulo."/p/";
-			$m_url3 = $m_url2."datos_ind.php";
+			//Datos nuevos
+				$m_m = explode("-", $_POST['m_m']);
+				$m_titulo = $_POST['m_titulo'];
+				$m_posicion = $_POST['m_posicion'];
+				$m_url = "m/".$m_titulo."/";
+				$m_url1 = "../../".$m_url;
+				$m_url2= "../../m/".$m_titulo."/p/";
+				$m_url3 = $m_url2."datos_ind.php";
+			//Datos viejos
+				$dir1 = "../../m/".$m_m[1]."/";
+			//Consulta para śaber si ya se ha registrado
+				$con_r = $mysqli->query("SELECT m_id FROM menus WHERE m_titulo = '".$m_titulo."' ");
 
-			$dir1 = "../../m/".$m_m[1]."/";
-			$dir2 = $dir1."p/datos_ind.php";
-
-			if(!rename($dir1, $m_url1)){
+			if($con_r!==0){
+				echo "Este nombre ya est&aacute; registrado y pertenece a un men&uacute; | <span>CPW Online</span>";
+			}elseif(empty($m_titulo) || empty($m_posicion)){
+				echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+			}elseif(!rename($dir1, $m_url1)){
 				echo "Fallo al editar (Renombrado) | <span>CPW Online</span>";
 			}else{
 				//Modificado en el menú
@@ -41,8 +47,43 @@
 							}
 				}else
 					echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
-				break;
 			}
+			break;
+		case 'submenus':
+			//Datos nuevos
+				$s_m = explode("-", $_POST['s_m']);
+				$s_titulo = $_POST['s_titulo'];
+				$s_posicion = $_POST['s_posicion'];
+
+				$s_url = "m/".$s_m[1]."/".$s_titulo."/";
+				$s_url1 = "../../".$s_url;
+				$s_url2= $s_url1;
+				$s_url3 = $s_url2."datos_ind.php";
+			//Datos viejos
+				$dir1 = "../../m/".$s_m[1]."/".$s_m[2]."/";
+			//Consulta para śaber si ya se ha registrado
+				$con_r = $mysqli->query("SELECT s_id FROM submenus WHERE s_titulo = '".$s_titulo."' ");
+
+			if($con_r!==0){
+				echo "Este nombre ya est&aacute; registrado y pertenece a un submen&uacute; | <span>CPW Online</span>";
+			}elseif(empty($s_titulo) || empty($s_posicion)){
+				echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+			}elseif(!rename($dir1, $s_url1)){
+				echo "Fallo al editar (Renombrado) | <span>CPW Online</span>";
+			}else{
+				//Modificado en el submenú
+					$con = $mysqli->query("UPDATE submenus SET s_titulo = '".$s_titulo."', s_posicion = '".$s_posicion."' WHERE submenus.s_id = '".$s_m[0]."'");
+				if($con){
+					//Creado del archivo de información
+						$FP = FOPEN($s_url3, "w");
+						FPUTS($FP, $s_titulo);
+						FCLOSE($FP);
+
+						echo 'Edici&oacute;n realizada correctamente.';
+				}else
+					echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
+			}
+			break;
 
 	}
 ?>

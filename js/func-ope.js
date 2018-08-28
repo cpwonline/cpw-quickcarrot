@@ -143,7 +143,7 @@ function mov(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "menus";
-					var frase = "el men&uacute;";
+					var frase = "el men&uacute;?";
 					borrar_general(m_m, tipo, frase);
 			}
 		//Editar
@@ -154,7 +154,7 @@ function mov(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "menus";
-					var frase = "el men&uacute;";
+					var frase = "el men&uacute;?";
 					editar_general(m_m, tipo, frase);
 			}
 	//Submenús
@@ -166,7 +166,7 @@ function mov(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
-					var frase = "el submen&uacute;";
+					var frase = "el submen&uacute;?";
 					borrar_general(m_m, tipo, frase);
 			}
 		//Editar
@@ -177,7 +177,7 @@ function mov(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
-					var frase = "el submen&uacute;";
+					var frase = "el submen&uacute;?";
 					editar_general(m_m, tipo, frase);
 			}
 	//Artículos
@@ -189,7 +189,7 @@ function mov(){
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "articulos";
-					var frase = "el art&iacute;culo";
+					var frase = "el art&iacute;culo?";
 					borrar_general(m_m, tipo, frase);
 			}
 		//Subir imagen
@@ -214,14 +214,14 @@ function mov(){
 				iniciar(id1, titulo1, tipo1);
 			}
 		//Editar
-			function boton_editar_sub(objeto){
+			function boton_editar_art(objeto){
 				//Animación
 					$('#sgac div.espera').css('right', '.5cm');
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
-					var tipo = "submenus";
-					var frase = "el submen&uacute;";
+					var tipo = "articulos";
+					var frase = "el art&iacute;culo?";
 					editar_general(m_m, tipo, frase);
 			}
 
@@ -246,13 +246,19 @@ function mov(){
 //Función general para editar
 	function editar_general(m_m, tipo, frase){
 		//Confirmación
-			$("#sgac #conf_editar_gen span[tag='2']").html(frase);
-			$("#sgac #conf_editar_gen").css("display", "block");
+			//Colocamos la frase
+				$("#sgac #conf_editar_gen span[tag='2']").html(frase);
+			//Mostramos el modal
+				$("#sgac #conf_editar_gen").css("display", "block");
+			//Desaparecemos todos los bloques
+				$("#sgac #conf_editar_gen div[tag='editar_menus']").css('display', 'none');
+				$("#sgac #conf_editar_gen div[tag='editar_sub']").css('display', 'none');
+				//$("#sgac #conf_editar_gen div[tag='editar_art']").css('display', 'none');
 			//Mostramos la edición 
 				switch(tipo){
 					case 'menus':
-						$("#sgac #conf_editar_gen div[tag='editar_menus']").css('display', 'block');
-
+						//Mostramos el bloque correspondiente
+							$("#sgac #conf_editar_gen div[tag='editar_menus']").css('display', 'block');
 						//Si elije guardar la edición
 							$("#sgac #conf_editar_gen a[tag='e_guarda_menu']").click(function(e){
 								$("#sgac #conf_editar_gen").css("display", "none");
@@ -267,6 +273,20 @@ function mov(){
 							});
 						break;
 					case 'submenus':
+						//Mostramos el bloque correspondiente
+							$("#sgac #conf_editar_gen div[tag='editar_sub']").css('display', 'block');
+						//Si elije guardar la edición
+							$("#sgac #conf_editar_gen a[tag='e_guarda_sub']").click(function(e){
+								$("#sgac #conf_editar_gen").css("display", "none");
+								//Datos
+									var s_titulo = $('#sgac input[name="e_s_titulo"]').val();
+									var s_posicion = $('#sgac select[name="e_s_posicion"]').val();
+								//Llamada AJAX
+									$.post("enlaces/editar.php", {s_m:m_m, tipo:tipo, s_titulo:s_titulo, s_posicion:s_posicion},function(r){
+										$('#sgac div.espera').html(r);
+										var retrasar = setTimeout(mov, 3000);
+									});
+							});
 						break;
 					case 'articulos':
 						break;

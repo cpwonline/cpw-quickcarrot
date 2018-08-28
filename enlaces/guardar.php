@@ -91,7 +91,7 @@
 					echo "Fallo al guardar (Copiado) | <span>CPW Online</span>";
 					exit;
 				}else{
-					$con = $mysqli->query("INSERT INTO submenus (s_titulo, s_posicion, s_usuario, s_menu, s_url, s_freg) VALUES ('".$s_titulo."', '".$s_posicion."', '".$s_usuario."', '".$s_menu."', '".$s_url."', NOW())");
+					$con = $mysqli->query("INSERT INTO submenus (s_titulo, s_posicion, s_usuario, s_menu, s_freg) VALUES ('".$s_titulo."', '".$s_posicion."', '".$s_usuario."', '".$s_menu."', NOW())");
 					$con2 = $mysqli->query("UPDATE menus SET m_sub = '1' WHERE m_titulo = '".$s_menu."'");//Indicación al menú de que hay sub
 					if($con && $con2){
 						//Creado del archivo de información
