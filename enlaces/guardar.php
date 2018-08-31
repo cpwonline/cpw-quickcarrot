@@ -74,7 +74,7 @@
 				}
 				//Si el número de registros es igual a siete
 				$con_sub = $mysqli->query("SELECT s_id FROM submenus WHERE s_titulo='".$s_titulo."' LIMIT 1");
-				$con_filas = $mysqli->query("SELECT s_id FROM submenus");
+				$con_filas = $mysqli->query("SELECT s_id FROM submenus WHERE s_menu ='".$s_menu."' ");
 				if($con_filas->num_rows==7){
 					echo "Usted a alcanzado el l&iacute;mite de submen&uacute;s | <span>CPW Online</span>";
 					exit;

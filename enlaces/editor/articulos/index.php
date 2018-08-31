@@ -4,49 +4,43 @@
 		SGAC | CPW Online
 	-->
 	<head>
-		<title>SGAC | CPW Online</title>
-		
-		<?php
-			require_once('../../../mysqli_db.php');
-			session_start();
-		?>
-		<!--Links de CSS-->
-			<link rel="stylesheet" href="../../../css/estilo-mod.css"/>
-			<link rel="stylesheet" href="../../../css/estilo-gen.css"/>
-			<link rel="stylesheet" href="../../../css/estilo-mi_info.css"/>
-		<!--Links de JS-->
-			<script src="../../../js/jquery-3.0.0.min.js"></script>
-			<script src="../../../js/func-gen.js"></script>
-			<script src="../../../js/func-ope.js"></script>
-			<script src="../../../js/func-inf.js"></script>
-			<script src="../../../js/func-images.js"></script>
-			<script src="../../../vendor/ckeditor/ckeditor.js"/></script>
-			<script src="../../../js/ck-editor.js"/></script>
-			<script src="../../../js/main.js"/></script>
+		<title>Articulos - SGAC | CPW Online</title>
+		<!--Incluimos el HEAD-->
+			<?php 
+				//Principal
+					require_once('../../../mysqli_db.php');
+					session_start();
+				//Etiqueta global de donde estamos
+					global $dimension;
+					$dimension = 3;
 
+				//Gestionamos el HEAD
+					$dir = "head.php";
+					$dir = calcDimension($dir, $dimension);
+					include($dir);
+					head($dimension);
+				//Fin gestionamos el HEAD
+
+			?>
+		<!--Fin Incluimos el HEAD-->
 	</head>
 	<body id="sgac">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobado del inicio de sesión
-			if(empty($_SESSION['u_nombre'])){
-		?>
-				<section class="inicio_sesion">
-					<h3>¡Bienvenido a SGAC!</h3>
-					<h4>El sistema que le ayudar&aacute; a gestionar sus contenidos.</h4>
-					<input type="text" name="u_nombre" placeholder="Usuario"/>
-					<input type="password" name="u_clave" placeholder="Contrase&ntilde;a"/><br>
-					<input type="hidden" name="contador" value="1"/>
-					<button class="btn-gen" id="iniciar_sesion">Entrar</button>
-					<button class="btn-gen2">Olvid&eacute; mi contrase&ntilde;a</button>
-				</section>
-		<?php
-			}else{
+				if(empty($_SESSION['u_nombre'])){
+					//Gestionamos el inicioSesion
+						$dir = "inicioSesion.php";
+						$dir = calcDimension($dir, $dimension);
+						include($dir);
+						head($dimension);
+					//Fin gestionamos el inicioSesion
+				}else{
 		?>
 	<!--Cabecera-->
 		<header class="cabecera">
 			<section class="logo">
-				<h3>SGAC | Ultimate</h3>
+				<h3>SGAC | <?=$_SESSION['u_plan']?></h3>
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
@@ -80,23 +74,56 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--Editor de artículos-->
+								<?php
+									isset($_GET['a_id'])? $a_id = palabraSegura($_GET['a_id']) : $a_id = NULL;
+									$con = $mysqli->query("SELECT * FROM articulos WHERE a_id = '".$a_id."' ");
+									if($con->num_rows === 0){							
+										echo 'Disculpe no se ha encontrado el art&iacute;culo especificado';
+										exit;
+									}
+									$ro = $con->fetch_assoc();
+									$a_titulo = $ro['a_titulo'];
+									$a_contenido = $ro['a_contenido'];
+									$a_imagen = $ro['a_imagen'];
+									$a_usuario = $ro['a_usuario'];
+								?>
+								<article class="bloque b1">
+									<h4>T&iacute;tulo</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">T&iacute;tulo:</div>
+											<div class="cam"><input type="text" name="e_a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo" value="<?=$a_titulo?>"/></div>
+										<div class="fil">
+											<div class="cam"><a class="btn-gen" id="e_guarda_art_titulo">Guardar</a></div>
+										</div>
+										</div>
+									</div>
+								</article>
+								<article class="bloque b1">
+									<h4>Imagen</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam"><img width="100px" src="../../<?=$a_imagen?>" alt="Img"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam"><a class="btn-gen" tag="e_guarda_art_imagen">Cambiar</a></div>
+										</div>
+									</div>
+								</article>
 								<article class="bloque b2">
-									<h4>Edici&oacute;n</h4>
-									<?php
-									echo "hola";
-										isset($_GET['a_id'])? $a_id = palabraSegura($_GET['a_id']) : $a_id = NULL;
-										$con = $mysqli->query("SELECT * FROM articulos WHERE a_id = '".$a_id."' ");
-										if($con->num_rows === 0){							
-											echo 'Disculpe no se ha encontrado el art&iacute;culo especificado';
-											exit;
-										}
-										$ro = $con->fetch_assoc();
-										$a_titulo = $ro['a_titulo'];
-										$a_contenido = $ro['a_contenido'];
-										$a_imagen = $ro['a_imagen'];
-									?>
-									<div id="editor"><?=$a_contenido?></div>
-									<a class="btn-gen" id="guarda_inf">Guardar cambios</a>
+									<h4>Editar texto del art&iacute;culo</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">
+												<div id="editor"><?=$a_contenido?></div>
+											</div>
+										</div>
+										<div class="fil">
+											<div class="cam">
+												<a class="btn-gen" id="e_guarda_art_contenido">Guardar</a>
+											</div>
+										</div>
+									</div>
 								</article>
 						<!--Fin Artículos de una cabecera-->
 					</section>

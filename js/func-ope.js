@@ -325,6 +325,20 @@ $(document).ready(function(){
 					pedidas(tipo, true);
 					var retrasar = setTimeout(mov, 3000);
 			});
+		//Select de Menús
+			$('#sgac i.img_col.actualizar.select').click(function(e){
+				//Animación
+					$('#sgac div.espera').css('right', '.5cm');
+					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
+				//Recolección de datos
+					var tipo = $(this).attr("tag");
+				//Llamada AJAX
+					$.post("enlaces/actualizar.php", {tipo:tipo},function(r){
+						$('#sgac select[name="s_menu"]').html(r);
+						$('#sgac div.espera').html("Listo.");
+						var retrasar = setTimeout(mov, 3000);
+					});
+			});
 	//Guardar------------------------------------------------------------------------------
 		//Menus-------------------------------------------------
 			$('#sgac #guarda_menu').click(function(e){

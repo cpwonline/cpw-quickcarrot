@@ -14,5 +14,17 @@
 				echo "<option value='".$s_url."'>".$s_titulo."</option>";
 			}
 			break;
+		case 'select_menus_sub':
+				$con = $mysqli->query("SELECT m_titulo FROM menus ORDER BY m_freg DESC");
+				if($con->num_rows === 0){
+					echo "<div class='uni'><option>No hay resultados.</option></div>";
+				}
+				while($ro = $con->fetch_assoc()){
+					$m_titulo = $ro['m_titulo'];
+			?>
+						<option value="<?=$m_titulo?>"><?=$m_titulo?></option>
+			<?php
+				}
+			break;
 	}
 ?>
