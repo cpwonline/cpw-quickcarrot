@@ -177,7 +177,7 @@
 						<!--Artículos de una cabecera-->
 							<!--Añadir artículo-->
 								<article class="bloque b2">
-									<h4>A&ntilde;adir un art&iacute;culo</h4>
+									<h4>A&ntilde;ade un art&iacute;culo</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
@@ -186,7 +186,15 @@
 									</div>
 								</article>
 								<article class="bloque b2">
-									<h4>A&ntilde;adir texto al art&iacute;culo</h4>
+									<h4>A&ntilde;ade una descripci&oacute;n corta</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam"><textarea name="a_des_c" placeholder="De qu&eacute; tratar&aacute; su art&iacute;culo"></textarea></div>
+										</div>
+									</div>
+								</article>
+								<article class="bloque b2">
+									<h4>A&ntilde;ade texto al art&iacute;culo</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">

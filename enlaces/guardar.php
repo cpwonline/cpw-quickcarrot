@@ -106,13 +106,14 @@
 		break;
 		case 'articulo':  
 			$a_titulo = $_POST['a_titulo'];
+			$a_des_c = $_POST['a_des_c'];
 			$a_contenido = $_POST['a_contenido'];
 			if($a_titulo == "" || $a_contenido ==""){
 				echo "No deben haber campos vac&iacute;os";
 				exit;
 			}
 			$a_usuario = $_SESSION['u_nombre'];
-			$con = $mysqli->query("INSERT INTO articulos (a_titulo, a_contenido, a_usuario, a_freg) VALUES ('".$a_titulo."', '".$a_contenido."', '".$a_usuario."', NOW())");
+			$con = $mysqli->query("INSERT INTO articulos (a_titulo, a_des_c,a_contenido, a_usuario, a_freg) VALUES ('".$a_titulo."', '".$a_des_c."','".$a_contenido."', '".$a_usuario."', NOW())");
 			if($con){
 				echo "El art&iacute;culo se ha guardado correctamente | <span>CPW Online</span>";
 			}else{

@@ -378,10 +378,11 @@ $(document).ready(function(){
 					$('#sgac div.espera').html('Espere | <span>CPW Online</span>');
 				//Recolección de datos
 					var a_titulo = $('#sgac input[name="a_titulo"]').val();
+					var a_des_c = $('#sgac textarea[name="a_des_c"]').val();
 					var a_contenido = CKEDITOR.instances.editor.getData();
 					var tipo = "articulo";
 				//Llamada AJAX
-					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_contenido:a_contenido, tipo:tipo},function(r){
+					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_des_c:a_des_c,a_contenido:a_contenido, tipo:tipo},function(r){
 						$('#sgac div.espera').html(r);
 						var retrasar = setTimeout(mov, 3000);
 					});
