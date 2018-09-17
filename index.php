@@ -189,7 +189,7 @@
 									<h4>A&ntilde;ade una descripci&oacute;n corta</h4>
 									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam"><textarea name="a_des_c" placeholder="De qu&eacute; tratar&aacute; su art&iacute;culo"></textarea></div>
+											<div class="cam"><textarea name="a_des_c" placeholder="De qu&eacute; tratar&aacute; su art&iacute;culo" maxlength="200"></textarea></div>
 										</div>
 									</div>
 								</article>
@@ -201,6 +201,11 @@
 												<div id="editor"></div>
 											</div>
 										</div>
+									</div>
+								</article>
+								<article class="bloque b2">
+									<h4>Si no has guardado, a&uacute;n no has terminado</h4>
+									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
 												<a class="btn-gen" id="guarda_art">Guardar</a>

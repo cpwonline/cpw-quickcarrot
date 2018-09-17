@@ -382,7 +382,7 @@ $(document).ready(function(){
 					var a_contenido = CKEDITOR.instances.editor.getData();
 					var tipo = "articulo";
 				//Llamada AJAX
-					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_des_c:a_des_c,a_contenido:a_contenido, tipo:tipo},function(r){
+					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_des_c:a_des_c, a_contenido:a_contenido, tipo:tipo},function(r){
 						$('#sgac div.espera').html(r);
 						var retrasar = setTimeout(mov, 3000);
 					});

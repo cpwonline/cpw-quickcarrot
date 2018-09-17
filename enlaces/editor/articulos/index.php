@@ -20,9 +20,13 @@
 					include($dir);
 					head($dimension);
 				//Fin gestionamos el HEAD
-
 			?>
 		<!--Fin Incluimos el HEAD-->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#sgac header.cabecera nav.menu li[tag='articulos']").click();
+			});
+		</script>
 	</head>
 	<body id="sgac">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
@@ -44,20 +48,7 @@
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
-					<li tag="menus"><i class="img_col menus blan"></i><a>Men&uacute;s</a></li>
-				</ul>
-				<ul class="menu_prin">
 					<li tag="articulos"><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
-					<li tag="informaciones"><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
-				</ul>
-				<ul class="menu_prin">
-					<li tag="diagnostico"><i class="img_col diagnostico blan"></i><a>Diagn&oacute;stico de errores</a></li>
-					<li tag="estadisticas"><i class="img_col estadisticas blan"></i><a>Estad&iacute;sticas</a></li>
-				</ul>
-				<ul class="menu_prin">
-					<li tag="ajustes"><i class="img_col ajustes blan"></i><a>Ajustes</a></li>
-					<li tag="ayuda"><i class="img_col ayuda blan"></i><a>Ayuda</a></li>
-					<li tag="acercade"><i class="img_col acercade blan"></i><a>Acerca de</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -69,7 +60,7 @@
 				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Editor de artículos-->
-				<article class="art_gen" id="art_1" tag="menus">
+				<article class="art_gen" id="art_1" tag="articulos">
 					<h3>Editor de artículos</h3>
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
@@ -83,6 +74,7 @@
 									}
 									$ro = $con->fetch_assoc();
 									$a_titulo = $ro['a_titulo'];
+									$a_des_c = $ro['a_des_c'];
 									$a_contenido = $ro['a_contenido'];
 									$a_imagen = $ro['a_imagen'];
 									$a_usuario = $ro['a_usuario'];
@@ -92,10 +84,12 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
-											<div class="cam"><input type="text" name="e_a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo" value="<?=$a_titulo?>"/></div>
+											<div class="cam">
+												<input type="text" name="e_a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo" value="<?=$a_titulo?>"/>
+											</div>
+										</div>
 										<div class="fil">
 											<div class="cam"><a class="btn-gen" id="e_guarda_art_titulo">Guardar</a></div>
-										</div>
 										</div>
 									</div>
 								</article>
@@ -111,13 +105,31 @@
 									</div>
 								</article>
 								<article class="bloque b2">
-									<h4>Editar texto del art&iacute;culo</h4>
+									<h4>Edite la descripci&oacute;n corta</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">
+												<textarea><?=$a_des_c?></textarea>
+											</div>
+										</div>
+										<div class="fil">
+											<div class="cam"><a class="btn-gen" id="e_guarda_art_des_c">Guardar</a></div>
+										</div>
+									</div>
+								</article>
+								<article class="bloque b2">
+									<h4>Edite el texto del art&iacute;culo</h4>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
 												<div id="editor"><?=$a_contenido?></div>
 											</div>
 										</div>
+									</div>
+								</article>
+								<article class="bloque b2">
+									<h4>Si no has guardado, a&uacute;n no has terminado</h4>
+									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
 												<a class="btn-gen" id="e_guarda_art_contenido">Guardar</a>
