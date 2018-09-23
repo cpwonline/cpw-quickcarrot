@@ -1,16 +1,14 @@
-#sgac articles.bloques_infos{
+#quickCarrot articles.bloques_infos{
 	padding:1.4cm;
 	display:block;
 	float:none;
 	overflow:hidden;
 }
-#sgac articles.bloques_infos section.titulo{
-	float:left;
+#quickCarrot articles.bloques_infos section.titulo{
 	width:25%;
 	display:inline-block;
 }
-#sgac articles.bloques_infos section.contenido{
-	float:left;
+#quickCarrot articles.bloques_infos section.contenido{
 	width:65%;
 	display:inline-block;
 }

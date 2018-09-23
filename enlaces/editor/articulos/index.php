@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="es">
 	<!--
-		SGAC | CPW Online
+		QuickCarrot | CPW Online
 	-->
 	<head>
-		<title>Articulos - SGAC | CPW Online</title>
+		<title>Articulos - QuickCarrot | CPW Online</title>
 		<!--Incluimos el HEAD-->
 			<?php 
 				//Principal
@@ -24,11 +24,11 @@
 		<!--Fin Incluimos el HEAD-->
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("#sgac header.cabecera nav.menu li[tag='articulos']").click();
+				$("#quickCarrot header.cabecera nav.menu li[tag='articulos']").click();
 			});
 		</script>
 	</head>
-	<body id="sgac">
+	<body id="quickCarrot">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobado del inicio de sesión
@@ -44,7 +44,7 @@
 	<!--Cabecera-->
 		<header class="cabecera">
 			<section class="logo">
-				<h3>SGAC | <?=$_SESSION['u_plan']?></h3>
+				<h3>QuickCarrot | <?=$_SESSION['u_plan']?></h3>
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
@@ -57,7 +57,7 @@
 		<section class="contenedor">
 			<!--Principal-->
 			<section class="inf_prin">
-				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
+				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Editor de artículos-->
 				<article class="art_gen" id="art_1" tag="articulos">

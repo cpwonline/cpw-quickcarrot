@@ -7,7 +7,7 @@
 			<meta name="copyright" content="CPW Online"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<meta name="description" content=
-				"Sistema de control de contenidos (CMS) SGAC."
+				"Sistema de control de contenidos (CMS) QuickCarrot."
 			/>
 			<meta name="keywords" content="p&aacute;ginas web, servidores, hosting, emprender, website, dominio, empresas"/>
 			<!--Color en Chrome, Firefox y Opera-->

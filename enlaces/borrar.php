@@ -13,7 +13,9 @@
 			//Condiciones
 				$dir = "../../m/".$m_m[1];
 				//Borrar archivos
-					if(!delTree($dir)){
+					if(!is_dir($dir)){
+						echo "Disculpe, est&aacute; intentando borrar un directorio inexistente.";
+					}elseif(!delTree($dir)){
 						echo "Ha habido un error al borrar (&Aacute;rbol de archivos).";
 					}else{
 						//Borrar registros del menú
@@ -34,7 +36,9 @@
 			//Condiciones
 				$dir = "../../m/".$m_m[1]."/".$m_m[2];
 				//Borrar archivos
-					if(!delTree($dir)){
+					if(!is_dir($dir)){
+						echo "Disculpe, est&aacute; intentando borrar un directorio inexistente.";
+					}elseif(!delTree($dir)){
 						echo "Ha habido un error al borrar (&Aacute;rbol de archivos).";
 					}else{
 						//Borrar registros del submenú

@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="es">
 	<!--
-		SGAC | CPW Online
+		QuickCarrot | CPW Online
 			- Versión 1.0.3
 	-->
 	<head>
-		<title>SGAC | CPW Online</title>
+		<title>QuickCarrot | CPW Online</title>
 		
 		<?php
 			require_once('../../mysqli_db.php');
@@ -25,7 +25,7 @@
 			<script src="../../js/ck-editor.js"/></script>
 			<script src="../../js/main.js"/></script>
 	</head>
-	<body id="sgac">
+	<body id="quickCarrot">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobar que la URL No esté vacía
@@ -38,7 +38,7 @@
 			if(empty($_SESSION['u_nombre'])){
 		?>
 				<section class="inicio_sesion">
-					<h3>¡Bienvenido a SGAC!</h3>
+					<h3>¡Bienvenido a QuickCarrot!</h3>
 					<h4>El sistema que le ayudar&aacute; a gestionar sus contenidos.</h4>
 					<input type="text" name="u_nombre" placeholder="Usuario"/>
 					<input type="password" name="u_clave" placeholder="Contrase&ntilde;a"/><br>
@@ -52,7 +52,7 @@
 	<!--Cabecera-->
 		<header class="cabecera">
 			<section class="logo">
-				<h3>SGAC | Ultimate</h3>
+				<h3>QuickCarrot | Ultimate</h3>
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
@@ -78,7 +78,7 @@
 		<section class="contenedor">
 			<!--Principal-->
 			<section class="inf_prin">
-				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
+				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Editor de páginas-->
 				<article class="art_gen" id="art_1" tag="menus">
@@ -166,7 +166,7 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#sgac #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#quickCarrot #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
 							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
 						</section>
 					</div>

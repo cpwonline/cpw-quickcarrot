@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="es">
 	<!--
-		SGAC | CPW Online
+		QuickCarrot | CPW Online
 	-->
 	<head>
-		<title>SGAC | CPW Online</title>
+		<title>QuickCarrot | CPW Online</title>
 		<!--Incluimos el HEAD-->
 			<?php 
 				//Principal
@@ -24,7 +24,7 @@
 			?>
 		<!--Fin Incluimos el HEAD-->
 	</head>
-	<body id="sgac">
+	<body id="quickCarrot">
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobado del inicio de sesión
@@ -40,7 +40,7 @@
 	<!--Cabecera-->
 		<header class="cabecera">
 			<section class="logo">
-				<h3>SGAC | <?=$_SESSION['u_plan']?></h3>
+				<h3>QuickCarrot | <?=$_SESSION['u_plan']?></h3>
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
@@ -66,7 +66,7 @@
 		<section class="contenedor">
 			<!--Principal-->
 			<section class="inf_prin">
-				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | SGAC &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
+				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
@@ -517,7 +517,7 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#sgac #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#quickCarrot #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
 							<a class="btn-gen" tag="si" href="#">S&iacute;</a>
 						</section>
 					</div>
@@ -593,7 +593,7 @@
 					</div>
 					<div class="cf footer">
 						<section class="cont_a">
-							<a class="btn-gen2" onclick="$('#sgac #conf_editar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+							<a class="btn-gen2" onclick="$('#quickCarrot #conf_editar_gen').css('display','none');" tag="cancelar">Cancelar</a>
 						</section>
 					</div>
 				</div>
