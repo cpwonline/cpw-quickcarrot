@@ -505,7 +505,7 @@
 		}
 	?>
 	<!--MODALES-->
-		<!--Modal de conf_borrar_gen------------------------------------------------>
+		<!--Modal de conf_borrar_gen-->
 			<div class="gen_modal" id="conf_borrar_gen">
 				<div class="modal-content">
 					<div class="header otro"><h2>Confirmaci&oacute;n</h2></div>
@@ -524,9 +524,9 @@
 				</div>
 				<div class="overlay"></div>
 			</div>
-		<!--Modal de conf_borrar_gen------------------------------------------------->
+		<!--Modal de conf_borrar_gen-->
 		
-		<!--Modal de conf_editar_gen------------------------------------------------>
+		<!--Modal de conf_editar_gen-->
 			<div class="gen_modal" id="conf_editar_gen">
 				<div class="modal-content">
 					<div class="header otro"><h2>Edici&oacute;n</h2></div>
@@ -599,7 +599,7 @@
 				</div>
 				<div class="overlay"></div>
 			</div>
-		<!--Modal de conf_editar_gen------------------------------------------------->
+		<!--Modal de conf_editar_gen-->
 		
 	</body>
 </html>
