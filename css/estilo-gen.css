@@ -5,10 +5,14 @@
 			margin:0;
 		}
 		#quickCarrot{
-			font-family: sans-serif, 'Source Sans Pro';
+			font: 12pt fGen, sans-serif, 'Source Sans Pro';
 			color:#444;
 			font-size:12pt;
 			position:relative;
+		}
+		@font-face{
+			font-family: 'fGen';
+			src: url('fuentes/ModernSans-Light.otf');
 		}
 		#quickCarrot .btn-gen{
 			font-size:12pt;
