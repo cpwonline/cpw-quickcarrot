@@ -25,6 +25,10 @@
 		<!--Fin Incluimos el HEAD-->
 	</head>
 	<body id="quickCarrot">
+		<!--Administrador de notificaciones-->
+			<section id="starFly">
+				<div id="pie_starFly"></div>
+			</section>
 		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobado del inicio de sesión

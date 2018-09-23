@@ -278,7 +278,6 @@ function mov(){
 
 $(document).ready(function(){
 	$('#quickCarrot div.espera').css('right', '.5cm');
-	$('#quickCarrot div.espera').html("Preferiblemente, visualice estas secci&oacute;n desde un PC de escritorio.");
 	var retrasar = setTimeout(mov, 3000);
 
 	//Iniciar sesión//
