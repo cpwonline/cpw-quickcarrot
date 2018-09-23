@@ -46,8 +46,8 @@
 		}
 		/*Botones*/
 			#quickCarrot i.img_col{
-				width:33px;
-				height:33px;
+				width:16px;
+				height:16px;
 				display:inline-block;
 			}
 			#quickCarrot i.img_col.boton{
@@ -61,29 +61,31 @@
 				border:1px solid #f60;
 			}
 			/*Blanco*/
-				#quickCarrot i.img_col.menus.blan{background:url(../images/32x32_blanco/menus.png)no-repeat center;}
-				#quickCarrot i.img_col.articulos.blan{background:url(../images/32x32_blanco/articulos.png)no-repeat center;}
-				#quickCarrot i.img_col.informaciones.blan{background:url(../images/32x32_blanco/informaciones.png)no-repeat center;}
-				#quickCarrot i.img_col.diagnostico.blan{background:url(../images/32x32_blanco/diagnostico.png)no-repeat center;}
-				#quickCarrot i.img_col.estadisticas.blan{background:url(../images/32x32_blanco/estadisticas.png)no-repeat center;}
-				#quickCarrot i.img_col.ajustes.blan{background:url(../images/32x32_blanco/ajustes.png)no-repeat center;}
-				#quickCarrot i.img_col.ayuda.blan{background:url(../images/32x32_blanco/ayuda.png)no-repeat center;}
-				#quickCarrot i.img_col.acercade.blan{background:url(../images/32x32_blanco/acercade.png)no-repeat center;}
-				#quickCarrot i.img_col.borrar.blan{background:url(../images/32x32_blanco/borrar.png)no-repeat center;}
-				#quickCarrot i.img_col.editar.blan{background:url(../images/32x32_blanco/editar.png)no-repeat center;}
-				#quickCarrot i.img_col.actualizar.blan{background:url(../images/32x32_negro/actualizar.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.menus{background:url(../images/16x16_blanco/menus.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.articulos{background:url(../images/16x16_blanco/articulos.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.informaciones{background:url(../images/16x16_blanco/informaciones.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.diagnostico{background:url(../images/16x16_blanco/diagnostico.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.estadisticas{background:url(../images/16x16_blanco/estadisticas.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.ajustes{background:url(../images/16x16_blanco/ajustes.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.ayuda{background:url(../images/16x16_blanco/ayuda.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.acercade{background:url(../images/16x16_blanco/acercade.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.borrar{background:url(../images/16x16_blanco/borrar.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.editar{background:url(../images/16x16_blanco/editar.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.actualizar{background:url(../images/16x16_blanco/actualizar.png)no-repeat center;}
+				#quickCarrot i.img_col.blan.subir{background:url(../images/16x16_blanco/subir.png)no-repeat center;}
 			/*Negro*/
-				#quickCarrot i.img_col.menus.neg{background:url(../images/32x32_negro/menus.png)no-repeat center;}
-				#quickCarrot i.img_col.articulos.neg{background:url(../images/32x32_negro/articulos.png)no-repeat center;}
-				#quickCarrot i.img_col.informaciones.neg{background:url(../images/32x32_negro/informaciones.png)no-repeat center;}
-				#quickCarrot i.img_col.diagnostico.neg{background:url(../images/32x32_negro/diagnostico.png)no-repeat center;}
-				#quickCarrot i.img_col.estadisticas.neg{background:url(../images/32x32_negro/estadisticas.png)no-repeat center;}
-				#quickCarrot i.img_col.ajustes.neg{background:url(../images/32x32_negro/ajustes.png)no-repeat center;}
-				#quickCarrot i.img_col.ayuda.neg{background:url(../images/32x32_negro/ayuda.png)no-repeat center;}
-				#quickCarrot i.img_col.acercade.neg{background:url(../images/32x32_negro/acercade.png)no-repeat center;}
-				#quickCarrot i.img_col.borrar.neg{background:url(../images/32x32_negro/borrar.png)no-repeat center;}
-				#quickCarrot i.img_col.editar.neg{background:url(../images/32x32_negro/editar.png)no-repeat center;}
-				#quickCarrot i.img_col.actualizar.neg{background:url(../images/32x32_negro/actualizar.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.menus{background:url(../images/16x16_negro/menus.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.articulos{background:url(../images/16x16_negro/articulos.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.informaciones{background:url(../images/16x16_negro/informaciones.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.diagnostico{background:url(../images/16x16_negro/diagnostico.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.estadisticas{background:url(../images/16x16_negro/estadisticas.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.ajustes{background:url(../images/16x16_negro/ajustes.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.ayuda{background:url(../images/16x16_negro/ayuda.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.acercade{background:url(../images/16x16_negro/acercade.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.borrar{background:url(../images/16x16_negro/borrar.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.editar{background:url(../images/16x16_negro/editar.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.actualizar{background:url(../images/16x16_negro/actualizar.png)no-repeat center;}
+				#quickCarrot i.img_col.neg.subir{background:url(../images/16x16_negro/subir.png)no-repeat center;}
 		/*Tabla general*/
 			#quickCarrot div.tabla_gen{
 				padding:.7cm .5cm .7cm .5cm;
@@ -183,11 +185,15 @@
 		}
 		#quickCarrot header.cabecera section.logo{
 			padding:.2cm;
+			text-align: center;
+			overflow: hidden;
+		}
+		#quickCarrot header.cabecera section.logo img{
+			width:70%;
 		}
 		#quickCarrot header.cabecera section.logo h3{
 			color:#FFF;
 			font-size:14pt;
-			text-align:left;
 		}
 		#quickCarrot header.cabecera ul.menu_prin{
 			margin-bottom:.8cm;
@@ -196,7 +202,7 @@
 			margin:0 0 .5mm 0;
 			background:#444;
 			display:block;
-			padding:.5cm .3cm .5cm .3cm;
+			padding:.3cm .3cm .3cm .3cm;
 			overflow:hidden;
 			cursor:pointer;
 		}

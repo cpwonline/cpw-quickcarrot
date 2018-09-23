@@ -44,7 +44,8 @@
 	<!--Cabecera-->
 		<header class="cabecera">
 			<section class="logo">
-				<h3>QuickCarrot | <?=$_SESSION['u_plan']?></h3>
+				<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
+				<h3>- <?=$_SESSION['u_plan']?> -</h3>
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">

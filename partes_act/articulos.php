@@ -27,7 +27,7 @@
 					if(empty($a_imagen)){
 						echo '<div class="cam" tag="'.$a_id.'_'.$a_titulo.'_articulo">
 								<input type="file" name="imagen" tag="'.$a_id.'_'.$a_titulo.'_articulo"/>
-								<a class="btn-gen subir_imagen"  tag="'.$a_id.'_'.$a_titulo.'_articulo">Subir</a>
+								<a class="btn-gen subir_imagen"  tag="'.$a_id.'_'.$a_titulo.'_articulo">Subir  <i class="img_col subir blan"></i></a>
 							</div>';
 					}else{
 						echo '<div class="cam">S&iacute;</div>';
