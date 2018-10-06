@@ -1,6 +1,6 @@
 <?php
 	function head($dimension){
-		echo '
+		$sup = '
 			<!--Etiquetas META-->
 				<meta name="charset" content="utf-8"/>
 				<meta name="author" content="CPW Online"/>
@@ -21,7 +21,7 @@
 		$dir ="";
 		$dir = calcDimension($dir, $dimension);
 
-		echo '
+		$inf = '
 			<!--Links de CSS-->
 				<link rel="stylesheet" href="'.$dir.'css/estilo-mod.css"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-gen.css"/>
@@ -30,13 +30,14 @@
 			<!--Links de JS-->
 				<script src="'.$dir.'js/jquery-3.0.0.min.js"></script>
 				<script src="'.$dir.'js/func-gen.js"></script>
-				<!--<script src="'.$dir.'js/func-ope.js"></script>
+				<script src="'.$dir.'js/func-ope.js"></script>
 				<script src="'.$dir.'js/func-inf.js"></script>
 				<script src="'.$dir.'js/func-images.js"></script>
 				<script src="'.$dir.'vendor/ckeditor/ckeditor.js"/></script>
 				<script src="'.$dir.'js/ck-editor.js"/></script>
 				<script src="'.$dir.'js/main.js"/></script>
-				<script src="'.$dir.'starFly/js/func-gen.js"/></script>-->
+				<script src="'.$dir.'starFly/js/func-gen.js"/></script>
 		';
+		return $sup.$inf;
 	}
 ?>
