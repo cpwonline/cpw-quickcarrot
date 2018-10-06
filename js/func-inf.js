@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 	//Actualización
 		//Al hacer click en el menú
 			$('#quickCarrot select[name="i_menu"]').change(function(e){

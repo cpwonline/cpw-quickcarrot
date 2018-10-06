@@ -17,8 +17,8 @@
 				//Gestionamos el HEAD
 					$dir = "head.php";
 					$dir = calcDimension($dir, $dimension);
-					include($dir);
-					head($dimension);
+					include_once($dir);
+					//head($dimension);
 				//Fin gestionamos el HEAD
 
 			?>

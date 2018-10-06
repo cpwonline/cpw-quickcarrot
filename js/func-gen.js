@@ -1,7 +1,4 @@
-function mov(){
-	$('#quickCarrot div.espera').css('right', '-50%');
-}
-$(document).ready(function(){
+$(function(){
 	//Pedida de los menus
 		lista = new Array(7);
 		lista = lista_menus();
@@ -35,8 +32,19 @@ $(document).ready(function(){
 				});
 		});
 });
-
+function mov(){
+	$('#quickCarrot div.espera').css('right', '-50%');
+}
 function lista_menus(){
-	lista = new Array('menus', 'articulos', 'informaciones', 'diagnostico', 'estadisticas', 'ajustes', 'ayuda', 'acercade');
+	lista = new Array(
+		'menus', 
+		'articulos', 
+		'informaciones', 
+		'diagnostico', 
+		'estadisticas', 
+		'ajustes', 
+		'ayuda', 
+		'acercade'
+	);
 	return lista;
 }

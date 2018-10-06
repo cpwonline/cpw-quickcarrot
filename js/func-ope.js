@@ -2,7 +2,7 @@ function mov(){
 	$('#quickCarrot div.espera').css('right', '-50%');
 }
 
-/*Guardado de la imagen del artículo*/
+//Guardado de la imagen del artículo
 	function iniciar(id1, titulo1, tipo1){
 		id = id1;
 		titulo = titulo1;
@@ -42,7 +42,7 @@ function mov(){
 	function mostrar(e){
 		cajadatos.innerHTML='Imagen guardada';
 	}
-/*fin Guardado de la imagen del pago*/
+//fin Guardado de la imagen del pago
 
 //Pedida de las partes-----------------------------------------------------------------------------
 	function pedidas(valor, retorno){
@@ -275,8 +275,7 @@ function mov(){
 			});
 	}
 
-
-$(document).ready(function(){
+$(function(){
 	$('#quickCarrot div.espera').css('right', '.5cm');
 	var retrasar = setTimeout(mov, 3000);
 
@@ -287,20 +286,21 @@ $(document).ready(function(){
 			});
 		//Mediante el teclado
 			$('#quickCarrot input[name="u_nombre"]').keydown(function(tecla){
-			  	if (tecla.keyCode == 10 || tecla.keyCode == 13) { 
+			  	if (tecla.keyCode == 10 || tecla.keyCode == 13) {
 					iniciar_sesion();
 			  	}
-			});﻿
+			});
 			$('#quickCarrot input[name="u_clave"]').keydown(function(tecla){
 			  	if (tecla.keyCode == 10 || tecla.keyCode == 13) {
 					iniciar_sesion();
 			  	}
-			});﻿
+			});
 			//Función para inciar sesión
 				function iniciar_sesion(){
 					//Animación
-						$('#quickCarrot div.espera').css('right', '.5cm');
-						$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+						var ob = starFly('Inicio', 'Un momento | CPW Online', 2, 6000);
+						//$('#quickCarrot div.espera').css('right', '.5cm');
+						//$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
 					//Recolección de datos
 						var u_nombre = $('#quickCarrot input[name="u_nombre"]').val();
 						var u_clave = $('#quickCarrot input[name="u_clave"]').val();
@@ -308,8 +308,10 @@ $(document).ready(function(){
 						$('#quickCarrot input[name="contador"]').val(contador*1+1);
 					//Llamada AJAX
 						$.post("enlaces/iniciar_sesion.php", {u_nombre:u_nombre, u_clave:u_clave, contador:contador},function(r){
-							$('#quickCarrot div.espera').html(r);
-							var retrasar = setTimeout(mov, 3000);
+							nuevoMsj_starFly(r, ob);
+							borrarElemento_starFly(ob, 1, 'xT');
+							//$('#quickCarrot div.espera').html(r);
+							//var retrasar = setTimeout(mov, 3000);
 						});
 			}
 	//Actualizar
