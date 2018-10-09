@@ -298,9 +298,8 @@ $(function(){
 			//Función para inciar sesión
 				function iniciar_sesion(){
 					//Animación
-						var ob = starFly('Inicio', 'Un momento | CPW Online', 2, 6000);
-						//$('#quickCarrot div.espera').css('right', '.5cm');
-						//$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+						$('#quickCarrot div.espera').css('right', '.5cm');
+						$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
 					//Recolección de datos
 						var u_nombre = $('#quickCarrot input[name="u_nombre"]').val();
 						var u_clave = $('#quickCarrot input[name="u_clave"]').val();
@@ -308,10 +307,8 @@ $(function(){
 						$('#quickCarrot input[name="contador"]').val(contador*1+1);
 					//Llamada AJAX
 						$.post("enlaces/iniciar_sesion.php", {u_nombre:u_nombre, u_clave:u_clave, contador:contador},function(r){
-							nuevoMsj_starFly(r, ob);
-							borrarElemento_starFly(ob, 1, 'xT');
-							//$('#quickCarrot div.espera').html(r);
-							//var retrasar = setTimeout(mov, 3000);
+							$('#quickCarrot div.espera').html(r);
+							var retrasar = setTimeout(mov, 3000);
 						});
 			}
 	//Actualizar

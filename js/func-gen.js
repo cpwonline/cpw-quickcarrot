@@ -1,6 +1,6 @@
 $(function(){
 	//Pedida de los menus
-		lista = new Array(7);
+		lista = new Array();
 		lista = lista_menus();
 		//Función click de los menus de la cabecera
 			$('#quickCarrot .cabecera nav.menu ul.menu_prin li').click(function(e){
