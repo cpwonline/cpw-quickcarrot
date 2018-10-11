@@ -23,7 +23,7 @@
 
 			?>
 		<!--Fin Incluimos el HEAD-->
-		<script type="text/javascript">
+		<script>
 			$(function(){
 				$("#quickCarrot header.cabecera nav.menu li[tag='informaciones']").click();
 			});
@@ -33,7 +33,7 @@
 		<?php
 			//Comprobar que la URL No esté vacía
 				if(isset($_GET['i_sub'])){
-					$i_sub = "../../../".$_GET['i_sub']."index.php";
+					$i_sub = $_GET['i_sub']."index.php";
 				}else{
 					$i_sub = "";
 				}
@@ -54,7 +54,7 @@
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
-					<li tag="articulos"><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
+					<li tag="informaciones"><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -66,67 +66,28 @@
 				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
 			</section>
 			<!--Editor de páginas-->
-				<article class="art_gen" id="art_1" tag="menus">
+				<article class="art_gen" id="art_1" tag="informaciones">
 					<h3>Editor de p&aacute;ginas</h3>
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
-							<!--Añadir menú-->
+							<!--Edición de informaciones-->
 								<article class="bloque b2">
 									<h4>Edici&oacute;n</h4>
-									<div id="editor">
+									<section class="body_2">
 										<?php
-										//Función que quita tabulaciones y espacios en blanco entre etiquetas
-											function limpia_html($codigo){
-												$buscar = array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');
-												$reemplazar = array('>', '<', '\\1');
-												$codigo = preg_replace($buscar, $reemplazar, $codigo);
-												$codigo = str_replace("> <", "><", $codigo);
-												$codigo = str_replace("<?php", "<!--PHP", $codigo);
-												$codigo = str_replace("?>", "-->", $codigo);
-												$codigo = str_replace("<?=", "<--PHP", $codigo);
-												$codigo = str_replace("?>", "-->", $codigo);
-												return $codigo;
-											}
-											//Lectura del archivo
-												$FP = FOPEN($i_sub, "r");
-													$cont_int = "";
-													$inicio = '<!--Bloque: CONTENEDOR<-->';$i = false;
-													$fin = '<!--Bloque: CONTENEDOR>-->';
-													$ignorado = ['vacio', 'vacio'];$ig = false;
-												while(!feof($FP)){
-													$codigo = FGETS($FP);
-													$res = limpia_html($codigo);
-													//Verificamos si se entra
-														if($res == $inicio){
-															$i = true;
-															continue;
-														}
-														if($res == $ignorado[0]){
-															$ig = true;
-															continue;
-														}
-													//Verificamos si se sale
-														if($res == $fin){
-															break;
-														}
-														if ($res == $ignorado[1]) {
-															$ig = false;
-															continue;
-														}
-													//Imprimimos
-														if($i == true && $ig == false)
-															echo $res;
-														elseif($ig == true)
-															$cont_int .= $res;
-
-												}
-												FCLOSE($FP);
-
+											$dir = "../".calcDimension($i_sub, $dimension);
+											echo '<object type="text/html" data="'.$dir.'" width="100%", height="1000"></object>';
 										?>
+									</section>
+								</article>
+								<article class="bloque b1">
+									<h4>¿Desea guardar?</h4>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam"><a class="btn-gen">Guardar</a></div>
+											<div class="cam"><a class="btn-gen2">Descartar</a></div>
+										</div>
 									</div>
-									<input type="text" name="datos_cont"/>
-									<textarea name="datos_int"><?=$cont_int?></textarea>
-									<a class="btn-gen" id="guarda_inf">Guardar cambios</a>
 								</article>
 						<!--Fin Artículos de una cabecera-->
 					</section>

@@ -10,7 +10,7 @@
 				echo "<option value='m/".$i_menu."/p/'>Principal</option>";
 			while($ro = $con->fetch_assoc()){
 				$s_titulo = $ro['s_titulo'];
-				echo "<option value='".$i_menu."/".$s_titulo."'>".$s_titulo."</option>";
+				echo "<option value='m/".$i_menu."/".$s_titulo."/'>".$s_titulo."</option>";
 			}
 			break;
 		case 'select_menus_sub':
