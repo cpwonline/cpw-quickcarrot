@@ -146,7 +146,7 @@
 												</select>
 											</div>
 											<div class="cam">
-												<i class="img_col actualizar select neg boton" tag="select_menus_sub" title="Actualizar los men&uacute;s"></i>
+												<i class="img_col actualizar neg boton" tag="select_menus_sub" title="Actualizar los men&uacute;s"></i>
 											</div>
 										</div>
 										<div class="fil">
@@ -236,7 +236,7 @@
 					<section class="dentro_art">
 							<!--Localización de la información-->
 								<article class="bloque b1">
-									<form name="enviar_inf" method="GET" action="enlaces/editor/">
+									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones">
 										<h4>PASO 1: Localizaci&oacute;n de la inf.</h4>
 										<div class="tabla_gen">
 											<div class="fil">

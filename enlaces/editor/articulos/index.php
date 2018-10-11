@@ -17,19 +17,19 @@
 				//Gestionamos el HEAD
 					$dir = "head.php";
 					$dir = calcDimension($dir, $dimension);
-					include($dir);
-					head($dimension);
+					include_once($dir);
+					echo head($dimension);
 				//Fin gestionamos el HEAD
+
 			?>
 		<!--Fin Incluimos el HEAD-->
 		<script type="text/javascript">
-			$(document).ready(function(){
+			$(function(){
 				$("#quickCarrot header.cabecera nav.menu li[tag='articulos']").click();
 			});
 		</script>
 	</head>
 	<body id="quickCarrot">
-		<div class="espera">Espere un momento... | <span>CPW Online</span></div>
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){

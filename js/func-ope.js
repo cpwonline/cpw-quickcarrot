@@ -1,7 +1,3 @@
-function mov(){
-	$('#quickCarrot div.espera').css('right', '-50%');
-}
-
 //Guardado de la imagen del artículo
 	function iniciar(id1, titulo1, tipo1){
 		id = id1;
@@ -123,38 +119,38 @@ function mov(){
 				});
 			break;
 		}
-		if(retorno == true){$('#quickCarrot div.espera').html('Listo.');}
+		if(retorno == true){
+			nuevoMsj_starFly('Listo.', ob_sF);
+			borrarElemento_starFly(ob_sF, 0, 'xT');
+		}
 	}
 //Funciones que se Actualizaron (ON)
 	//Menus
 		//Borrar
 			function boton_borrar_menu(objeto){
 			//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
-				//Recolección de datos
-					var m_m = $(objeto).attr("tag");
-					var tipo = "menus";
-					var frase = "el men&uacute;?";
-					borrar_general(m_m, tipo, frase);
+				ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+			//Recolección de datos
+				var m_m = $(objeto).attr("tag");
+				var tipo = "menus";
+				var frase = "el men&uacute;?";
+				borrar_general(m_m, tipo, frase);
 			}
 		//Editar
 			function boton_editar_menu(objeto){
 			//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
-				//Recolección de datos
-					var m_m = $(objeto).attr("tag");
-					var tipo = "menus";
-					var frase = "el men&uacute;?";
-					editar_general(m_m, tipo, frase);
+				ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+			//Recolección de datos
+				var m_m = $(objeto).attr("tag");
+				var tipo = "menus";
+				var frase = "el men&uacute;?";
+				editar_general(m_m, tipo, frase);
 			}
 	//Submenús
 		//Borrar
 			function boton_borrar_sub(objeto){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
@@ -164,8 +160,7 @@ function mov(){
 		//Editar
 			function boton_editar_sub(objeto){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "submenus";
@@ -176,8 +171,7 @@ function mov(){
 		//Borrar
 			function boton_borrar_art(objeto){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var m_m = $(objeto).attr("tag");
 					var tipo = "articulos";
@@ -215,12 +209,12 @@ function mov(){
 				$("#quickCarrot #conf_borrar_gen").css("display", "none");
 				//Llamada AJAX
 					$.post("enlaces/borrar.php", {m_m:m_m, tipo:tipo},function(r){
-						$('#quickCarrot div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 			$("#quickCarrot #conf_borrar_gen a[tag='cancelar']").click(function(e){
-				var retrasar = setTimeout(mov, 100);
+				borrarElemento_starFly(ob_sF, 1, 'inst');
 			});
 	}
 
@@ -248,8 +242,8 @@ function mov(){
 									var m_posicion = $('#quickCarrot select[name="e_m_posicion"]').val();
 								//Llamada AJAX
 									$.post("enlaces/editar.php", {m_m:m_m, tipo:tipo, m_titulo:m_titulo, m_posicion:m_posicion},function(r){
-										$('#quickCarrot div.espera').html(r);
-										var retrasar = setTimeout(mov, 3000);
+										nuevoMsj_starFly(r, ob_sF);
+										borrarElemento_starFly(ob_sF, 1, 'xT');
 									});
 							});
 						break;
@@ -264,21 +258,18 @@ function mov(){
 									var s_posicion = $('#quickCarrot select[name="e_s_posicion"]').val();
 								//Llamada AJAX
 									$.post("enlaces/editar.php", {s_m:m_m, tipo:tipo, s_titulo:s_titulo, s_posicion:s_posicion},function(r){
-										$('#quickCarrot div.espera').html(r);
-										var retrasar = setTimeout(mov, 3000);
+										nuevoMsj_starFly(r, ob_sF);
+										borrarElemento_starFly(ob_sF, 1, 'xT');
 									});
 							});
 						break;
 				}
 			$("#quickCarrot #conf_editar_gen a[tag='cancelar']").click(function(e){
-				var retrasar = setTimeout(mov, 100);
+				borrarElemento_starFly(ob_sF, 1, 'inst');
 			});
 	}
 
 $(function(){
-	$('#quickCarrot div.espera').css('right', '.5cm');
-	var retrasar = setTimeout(mov, 3000);
-
 	//Iniciar sesión//
 		//General
 			$('#quickCarrot button#iniciar_sesion').click(function(e){
@@ -297,9 +288,8 @@ $(function(){
 			});
 			//Función para inciar sesión
 				function iniciar_sesion(){
-					//Animación
-						$('#quickCarrot div.espera').css('right', '.5cm');
-						$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					//Animación				
+						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 					//Recolección de datos
 						var u_nombre = $('#quickCarrot input[name="u_nombre"]').val();
 						var u_clave = $('#quickCarrot input[name="u_clave"]').val();
@@ -307,57 +297,58 @@ $(function(){
 						$('#quickCarrot input[name="contador"]').val(contador*1+1);
 					//Llamada AJAX
 						$.post("enlaces/iniciar_sesion.php", {u_nombre:u_nombre, u_clave:u_clave, contador:contador},function(r){
-							$('#quickCarrot div.espera').html(r);
-							var retrasar = setTimeout(mov, 3000);
+							if(r === '7correcto'){
+								nuevoMsj_starFly('Bienvenido, por favor espere.', ob_sF);
+								window.location.reload();
+							}else{
+								nuevoMsj_starFly(r, ob_sF);
+								borrarElemento_starFly(ob_sF, 1, 'xT');
+							}
 						});
 			}
 	//Actualizar
+		var l = '#quickCarrot i.img_col.actualizar';
 		//General
-			$('#quickCarrot i.img_col.actualizar').click(function(e){
+			$(l+':not('+l+'[tag="select_menus_sub"])').click(function(e){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var tipo = $(this).attr("tag");
 				//Llamada AJAX
 					pedidas(tipo, true);
-					var retrasar = setTimeout(mov, 3000);
 			});
 		//Select de Menús
-			$('#quickCarrot i.img_col.actualizar.select').click(function(e){
-				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+			$(l+'[tag="select_menus_sub"]').click(function(e){
+				//Animación						
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var tipo = $(this).attr("tag");
 				//Llamada AJAX
 					$.post("enlaces/actualizar.php", {tipo:tipo},function(r){
 						$('#quickCarrot select[name="s_menu"]').html(r);
-						$('#quickCarrot div.espera').html("Listo.");
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly('Listo.', ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 	//Guardar------------------------------------------------------------------------------
 		//Menus-------------------------------------------------
 			$('#quickCarrot #guarda_menu').click(function(e){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var m_titulo = $('#quickCarrot input[name="m_titulo"]').val();
 					var m_posicion = $('#quickCarrot select[name="m_posicion"]').val();
 					var tipo = "menus";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {m_titulo:m_titulo, m_posicion:m_posicion, tipo:tipo},function(r){
-						$('#quickCarrot div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 		//Submenus--------------------------------------------------
 			$('#quickCarrot #guarda_sub').click(function(e){
-				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+				//Animación					
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var s_titulo = $('#quickCarrot input[name="s_titulo"]').val();
 					var s_posicion = $('#quickCarrot select[name="s_posicion"]').val();
@@ -365,15 +356,14 @@ $(function(){
 					var tipo = "sub";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {s_titulo:s_titulo, s_posicion:s_posicion, s_menu:s_menu, tipo:tipo},function(r){
-						$('#quickCarrot div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 		//Artículos--------------------------------------------------
 			$('#quickCarrot #guarda_art').click(function(e){
-				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+				//Animación					
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var a_titulo = $('#quickCarrot input[name="a_titulo"]').val();
 					var a_des_c = $('#quickCarrot textarea[name="a_des_c"]').val();
@@ -381,15 +371,14 @@ $(function(){
 					var tipo = "articulo";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_des_c:a_des_c, a_contenido:a_contenido, tipo:tipo},function(r){
-						$('#quickCarrot div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 		//Informaciones--------------------------------------------------
 			$('#quickCarrot #guarda_inf').click(function(e){
 				//Animación
-					$('#quickCarrot div.espera').css('right', '.5cm');
-					$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 				//Recolección de datos
 					var i_menu = $('#quickCarrot select[name="inf_menu"]').val();
 					var i_sub = $('#quickCarrot select[name="inf_sub"]').val();
@@ -404,8 +393,8 @@ $(function(){
 					var tipo = "informacion";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {i_menu:i_menu, i_sub:i_sub, i_titulo:i_titulo, i_titulo_letra:i_titulo_letra, i_contenido:i_contenido, i_contenido_fondo:i_contenido_fondo, i_contenido_borde:i_contenido_borde, i_contenido_letra:i_contenido_letra, i_posicion:i_posicion, i_disegno:i_disegno, tipo:tipo},function(r){
-						$('#quickCarrot div.espera').html(r);
-						var retrasar = setTimeout(mov, 3000);
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
 	//Pedida de las partes

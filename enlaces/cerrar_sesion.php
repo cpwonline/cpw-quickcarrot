@@ -5,11 +5,7 @@
 			echo 'La sesi&oacute;n ya ha sido cerrada.';
 		else{
 			session_destroy();
-?>
-			<script type="text/javascript">
-				window.location.reload();
-			</script>
-<?php
+			echo '7correcto';
 		}
 	}else{
 		echo "Disculpe, ha ocurrido un error.";

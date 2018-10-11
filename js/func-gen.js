@@ -21,20 +21,20 @@ $(function(){
 		$("#quickCarrot a.cerrar_sesion").click(function(e){
 			e.preventDefault();
 			//Animación
-				$('#quickCarrot div.espera').css('right', '.5cm');
-				$('#quickCarrot div.espera').html('Espere | <span>CPW Online</span>');
+				ob_sF = starFly('Cerrando sesión', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
 			//Recolección de datos
 				var tipo = "admin";
 			//Llamada AJAX
 				$.post("enlaces/cerrar_sesion.php", {tipo:tipo}, function(r){
-					$('#quickCarrot div.espera').html(r);
-					var retrasar = setTimeout(mov, 3000);
+					if(r === '7correcto'){
+						window.location.reload();
+					}else{
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
+					}
 				});
 		});
 });
-function mov(){
-	$('#quickCarrot div.espera').css('right', '-50%');
-}
 function lista_menus(){
 	lista = new Array(
 		'menus', 

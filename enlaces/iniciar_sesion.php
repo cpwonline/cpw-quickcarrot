@@ -18,16 +18,11 @@
 	}else{
 		$row = $con->fetch_array();
 		if($row['u_estado']!="Bloqueado"){
-			echo "Bienvenido: ".$u_nombre;
 			$_SESSION['u_nombre'] = $row['u_nombre'];
 			$_SESSION['u_control'] = $row['u_control'];
 			$_SESSION['u_estado'] = $row['u_estado'];
 			$_SESSION['u_plan'] = $row['u_plan'];
-?>
-			<script type="text/javascript">
-				window.location.reload();
-			</script>
-<?php
+			echo '7correcto';
 		}else{
 			echo "Disculpe, este usuario est&aacute; bloqueado. Comun&iacute;quese con los desarrolladores.";
 		}
