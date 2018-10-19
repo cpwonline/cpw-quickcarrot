@@ -217,7 +217,17 @@
 				borrarElemento_starFly(ob_sF, 1, 'inst');
 			});
 	}
-
+function calc_posicion(sel, p){
+	var mensaje = "";
+	for(var h = 1; h < p+1; h++){
+		if(sel == h){
+			mensaje = mensaje + "<option value='"+h+"' selected>"+h+"</option>";
+		}else{
+			mensaje = mensaje + "<option value='"+h+"'>"+h+"</option>";
+		}
+	}
+	return mensaje;
+}
 //Función general para editar
 	function editar_general(m_m, tipo, frase){
 		//Confirmación
@@ -234,6 +244,12 @@
 					case 'menus':
 						//Mostramos el bloque correspondiente
 							$("#quickCarrot #conf_editar_gen div[tag='editar_menus']").css('display', 'block');
+						//Mostramos los datos anteriores para editar
+							var datos_padre = $($("#quickCarrot i.editar_menu[tag='"+m_m+"']").parent()).parent();
+							var a = $(datos_padre).children();
+							var b = calc_posicion($($(a).eq(1)).text(), 7);
+							$('#quickCarrot input[name="e_m_titulo"]').val($($(a).eq(0)).text());
+							$('#quickCarrot select[name="e_m_posicion"]').html(b);
 						//Si elije guardar la edición
 							$("#quickCarrot #conf_editar_gen a[tag='e_guarda_menu']").click(function(e){
 								$("#quickCarrot #conf_editar_gen").css("display", "none");
@@ -250,6 +266,12 @@
 					case 'submenus':
 						//Mostramos el bloque correspondiente
 							$("#quickCarrot #conf_editar_gen div[tag='editar_sub']").css('display', 'block');
+						//Mostramos los datos anteriores para editar
+							var datos_padre = $($("#quickCarrot i.editar_sub[tag='"+m_m+"']").parent()).parent();
+							var a = $(datos_padre).children();
+							var b = calc_posicion($($(a).eq(2)).text(), 7);
+							$('#quickCarrot input[name="e_s_titulo"]').val($($(a).eq(0)).text());
+							$('#quickCarrot select[name="e_s_posicion"]').html(b);
 						//Si elije guardar la edición
 							$("#quickCarrot #conf_editar_gen a[tag='e_guarda_sub']").click(function(e){
 								$("#quickCarrot #conf_editar_gen").css("display", "none");
