@@ -17,7 +17,7 @@
 			//Consulta para śaber si ya se ha registrado
 				$con_r = $mysqli->query("SELECT m_id FROM menus WHERE m_titulo = '".$m_titulo."' ");
 
-			if($con_r!==0){
+			if($con_r->num_rows !=0){
 				echo "Este nombre ya est&aacute; registrado y pertenece a un men&uacute; | <span>CPW Online</span>";
 			}elseif(empty($m_titulo) || empty($m_posicion)){
 				echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
@@ -64,7 +64,7 @@
 			//Consulta para śaber si ya se ha registrado
 				$con_r = $mysqli->query("SELECT s_id FROM submenus WHERE s_titulo = '".$s_titulo."' ");
 
-			if($con_r!==0){
+			if($con_r->num_rows != 0){
 				echo "Este nombre ya est&aacute; registrado y pertenece a un submen&uacute; | <span>CPW Online</span>";
 			}elseif(empty($s_titulo) || empty($s_posicion)){
 				echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
