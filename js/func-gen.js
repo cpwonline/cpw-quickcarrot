@@ -48,3 +48,18 @@ function lista_menus(){
 	);
 	return lista;
 }
+
+
+//Inicio copiado
+//Variables generales de StarFly
+	//De estilo
+		estiloContenedor = "background:hsla(0, 0%, 30%, .9);padding:.2cm;margin-bottom:.1cm;overflow:hidden;text-align:right;border-radius:.1cm;-webkit-border-radius:.1cm;-moz-border-radius:.1cm;-o-border-radius:.1cm;transition:.3s all;-webkit-transition:.3s all;-moz-transition:.3s all;-o-transition:.3s all;";
+		estiloTitulo = "font-size:12pt;color:#CCC;margin-bottom:.1cm;";
+		estiloMensaje = "font-size:10pt;color:#FFF;";
+		estiloBoton = "btn-gen";//Debes elegir una clase 
+	//De personalización
+		textoBotonGen = "Ok";
+//Fin variables generales de StarFly
+//Fin copiado
+
+

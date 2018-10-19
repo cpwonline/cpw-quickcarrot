@@ -26,7 +26,7 @@
 				<link rel="stylesheet" href="'.$dir.'css/estilo-mod.css"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-gen.css"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-mi_info.css"/>
-				<link rel="stylesheet" href="'.$dir.'starFly/css/estilo-gen.css"/>
+				<link rel="stylesheet" href="'.$dir.'starfly/css/estilo-gen.css"/>
 			<!--Links de JS-->
 				<script src="'.$dir.'js/jquery-3.0.0.min.js"></script>
 				<script src="'.$dir.'js/func-gen.js"></script>
@@ -36,7 +36,7 @@
 				<script src="'.$dir.'vendor/ckeditor/ckeditor.js"/></script>
 				<script src="'.$dir.'js/ck-editor.js"/></script>
 				<script src="'.$dir.'js/main.js"/></script>
-				<script src="'.$dir.'starFly/js/func-gen.js"/></script>
+				<script src="'.$dir.'starfly/js/func-gen.js"/></script>
 		';
 		return $sup.$inf;
 	}
