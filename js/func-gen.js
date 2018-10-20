@@ -34,6 +34,16 @@ $(function(){
 					}
 				});
 		});
+	//Abrimos/Cerramos el menú
+		$("#quickCarrot img.menu_boton").click(function(e){
+			if($("#quickCarrot header.cabecera").css("width") != "0px"){
+				$("#quickCarrot header.cabecera").css("width", "0%");
+				$("#quickCarrot section.contenedor").css("width", "100%");
+			}else{
+				$("#quickCarrot section.contenedor").css("width", "75%");
+				$("#quickCarrot header.cabecera").css("width", "25%");
+			}
+		});
 });
 function lista_menus(){
 	lista = new Array(

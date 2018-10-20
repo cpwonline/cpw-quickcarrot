@@ -69,7 +69,10 @@
 		<section class="contenedor">
 			<!--Principal-->
 			<section class="inf_prin">
-				<span>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></span>
+				<div class="menu_boton">
+					<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+				</div>
+				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></h5>
 			</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">

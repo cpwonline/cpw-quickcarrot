@@ -182,6 +182,10 @@
 			top:0;
 			background:#111;
 			overflow:auto;
+			transition: .3s all;
+			-webkit-transition: .3s all;
+			-moz-transition: .3s all;
+			-o-transition: .3s all;
 		}
 		#quickCarrot header.cabecera section.logo{
 			padding:.2cm;
@@ -230,15 +234,32 @@
 			background:#CCC;
 			float:right;
 			overflow:hidden;
+			transition: .3s all;
+			-webkit-transition: .3s all;
+			-moz-transition: .3s all;
+			-o-transition: .3s all;
 		}
 		#quickCarrot section.contenedor section.inf_prin{
 			background:#f60;
 			padding:.6cm;
 			overflow:hidden;
+			text-align: left;
 		}
-		#quickCarrot section.contenedor section.inf_prin span{
-			text-align:right;
+		#quickCarrot section.contenedor section.inf_prin div.menu_boton{
+			width:20%;
+			display:inline-block;
+			text-align:left;
+			overflow:hidden;
+		}
+		#quickCarrot section.contenedor section.inf_prin img.menu_boton{
+			display:inline-block;
+			cursor:pointer;
+		}
+		#quickCarrot section.contenedor section.inf_prin h5{
 			color:#FFF;
+			text-align:right;
+			width:75%;
+			display:inline-block;
 		}
 		#quickCarrot section.contenedor article.art_gen{
 			overflow:hidden;
