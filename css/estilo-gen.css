@@ -14,36 +14,6 @@
 			font-family: 'fGen';
 			src: url('fuentes/ModernSans-Light.otf');
 		}
-		#quickCarrot .btn-gen{
-			font-size:12pt;
-			color:#fff;
-			text-decoration:none;
-			background: #f60;
-			padding:8px 12px;
-			border:none;
-			cursor:pointer;
-		}
-		#quickCarrot .btn-gen:hover{
-			background: #777;
-		}
-		#quickCarrot .btn-gen:active{
-			text-decoration:underline;
-		}
-		#quickCarrot .btn-gen2{
-			font-size:12pt;
-			color:#fff;
-			text-decoration:none;
-			background: #444;
-			padding:8px 12px;
-			border:none;
-			cursor:pointer;
-		}
-		#quickCarrot .btn-gen2:hover{
-			background: #777;
-		}
-		#quickCarrot .btn-gen2:active{
-			text-decoration:underline;
-		}
 		/*Botones*/
 			#quickCarrot i.img_col{
 				width:16px;

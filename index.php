@@ -72,7 +72,7 @@
 				<div class="menu_boton">
 					<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
 				</div>
-				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></h5>
+				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-btn w3-gray">Cerrar sesi&oacute;n</a></h5>
 			</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
@@ -102,7 +102,7 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="guarda_menu">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_menu">Guardar</a></div>
 										</div>
 									</div>
 								</article>
@@ -151,7 +151,7 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="guarda_sub">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_sub">Guardar</a></div>
 										</div>
 									</div>
 								</article>
@@ -214,7 +214,7 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
-												<a class="btn-gen" id="guarda_art">Guardar</a>
+												<a class="w3-btn w3-deep-orange" id="guarda_art">Guardar</a>
 											</div>
 										</div>
 									</div>
@@ -263,7 +263,7 @@
 												</div>
 											</div>
 											<div class="fil">
-												<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
+												<div class="cam"><a class="w3-btn w3-deep-orange" id="configura_inf">Configurar</a></div>
 											</div>
 										</div>
 									</form>
@@ -306,7 +306,7 @@
 											<div class="cam"><input type="url" name="inf_cont" placeholder="Escriba la URL de la p&aacute;gina donde encontr&oacute; el error"/></div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="enviar_diag">Enviar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="enviar_diag">Enviar</a></div>
 										</div>
 									</div>
 								</article>
@@ -437,7 +437,7 @@
 										<div class="cam"><input type="password" name="repita_clave" placeholder="Reescriba su actual clave"/></div>
 									</div>
 									<div class="fil">
-										<div class="cam"><a class="btn-gen" id="editar_clave">Guardar</a></div>
+										<div class="cam"><a class="w3-btn w3-deep-orange" id="editar_clave">Guardar</a></div>
 									</div>
 								</div>
 							</article>

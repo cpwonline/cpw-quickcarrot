@@ -4,6 +4,6 @@
 	<input type="text" name="u_nombre" placeholder="Usuario" autofocus/>
 	<input type="password" name="u_clave" placeholder="Contrase&ntilde;a"/><br>
 	<input type="hidden" name="contador" value="1"/>
-	<button class="btn-gen" id="iniciar_sesion">Entrar</button>
-	<button class="btn-gen2">Olvid&eacute; mi contrase&ntilde;a</button>
+	<button class="w3-btn w3-deep-orange" id="iniciar_sesion">Entrar</button>
+	<button class="w3-btn w3-gray">Olvid&eacute; mi contrase&ntilde;a</button>
 </section>
