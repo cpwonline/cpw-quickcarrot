@@ -104,7 +104,7 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
-												<img width="100px" src="../../<?=$a_imagen?>" alt="Img"/>
+												<img width="100px" src="../../<?=$a_imagen?>" alt="Img" tag="a_imagen_vis"/>
 												<input type="file" name="e_a_imagen"/>
 												<input type="hidden" name="e_a_imagen_url" value="<?=$a_imagen?>"/>
 											</div>

@@ -460,7 +460,6 @@ $(function(){
 						var e_a_id = $('#quickCarrot input[name="e_a_id"]').val();
 						var tipo = "articulos";
 						var tipo2 = "contenido";
-						alert(e_a_contenido);
 					//Llamada AJAX
 						$.post("../../editar.php", {e_a_id:e_a_id, e_a_contenido:e_a_contenido, tipo:tipo, tipo2:tipo2},function(r){
 							nuevoMsj_starFly(r, ob_sF);
@@ -469,9 +468,20 @@ $(function(){
 				});
 			//Contenido--
 				//Cargar contenido--
-					$('#quickCarrot #e_carga_art_imagen').click(function(e){
-						var e_a_imagen = $('#quickCarrot input[name="e_a_imagen"]').click();
-					});
+					//Hacer clic
+						$('#quickCarrot #e_carga_art_imagen').click(function(e){
+							var e_a_imagen = document.querySelector('#quickCarrot input[name="e_a_imagen"]');
+							$(e_a_imagen).click();
+							e_a_imagen.addEventListener("change", previewImage, false);
+						});
+					//Visualizar la imagen
+						function previewImage(e) {
+							var reader = new FileReader();
+							reader.readAsDataURL(e.target.files[0]);
+							reader.onload = function (e2) {
+								$("#quickCarrot img[tag=a_imagen_vis]").attr("src", e2.target.result);
+							};
+						}
 				//Guardar contenido
 					$('#quickCarrot #e_guarda_art_imagen').click(function(e){
 						//$('#quickCarrot input[name="e_a_imagen"]').click(function(es){
@@ -484,13 +494,16 @@ $(function(){
 								var tipo = "articulos";
 								var tipo2 = "imagenArt";
 							//Llamada AJAX
-								//Creamos un array con todos lo datos
-									var datos = [e_a_id, e_a_imagen_url, tipo, tipo2];
-								//Llamada a la subida
-									subirArch(e_a_imagen, "../../editar.php", ob_sF.querySelector("p"), "image/png", datos);
+								if(e_a_imagen.files[0] == null){
+									nuevoMsj_starFly("No ha seleccionado archivo alguno", ob_sF);
 									borrarElemento_starFly(ob_sF, 1, 'xT');
-						//});
-						//$('#quickCarrot input[name="e_a_imagen"]').click();
+								}else{
+									//Creamos un array con todos lo datos
+										var datos = [e_a_id, e_a_imagen_url, tipo, tipo2];
+									//Llamada a la subida
+										subirArch(e_a_imagen, "../../editar.php", ob_sF.querySelector("p"), "image/png", datos);
+										borrarElemento_starFly(ob_sF, 1, 'xT');
+								}
 					});
 	//Pedida de las partes
 		pedidas("todo", false);
