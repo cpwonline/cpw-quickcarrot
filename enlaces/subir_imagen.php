@@ -14,6 +14,13 @@
 				mkdir($url, 0777, true);
 			if(copy($imagen['tmp_name'], $nombre_completo)){
 				$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$nombre_completo."' WHERE a_id='".$id."' ");
+				if($con){
+					echo "Guardado correctamente.";
+				}else{
+					echo "Hubo un error al guardar (Registro).";
+				}
+			}else{
+				echo "Hubo un error al guardar (Copiado).";
 			}
 		break;
 	}

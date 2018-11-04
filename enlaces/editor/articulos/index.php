@@ -30,6 +30,10 @@
 		</script>
 	</head>
 	<body id="quickCarrot">
+		<!--Administrador de notificaciones-->
+			<section id="starFly">
+				<div id="pie_starFly"></div>
+			</section>
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
@@ -73,6 +77,7 @@
 										exit;
 									}
 									$ro = $con->fetch_assoc();
+									$a_id = $ro['a_id'];
 									$a_titulo = $ro['a_titulo'];
 									$a_des_c = $ro['a_des_c'];
 									$a_contenido = $ro['a_contenido'];
@@ -86,6 +91,7 @@
 											<div class="cam">T&iacute;tulo:</div>
 											<div class="cam">
 												<input type="text" name="e_a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo" value="<?=$a_titulo?>"/>
+												<input type="hidden" name="e_a_id" value="<?=$a_id?>"/>
 											</div>
 										</div>
 										<div class="fil">
@@ -97,10 +103,15 @@
 									<h4>Imagen</h4>
 									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam"><img width="100px" src="../../<?=$a_imagen?>" alt="Img"/></div>
+											<div class="cam">
+												<img width="100px" src="../../<?=$a_imagen?>" alt="Img" tag="a_imagen_vis"/>
+												<input type="file" name="e_a_imagen"/>
+												<input type="hidden" name="e_a_imagen_url" value="<?=$a_imagen?>"/>
+											</div>
+											<div class="cam"><a class="btn-gen2" id="e_carga_art_imagen">Cambiar imagen</a></div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" tag="e_guarda_art_imagen">Cambiar</a></div>
+											<div class="cam"><a class="btn-gen" id="e_guarda_art_imagen">Guardar imagen</a></div>
 										</div>
 									</div>
 								</article>
@@ -109,7 +120,7 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
-												<textarea><?=$a_des_c?></textarea>
+												<textarea name="e_a_des_c" maxlength="200"><?=$a_des_c?></textarea>
 											</div>
 										</div>
 										<div class="fil">
@@ -125,11 +136,6 @@
 												<div id="editor"><?=$a_contenido?></div>
 											</div>
 										</div>
-									</div>
-								</article>
-								<article class="bloque b2">
-									<h4>Si no has guardado, a&uacute;n no has terminado</h4>
-									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
 												<a class="btn-gen" id="e_guarda_art_contenido">Guardar</a>

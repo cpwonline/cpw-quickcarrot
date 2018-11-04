@@ -2,7 +2,12 @@
 <?php
 	require_once('../mysqli_db.php');
 	session_start();
-	switch($_POST['tipo']){
+	if(!isset($_POST["vares"])){
+		$tipo = $_POST['tipo'];
+	}else{
+		$tipo = (explode(",", $_POST['vares']))[2];
+	}
+	switch($tipo){
 		case 'menus': 
 			//Datos nuevos
 				$m_m = explode("-", $_POST['m_m']);
@@ -82,6 +87,76 @@
 						echo 'Edici&oacute;n realizada correctamente.';
 				}else
 					echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
+			}
+			break;
+		case "articulos":
+			if(isset($_POST["vares"])){
+				$tipo2 = (explode(",", $_POST['vares']))[3];
+				$e_a_id= (explode(",", $_POST['vares']))[0];
+			}else{
+				$tipo2 = $_POST['tipo2'];
+				$e_a_id= $_POST['e_a_id'];
+			}
+			switch($tipo2){
+				case "titulo":
+					$e_a_titulo = $_POST['e_a_titulo'];
+					if(empty($e_a_titulo)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_titulo = '".$e_a_titulo."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar | <span>CPW Online</span>";
+					}
+					break;
+				case "des_c":
+					$e_a_des_c = $_POST['e_a_des_c'];
+					if(empty($e_a_des_c)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_des_c = '".$e_a_des_c."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar | <span>CPW Online</span>";
+					}
+					break;
+				case "contenido":
+					$e_a_contenido = $_POST['e_a_contenido'];
+					if(empty($e_a_contenido)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_contenido = '".$e_a_contenido."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar | <span>CPW Online</span>";
+					}
+					break;
+				case "imagenArt":
+					$vares = explode(",", $_POST["vares"]);
+					$id = $vares[0];
+					$url = $vares[1];
+					$imagen = $_FILES['archivo'];
+					if(unlink($url)){
+						if(copy($imagen['tmp_name'], $url)){
+							$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$url."' WHERE a_id='".$id."' ");
+							if($con){
+								echo "Guardado correctamente.";
+							}else{
+								echo "Hubo un error al guardar (Registro).";
+							}
+						}else{
+							echo "Hubo un error al guardar (Copiado).";
+						}
+					}else{
+						echo "Hubo un error al guardar (Borrado de archivo pasado).";
+					}
+					break;
 			}
 			break;
 

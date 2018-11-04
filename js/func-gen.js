@@ -21,7 +21,7 @@ $(function(){
 		$("#quickCarrot a.cerrar_sesion").click(function(e){
 			e.preventDefault();
 			//Animación
-				ob_sF = starFly('Cerrando sesión', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+				ob_sF = starFly('Cerrando sesión', 'Espere | CPW Online', 2, 5000, "information");//Not. que se quita manualmente con código
 			//Recolección de datos
 				var tipo = "admin";
 			//Llamada AJAX
@@ -68,7 +68,7 @@ function lista_menus(){
 		estiloTitulo = "font-size:12pt;color:#CCC;margin-bottom:.1cm;padding:.25cm;";
 		estiloMensaje = "font-size:10pt;color:#FFF;";
 		estiloBoton = "btn-gen";//Debes elegir una clase de estilo
-	//De personalización
+//De personalización
 		textoBotonGen = "Ok";
 //Fin variables generales de StarFly
 //Fin copiado
