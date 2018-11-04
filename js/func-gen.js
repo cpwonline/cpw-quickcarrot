@@ -35,14 +35,17 @@ $(function(){
 				});
 		});
 	//Abrimos/Cerramos el menú
-		$("#quickCarrot img.menu_boton").click(function(e){
-			if($("#quickCarrot header.cabecera").css("width") != "0px"){
-				$("#quickCarrot header.cabecera").css("width", "0%");
-				$("#quickCarrot section.contenedor").css("width", "100%");
-			}else{
-				$("#quickCarrot section.contenedor").css("width", "75%");
-				$("#quickCarrot header.cabecera").css("width", "25%");
-			}
+		$("#quickCarrot div.menu_boton").click(function(e){
+			$("#quickCarrot header.cabecera").css("width", "25%");
+			$("#quickCarrot section.contenedor").css("width", "75%");
+			$("#quickCarrot div.menu_boton").hide();
+			$("#quickCarrot div.menu_boton_x").show();
+		});
+		$("#quickCarrot div.menu_boton_x").click(function(e){
+			$("#quickCarrot header.cabecera").css("width", "0%");
+			$("#quickCarrot section.contenedor").css("width", "100%");
+			$("#quickCarrot div.menu_boton").show();
+			$("#quickCarrot div.menu_boton_x").hide();
 		});
 });
 function lista_menus(){
