@@ -103,10 +103,15 @@
 									<h4>Imagen</h4>
 									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam"><img width="100px" src="../../<?=$a_imagen?>" alt="Img"/></div>
+											<div class="cam">
+												<img width="100px" src="../../<?=$a_imagen?>" alt="Img"/>
+												<input type="file" name="e_a_imagen"/>
+												<input type="hidden" name="e_a_imagen_url" value="<?=$a_imagen?>"/>
+											</div>
+											<div class="cam"><a class="btn-gen2" id="e_carga_art_imagen">Cambiar imagen</a></div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" tag="e_guarda_art_imagen">Cambiar</a></div>
+											<div class="cam"><a class="btn-gen" id="e_guarda_art_imagen">Guardar imagen</a></div>
 										</div>
 									</div>
 								</article>
