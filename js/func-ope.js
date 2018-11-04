@@ -311,8 +311,8 @@ $(function(){
 			//Función para inciar sesión
 				function iniciar_sesion(){
 					//Animación				
-						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
-					//Recolección de datos
+						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 0, "information");//Not. que se quita manualmente con código
+						//Recolección de datos
 						var u_nombre = $('#quickCarrot input[name="u_nombre"]').val();
 						var u_clave = $('#quickCarrot input[name="u_clave"]').val();
 						var contador = $('#quickCarrot input[name="contador"]').val();
