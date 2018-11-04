@@ -115,7 +115,7 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
-												<textarea><?=$a_des_c?></textarea>
+												<textarea name="e_a_des_c" maxlength="200"><?=$a_des_c?></textarea>
 											</div>
 										</div>
 										<div class="fil">
@@ -131,11 +131,6 @@
 												<div id="editor"><?=$a_contenido?></div>
 											</div>
 										</div>
-									</div>
-								</article>
-								<article class="bloque b2">
-									<h4>Si no has guardado, a&uacute;n no has terminado</h4>
-									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
 												<a class="btn-gen" id="e_guarda_art_contenido">Guardar</a>
