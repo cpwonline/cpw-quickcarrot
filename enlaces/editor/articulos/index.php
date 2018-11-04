@@ -30,6 +30,10 @@
 		</script>
 	</head>
 	<body id="quickCarrot">
+		<!--Administrador de notificaciones-->
+			<section id="starFly">
+				<div id="pie_starFly"></div>
+			</section>
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
