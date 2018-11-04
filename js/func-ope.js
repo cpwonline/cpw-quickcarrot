@@ -431,7 +431,54 @@ $(function(){
 						var tipo = "articulos";
 						var tipo2 = "titulo";
 					//Llamada AJAX
-						$.post("enlaces/editar.php", {e_a_id:e_a_id, e_a_titulo:e_a_titulo, tipo:tipo, tipo2:tipo2},function(r){
+						$.post("../../editar.php", {e_a_id:e_a_id, e_a_titulo:e_a_titulo, tipo:tipo, tipo2:tipo2},function(r){
+							nuevoMsj_starFly(r, ob_sF);
+							borrarElemento_starFly(ob_sF, 1, 'xT');
+						});
+				});
+			//Descripción corta--
+				$('#quickCarrot #e_guarda_art_des_c').click(function(e){
+					//Animación
+						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 0);//Not. que se quita manualmente con código
+					//Recolección de datos
+						var e_a_des_c = $('#quickCarrot textarea[name="e_a_des_c"]').val();
+						var e_a_id = $('#quickCarrot input[name="e_a_id"]').val();
+						var tipo = "articulos";
+						var tipo2 = "des_c";
+					//Llamada AJAX
+						$.post("../../editar.php", {e_a_id:e_a_id, e_a_des_c:e_a_des_c, tipo:tipo, tipo2:tipo2},function(r){
+							nuevoMsj_starFly(r, ob_sF);
+							borrarElemento_starFly(ob_sF, 1, 'xT');
+						});
+				});
+			//Contenido--
+				$('#quickCarrot #e_guarda_art_contenido').click(function(e){
+					//Animación
+						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 0);//Not. que se quita manualmente con código
+					//Recolección de datos
+						var e_a_contenido = CKEDITOR.instances.editor.getData();
+						var e_a_id = $('#quickCarrot input[name="e_a_id"]').val();
+						var tipo = "articulos";
+						var tipo2 = "contenido";
+						alert(e_a_contenido);
+					//Llamada AJAX
+						$.post("../../editar.php", {e_a_id:e_a_id, e_a_contenido:e_a_contenido, tipo:tipo, tipo2:tipo2},function(r){
+							nuevoMsj_starFly(r, ob_sF);
+							borrarElemento_starFly(ob_sF, 1, 'xT');
+						});
+				});
+			//Contenido--
+				$('#quickCarrot #e_guarda_art_imagen').click(function(e){
+					//Animación
+						ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 0);//Not. que se quita manualmente con código
+					//Recolección de datos
+					
+						var e_a_id = $('#quickCarrot input[name="e_a_id"]').val();
+						var tipo = "articulos";
+						var tipo2 = "contenido";
+						alert(e_a_contenido);
+					//Llamada AJAX
+						$.post("../../editar.php", {e_a_id:e_a_id, e_a_contenido:e_a_contenido, tipo:tipo, tipo2:tipo2},function(r){
 							nuevoMsj_starFly(r, ob_sF);
 							borrarElemento_starFly(ob_sF, 1, 'xT');
 						});
