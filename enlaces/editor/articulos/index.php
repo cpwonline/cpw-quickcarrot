@@ -73,6 +73,7 @@
 										exit;
 									}
 									$ro = $con->fetch_assoc();
+									$a_id = $ro['a_id'];
 									$a_titulo = $ro['a_titulo'];
 									$a_des_c = $ro['a_des_c'];
 									$a_contenido = $ro['a_contenido'];
@@ -86,6 +87,7 @@
 											<div class="cam">T&iacute;tulo:</div>
 											<div class="cam">
 												<input type="text" name="e_a_titulo" placeholder="Escriba el t&iacute;tulo de su art&iacute;culo" value="<?=$a_titulo?>"/>
+												<input type="hidden" name="e_a_id" value="<?=$a_id?>"/>
 											</div>
 										</div>
 										<div class="fil">

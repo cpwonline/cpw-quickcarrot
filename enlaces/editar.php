@@ -84,6 +84,30 @@
 					echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
 			}
 			break;
+		case "articulos":
+			$e_a_id= $_POST['e_a_id'];
+			$e_a_titulo = $_POST['e_a_titulo'];
+			switch($_POST['tipo2']){
+				case "titulo":
+					if(empty($e_a_titulo)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_titulo = '".$e_a_titulo."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
+					}
+					break;
+				case "des_c":
+					break;
+				case "contenido":
+					break;
+				case "imagen":
+					break;
+			}
+			break;
 
 	}
 ?>

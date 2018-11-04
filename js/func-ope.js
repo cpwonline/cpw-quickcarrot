@@ -419,6 +419,22 @@ $(function(){
 						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			});
+	//Editar------------------------------------------------------------------------------
+		//Menus-------------------------------------------------
+			$('#quickCarrot #e_guarda_art_titulo').click(function(e){
+				//Animación
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 0);//Not. que se quita manualmente con código
+				//Recolección de datos
+					var e_a_titulo = $('#quickCarrot input[name="e_a_titulo"]').val();
+					var e_a_id = $('#quickCarrot input[name="e_a_id"]').val();
+					var tipo = "articulos";
+					var tipo2 = "titulo";
+				//Llamada AJAX
+					$.post("enlaces/editar.php", {e_a_id:e_a_id, e_a_titulo:e_a_titulo, tipo:tipo, tipo2:tipo2},function(r){
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
+					});
+			});
 	//Pedida de las partes
 		pedidas("todo", false);
 });
