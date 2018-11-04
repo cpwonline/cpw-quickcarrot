@@ -1,24 +1,24 @@
-﻿function subirArch(contArch, url, divProgreso, tipo){
+﻿function subirArch(contArch, url, divProgreso, MIME, vares){
     this.iniciarArch = function(){
       //Se llama a subir cuando cambie el estado del input
-		    contArch.addEventListener('change', subirArch, false);
+        mainArch(contArch);
     }
-    this.subirArch = function(e){
+    this.mainArch = function(e){
       //Datos
-        var archivos=e.target.files;
-        var archivo=archivos[0];
-      //Instancias para formulario
+        var archivos = e.files;
+        var archivo = archivos[0];
+     //Instancias para formulario
         var datos = new FormData();
       //Cargamos archivos para ser enviados
-        datos.append('archivo',archivo);
-        /*datos.append('id', id);//Algúna información extra*/
+        datos.append('archivo', archivo);
+        datos.append('vares', vares);
       //Dirección y procesamiento de datos
         var solicitud = new XMLHttpRequest();
         var xmlupload = solicitud.upload;
       //Estados de la carga
         xmlupload.addEventListener('loadstart',comenzarArch,false);
         xmlupload.addEventListener('progress',estadoArch,false);
-        xmlupload.addEventListener('load',mostrarArch,false);
+        solicitud.addEventListener('load',mostrarArch,false);
       //Envío y tipo de envío
         solicitud.open("POST", url, true);
         solicitud.send(datos);
@@ -34,7 +34,8 @@
         barraProgreso.innerHTML=por+'%';
       }
     }
-    function mostrar(e){
-      cajadatos.innerHTML=Tipo + " guardado(a) correctamente";
+    this.mostrarArch = function(e){
+      divProgreso.innerHTML = e.target.responseText;
     }
+    iniciarArch();
 }
