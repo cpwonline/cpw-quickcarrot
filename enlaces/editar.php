@@ -2,7 +2,11 @@
 <?php
 	require_once('../mysqli_db.php');
 	session_start();
-	$_POST["vares"] != NULL? $tipo = (explode(",", $_POST['vares']))[2] : $tipo = $_POST['tipo'];
+	if(!isset($_POST["vares"])){
+		$tipo = $_POST['tipo'];
+	}else{
+		$tipo = (explode(",", $_POST['vares']))[2];
+	}
 	switch($tipo){
 		case 'menus': 
 			//Datos nuevos
@@ -86,8 +90,13 @@
 			}
 			break;
 		case "articulos":
-			$e_a_id= $_POST['e_a_id'];
-			$_POST["vares"] != NULL? $tipo2 = (explode(",", $_POST['vares']))[3] : $tipo2 = $_POST['tipo'];
+			if(isset($_POST["vares"])){
+				$tipo2 = (explode(",", $_POST['vares']))[3];
+				$e_a_id= (explode(",", $_POST['vares']))[0];
+			}else{
+				$tipo2 = $_POST['tipo2'];
+				$e_a_id= $_POST['e_a_id'];
+			}
 			switch($tipo2){
 				case "titulo":
 					$e_a_titulo = $_POST['e_a_titulo'];
@@ -129,25 +138,23 @@
 					}
 					break;
 				case "imagenArt":
-					echo "hello";
-					$id = $_POST['id'];
-					$titulo = $_POST['titulo'];
-					$tipo = $_POST['tipo'];
+					$vares = explode(",", $_POST["vares"]);
+					$id = $vares[0];
+					$url = $vares[1];
 					$imagen = $_FILES['archivo'];
-					$url =  "../../articulos/img/".$_SESSION['u_nombre']."/";
-					$nombre_imagen = $id."_".$imagen['name'];
-					$nombre_completo = $url.$nombre_imagen;
-					if(!is_dir($url))
-						mkdir($url, 0777, true);
-					if(copy($imagen['tmp_name'], $nombre_completo)){
-						$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$nombre_completo."' WHERE a_id='".$id."' ");
-						if($con){
-							echo "Guardado correctamente.";
+					if(unlink($url)){
+						if(copy($imagen['tmp_name'], $url)){
+							$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$url."' WHERE a_id='".$id."' ");
+							if($con){
+								echo "Guardado correctamente.";
+							}else{
+								echo "Hubo un error al guardar (Registro).";
+							}
 						}else{
-							echo "Hubo un error al guardar (Registro).";
+							echo "Hubo un error al guardar (Copiado).";
 						}
 					}else{
-						echo "Hubo un error al guardar (Copiado).";
+						echo "Hubo un error al guardar (Borrado de archivo pasado).";
 					}
 					break;
 			}
