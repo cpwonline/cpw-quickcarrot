@@ -86,9 +86,9 @@
 			break;
 		case "articulos":
 			$e_a_id= $_POST['e_a_id'];
-			$e_a_titulo = $_POST['e_a_titulo'];
 			switch($_POST['tipo2']){
 				case "titulo":
+					$e_a_titulo = $_POST['e_a_titulo'];
 					if(empty($e_a_titulo)){
 						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
 					}else{
@@ -97,12 +97,34 @@
 						if($con){
 								echo 'Edici&oacute;n realizada correctamente.';
 						}else
-							echo "Fallo al editar (Registro:Men&uacute;) | <span>CPW Online</span>";
+							echo "Fallo al editar | <span>CPW Online</span>";
 					}
 					break;
 				case "des_c":
+					$e_a_des_c = $_POST['e_a_des_c'];
+					if(empty($e_a_des_c)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_des_c = '".$e_a_des_c."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar | <span>CPW Online</span>";
+					}
 					break;
 				case "contenido":
+					$e_a_contenido = $_POST['e_a_contenido'];
+					if(empty($e_a_contenido)){
+						echo "No deben haber campos vac&iacute;os | <span>CPW Online</span>";
+					}else{
+						//Modificado del título del artículo
+							$con = $mysqli->query("UPDATE articulos SET a_contenido = '".$e_a_contenido."' WHERE articulos.a_id = '".$e_a_id."'");
+						if($con){
+								echo 'Edici&oacute;n realizada correctamente.';
+						}else
+							echo "Fallo al editar | <span>CPW Online</span>";
+					}
 					break;
 				case "imagen":
 					break;
