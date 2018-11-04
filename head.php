@@ -32,7 +32,7 @@
 				<script src="'.$dir.'js/func-gen.js"></script>
 				<script src="'.$dir.'js/func-ope.js"></script>
 				<script src="'.$dir.'js/func-inf.js"></script>
-				<script src="'.$dir.'js/func-images.js"></script>
+				<script src="'.$dir.'js/func-subirArch.js"></script>
 				<script src="'.$dir.'vendor/ckeditor/ckeditor.js"/></script>
 				<script src="'.$dir.'js/ck-editor.js"/></script>
 				<script src="'.$dir.'js/main.js"/></script>
