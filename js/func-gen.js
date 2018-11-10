@@ -3,20 +3,24 @@ $(function(){
 		lista = new Array();
 		lista = lista_menus();
 		//Función click de los menus de la cabecera
-			$('#quickCarrot .cabecera nav.menu ul.menu_prin li').click(function(e){
-				var estoy = $(this).attr("tag");
-				for(var a = 0; a < 8; a++){
-					if(lista[a] === estoy){
-						$('#quickCarrot article[tag="'+lista[a]+'"]').css("display", "block");
-						$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="'+lista[a]+'"]').css("background", "#f60");
-						
-					}else{
-						$('#quickCarrot article[tag="'+lista[a]+'"]').css("display", "none");
-						$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="'+lista[a]+'"]').css("background", "#444");
+			//Función
+				$('#quickCarrot .cabecera nav.menu ul.menu_prin li').click(function(e){
+					var estoy = $(this).attr("tag");
+					for(var a = 0; a < 8; a++){
+						if(lista[a] === estoy){
+							$('#quickCarrot article[tag="'+lista[a]+'"]').css("display", "block");
+							$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="'+lista[a]+'"]').css("background", "#f60");
+							
+						}else{
+							$('#quickCarrot article[tag="'+lista[a]+'"]').css("display", "none");
+							$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="'+lista[a]+'"]').css("background", "#444");
+						}
 					}
-				}
-			});
-			$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="menus"]').click();
+				});
+			//Por la URL
+			abreMenu(window.location.hash);
+				
+				
 	//Cerrado de la sesión
 		$("#quickCarrot a.cerrar_sesion").click(function(e){
 			e.preventDefault();
@@ -57,6 +61,25 @@ function lista_menus(){
 		'acercade'
 	);
 	return lista;
+}
+function abreMenu(q){
+	//Depuramos la variable
+		var res = "";
+		for(var a = 0; a < q.length; a++){
+			if(q[a] == "0" || q[a] == "1" || q[a] == "2" || q[a] == "3" || q[a] == "4" || q[a] == "5" || q[a] == "6" || q[a] == "7" || q[a] == "8" || q[a] == "9"){
+				res += q[a];
+			}
+		}
+		res == ""? q = 0 : q = res;
+	//Pedida de los menus
+		lista = new Array();
+		lista = lista_menus();
+		if(q > lista.length || q < 0){
+			$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="' + lista[0] + '"]').click();
+		}else{
+			$('#quickCarrot .cabecera nav.menu ul.menu_prin li[tag="' + lista[q] + '"]').click();
+		}
+
 }
 
 

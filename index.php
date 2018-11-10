@@ -46,20 +46,20 @@
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
-					<li tag="menus" title="Aqu&iacute; podr&aacute; gestionar (crear, editar, borrar) todos los men&uacute;s y submen&uacute;s de su sitio web."><i class="img_col menus blan"></i><a>Men&uacute;s</a></li>
+					<li tag="menus" title="Aqu&iacute; podr&aacute; gestionar (crear, editar, borrar) todos los men&uacute;s y submen&uacute;s de su sitio web."><i class="img_col menus blan"></i><a href="#0">Men&uacute;s</a></li>
 				</ul>
 				<ul class="menu_prin">
-					<li tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
-					<li tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
+					<li tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a href="#1">Art&iacute;culos</a></li>
+					<li tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a href="#2">Informaciones</a></li>
 				</ul>
 				<ul class="menu_prin">
-					<li tag="diagnostico" title="Si presenta errores con el sistema, env&iacute;e sus declaraciones aqu&iacute;, los desarrolladores har&aacute;n lo posible de solventar el problema."><i class="img_col diagnostico blan"></i><a>Diagn&oacute;stico de errores</a></li>
-					<li tag="estadisticas" title="Parte fundamental que le ayuda a mantenerse informado del d&iacute;a a d&iacute;a de su sitio."><i class="img_col estadisticas blan"></i><a>Estad&iacute;sticas</a></li>
+					<li tag="diagnostico" title="Si presenta errores con el sistema, env&iacute;e sus declaraciones aqu&iacute;, los desarrolladores har&aacute;n lo posible de solventar el problema."><i class="img_col diagnostico blan"></i><a href="#3">Diagn&oacute;stico de errores</a></li>
+					<li tag="estadisticas" title="Parte fundamental que le ayuda a mantenerse informado del d&iacute;a a d&iacute;a de su sitio."><i class="img_col estadisticas blan"></i><a href="#4">Estad&iacute;sticas</a></li>
 				</ul>
 				<ul class="menu_prin">
-					<li tag="ajustes" title="Configure el sistema a su gusto con las opciones disponibles."><i class="img_col ajustes blan"></i><a>Ajustes</a></li>
-					<li tag="ayuda" title="Si presenta dudas, dir&iacute;jase a esta secci&oacute;n de valiosos recursos."><i class="img_col ayuda blan"></i><a>Ayuda</a></li>
-					<li tag="acercade" title="Si quiere saber m&aacute;s acerca de CPW Online, lea lo que tenemos para usted."><i class="img_col acercade blan"></i><a>Acerca de</a></li>
+					<li tag="ajustes" title="Configure el sistema a su gusto con las opciones disponibles."><i class="img_col ajustes blan"></i><a href="#5">Ajustes</a></li>
+					<li tag="ayuda" title="Si presenta dudas, dir&iacute;jase a esta secci&oacute;n de valiosos recursos."><i class="img_col ayuda blan"></i><a href="#6">Ayuda</a></li>
+					<li tag="acercade" title="Si quiere saber m&aacute;s acerca de CPW Online, lea lo que tenemos para usted."><i class="img_col acercade blan"></i><a href="#7">Acerca de</a></li>
 				</ul>
 			</nav>
 		</header>
