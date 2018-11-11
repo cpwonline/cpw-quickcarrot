@@ -22,10 +22,9 @@
 		?>
 	</head>
 	<body id="quickCarrot" class="w3-row">
-		<!--Administrador de notificaciones-->
-			<section id="starFly">
-				<div id="pie_starFly"></div>
-			</section>
+		<!--StarFly-->
+			<section id="starFly"><div id="pie_starFly"></div></section>
+		<!--Fin StarFly-->
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
@@ -68,7 +67,6 @@
 					</ul>
 				</nav>
 		</header>
-		
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
@@ -233,6 +231,7 @@
 										<!--PARTE: ARTÍCULOS-->
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Informaciones-->
@@ -280,6 +279,7 @@
 										<!--PARTE: INFORMACIONES-->
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Diagnóstico de errores-->
@@ -315,6 +315,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Estadísticas-->
@@ -420,6 +421,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Ajustes-->
@@ -448,6 +450,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Ayuda-->
@@ -470,29 +473,30 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Acerca de-->
 				<article class="art_gen" id="art_8" tag="acercade">
 					<h3>Acerca de</h3>
 					<section class="dentro_art">
-						<!--Acerca de-->
-							<article class="bloque w3-col m6 l6">
-							<div class="w3-container w3-gray"><h4 class="">¡Somos CPW Online&excl;</h4></div>
-								<div class="tabla_gen">
-									<div class="fil">
-										<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
+						<!--Artículos de una cabecera-->
+							<!--Acerca de-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">¡Somos CPW Online&excl;</h4></div>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
+										</div>
+										<div class="fil">
+											<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/#acercade" target="_blank">CPW Online > Informaciones</a>.</div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/#acercade" target="_blank">CPW Online > Informaciones</a>.</div>
-									</div>
-								</div>
-							</article>
+								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
-
 		</section>
-
 	<!--Pie-->
 		<footer class="pie">
 			<!--
@@ -538,7 +542,6 @@
 				</article>
 			-->
 		</footer>
-
 		<!--Añadimos los modales-->
 			<?php
 				$dir = "modales.php";
@@ -546,7 +549,6 @@
 				include_once($dir);	
 			?>	
 		<!--Fin añadimos los modales-->
-
 	<?php
 		}
 	?>

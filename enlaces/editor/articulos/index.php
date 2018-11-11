@@ -7,7 +7,7 @@
 		<title>Art&iacute;culos - QuickCarrot | CPW Online</title>
 		<?php 
 			//Principal
-				require_once('mysqli_db.php');
+				require_once('../../../mysqli_db.php');
 				session_start();
 			//Etiqueta global de donde estamos
 				global $dimension;
@@ -22,10 +22,9 @@
 		?>
 	</head>
 	<body id="quickCarrot" class="w3-row">
-		<!--Administrador de notificaciones-->
-			<section id="starFly">
-				<div id="pie_starFly"></div>
-			</section>
+		<!--StarFly-->
+			<section id="starFly"><div id="pie_starFly"></div></section>
+		<!--Fin StarFly-->
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
@@ -55,7 +54,6 @@
 						</ul>
 					</nav>
 			</header>
-
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
@@ -153,10 +151,17 @@
 					</section>
 				</article>
 		</section>
-
+	<!--Pie-->
 		<footer class="pie">
 			
 		</footer>
+		<!--Añadimos los modales-->
+			<?php
+				$dir = "modales.php";
+				$dir = calcDimension($dir, $dimension);
+				include_once($dir);	
+			?>	
+		<!--Fin añadimos los modales-->
 	<?php
 		}
 	?>
