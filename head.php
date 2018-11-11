@@ -23,6 +23,7 @@
 
 		$inf = '
 			<!--Links de CSS-->
+				<link rel="stylesheet" href="'.$dir.'css/W3.CSS"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-mod.css"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-gen.css"/>
 				<link rel="stylesheet" href="'.$dir.'css/estilo-mi_info.css"/>

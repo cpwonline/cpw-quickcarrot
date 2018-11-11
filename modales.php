@@ -11,8 +11,8 @@
                 </div>
                 <div class="cf footer">
                     <section class="cont_a">
-                        <a class="btn-gen2" onclick="$('#quickCarrot #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
-                        <a class="btn-gen" tag="si" href="#">S&iacute;</a>
+                        <a class="w3-btn w3-gray" onclick="$('#quickCarrot #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+                        <a class="w3-btn w3-deep-orange" tag="si" href="#">S&iacute;</a>
                     </section>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                                     <div class="fil">
                                         <span tag="1">¿Est&aacute; seguro de editar </span>
                                         <span tag="2"></span>
-                                        <div class="cam"><a class="btn-gen" tag="e_guarda_menu">Guardar</a></div>
+                                        <div class="cam"><a class="w3-btn w3-deep-orange" tag="e_guarda_menu">Guardar</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     <div class="fil">
                                         <span tag="1">¿Est&aacute; seguro de editar </span>
                                         <span tag="2"></span>
-                                        <div class="cam"><a class="btn-gen" tag="e_guarda_sub">Guardar</a></div>
+                                        <div class="cam"><a class="w3-btn w3-deep-orange" tag="e_guarda_sub">Guardar</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="cf footer">
                     <section class="cont_a">
-                        <a class="btn-gen2" onclick="$('#quickCarrot #conf_editar_gen').css('display','none');" tag="cancelar">Cancelar</a>
+                        <a class="w3-btn w3-gray" onclick="$('#quickCarrot #conf_editar_gen').css('display','none');" tag="cancelar">Cancelar</a>
                     </section>
                 </div>
             </div>

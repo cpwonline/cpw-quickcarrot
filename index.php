@@ -22,7 +22,7 @@
 
 			?>
 	</head>
-	<body id="quickCarrot">
+	<body id="quickCarrot" class="w3-row">
 		<!--Administrador de notificaciones-->
 			<section id="starFly">
 				<div id="pie_starFly"></div>
@@ -39,39 +39,45 @@
 				}else{
 		?>
 	<!--Cabecera-->
-		<header class="cabecera">
-			<section class="logo">
-				<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
-				<h3>- <?=$_SESSION['u_plan']?> -</h3>
-			</section>
-			<nav class="menu">
-				<ul class="menu_prin">
-					<li tag="menus" title="Aqu&iacute; podr&aacute; gestionar (crear, editar, borrar) todos los men&uacute;s y submen&uacute;s de su sitio web."><i class="img_col menus blan"></i><a href="#0">Men&uacute;s</a></li>
-				</ul>
-				<ul class="menu_prin">
-					<li tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a href="#1">Art&iacute;culos</a></li>
-					<li tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a href="#2">Informaciones</a></li>
-				</ul>
-				<ul class="menu_prin">
-					<li tag="diagnostico" title="Si presenta errores con el sistema, env&iacute;e sus declaraciones aqu&iacute;, los desarrolladores har&aacute;n lo posible de solventar el problema."><i class="img_col diagnostico blan"></i><a href="#3">Diagn&oacute;stico de errores</a></li>
-					<li tag="estadisticas" title="Parte fundamental que le ayuda a mantenerse informado del d&iacute;a a d&iacute;a de su sitio."><i class="img_col estadisticas blan"></i><a href="#4">Estad&iacute;sticas</a></li>
-				</ul>
-				<ul class="menu_prin">
-					<li tag="ajustes" title="Configure el sistema a su gusto con las opciones disponibles."><i class="img_col ajustes blan"></i><a href="#5">Ajustes</a></li>
-					<li tag="ayuda" title="Si presenta dudas, dir&iacute;jase a esta secci&oacute;n de valiosos recursos."><i class="img_col ayuda blan"></i><a href="#6">Ayuda</a></li>
-					<li tag="acercade" title="Si quiere saber m&aacute;s acerca de CPW Online, lea lo que tenemos para usted."><i class="img_col acercade blan"></i><a href="#7">Acerca de</a></li>
-				</ul>
-			</nav>
+		<header class="cabecera w3-col m4 l3">
+			<!--Logo e informacion principal-->
+				<section class="logo w3-container w3-display-container">
+					<!--Boton para cerrar menu-->
+						<div class="menu_boton_x w3-button w3-display-topright">
+							<span class="w3-text-white">X</span>
+						</div>
+					<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
+					<h3>- <?=$_SESSION['u_plan']?> -</h3>
+				</section>
+			<!--Menú-->
+				<nav class="menu">
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="menus" title="Aqu&iacute; podr&aacute; gestionar (crear, editar, borrar) todos los men&uacute;s y submen&uacute;s de su sitio web."><i class="img_col menus blan"></i><a>Men&uacute;s</a></li>
+					</ul>
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
+						<li class="w3-hover-gray" tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
+					</ul>
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="diagnostico" title="Si presenta errores con el sistema, env&iacute;e sus declaraciones aqu&iacute;, los desarrolladores har&aacute;n lo posible de solventar el problema."><i class="img_col diagnostico blan"></i><a>Diagn&oacute;stico de errores</a></li>
+						<li class="w3-hover-gray" tag="estadisticas" title="Parte fundamental que le ayuda a mantenerse informado del d&iacute;a a d&iacute;a de su sitio."><i class="img_col estadisticas blan"></i><a>Estad&iacute;sticas</a></li>
+					</ul>
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="ajustes" title="Configure el sistema a su gusto con las opciones disponibles."><i class="img_col ajustes blan"></i><a>Ajustes</a></li>
+						<li class="w3-hover-gray" tag="ayuda" title="Si presenta dudas, dir&iacute;jase a esta secci&oacute;n de valiosos recursos."><i class="img_col ayuda blan"></i><a>Ayuda</a></li>
+						<li class="w3-hover-gray" tag="acercade" title="Si quiere saber m&aacute;s acerca de CPW Online, lea lo que tenemos para usted."><i class="img_col acercade blan"></i><a>Acerca de</a></li>
+					</ul>
+				</nav>
 		</header>
 		
 	<!--Contenedor-->
-		<section class="contenedor">
+		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
-			<section class="inf_prin">
-				<div class="menu_boton">
+			<section class="inf_prin w3-container w3-display-container">
+				<div class="menu_boton w3-button w3-display-left">
 					<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
 				</div>
-				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion btn-gen2">Cerrar sesi&oacute;n</a></h5>
+				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
 			</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
@@ -79,8 +85,8 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--Añadir menú-->
-								<article class="bloque b1">
-									<h4>A&ntilde;adir un men&uacute;s</h4>
+								<article class="bloque w3-col m6 l6">
+									<div class="w3-container w3-gray"><h4 class="">A&ntilde;adir un men&uacute;</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
@@ -101,13 +107,13 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="guarda_menu">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_menu">Guardar</a></div>
 										</div>
 									</div>
 								</article>
 							<!--Añadir submenú-->
-								<article class="bloque b1">
-									<h4>A&ntilde;adir un submen&uacute;s</h4>
+								<article class="bloque w3-col m6 l6">
+									<div class="w3-container w3-gray"><h4 class="">A&ntilde;adir un submen&uacute;</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
@@ -150,24 +156,26 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="guarda_sub">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_sub">Guardar</a></div>
 										</div>
 									</div>
 								</article>
 							<!--Mis menús-->
-								<article class="bloque b2">
-									<h4>Mis men&uacute;s
-										<i class="img_col actualizar neg boton" tag="menus"></i>
-									</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4 class="">Mis men&uacute;s</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="menus"></i>
+									</div>
 									<div class="tabla_gen menus">
 										<!--PARTE: MENUS-->
 									</div>
 								</article>
 							<!--Mis submenús-->
-								<article class="bloque b2">
-									<h4>Mis submen&uacute;s
-										<i class="img_col actualizar neg boton" tag="submenus"></i>
-									</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4 class="">Mis submen&uacute;s</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="submenus"></i>
+									</div>
 									<div class="tabla_gen submenus">
 										<!--PARTE: SUBMENUS-->
 									</div>
@@ -181,8 +189,8 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--Añadir artículo-->
-								<article class="bloque b2">
-									<h4>A&ntilde;ade un art&iacute;culo</h4>
+								<article class="bloque w3-col m6 l6">
+									<div class="w3-container w3-gray"><h4>A&ntilde;ade un art&iacute;culo</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">T&iacute;tulo:</div>
@@ -190,16 +198,14 @@
 										</div>
 									</div>
 								</article>
-								<article class="bloque b2">
-									<h4>A&ntilde;ade una descripci&oacute;n corta</h4>
+								<article class="bloque w3-col m6 l6">
+									<div class="w3-container w3-gray"><h4>A&ntilde;ade una descripci&oacute;n corta</h4></div>
 									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam"><textarea name="a_des_c" placeholder="De qu&eacute; tratar&aacute; su art&iacute;culo" maxlength="200"></textarea></div>
-										</div>
+										<textarea style="width:100%" name="a_des_c" placeholder="De qu&eacute; tratar&aacute; su art&iacute;culo" maxlength="200"></textarea>
 									</div>
 								</article>
-								<article class="bloque b2">
-									<h4>A&ntilde;ade texto al art&iacute;culo</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-container w3-gray"><h4 class="">A&ntilde;ade texto al art&iacute;culo</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
@@ -208,22 +214,22 @@
 										</div>
 									</div>
 								</article>
-								<article class="bloque b2">
-									<h4>Si no has guardado, a&uacute;n no has terminado</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-container w3-gray"><h4 class="">Si no has guardado, a&uacute;n no has terminado</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">
-												<a class="btn-gen" id="guarda_art">Guardar</a>
+												<a class="w3-btn w3-deep-orange" id="guarda_art">Guardar</a>
 											</div>
 										</div>
 									</div>
 								</article>
 							<!--Mis artículos-->
-								<article class="bloque b2">
-									<h4>
-										Mis art&iacute;culos
-										<i class="img_col actualizar neg boton" tag="articulos"></i>
-									</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Mis art&iacute;culos</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="articulos"></i>
+									</div>
 									<div class="tabla_gen articulos">
 										<!--PARTE: ARTÍCULOS-->
 									</div>
@@ -234,10 +240,11 @@
 				<article class="art_gen" id="art_3" tag="informaciones">
 					<h3>Informaciones</h3>
 					<section class="dentro_art">
+						<!--Artículos de una cabecera-->
 							<!--Localización de la información-->
-								<article class="bloque b1">
+								<article class="bloque w3-col m6 l6">
 									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones">
-										<h4>PASO 1: Localizaci&oacute;n de la inf.</h4>
+										<div class="w3-container w3-gray"><h4>PASO 1: Localizaci&oacute;n de la inf.</h4></div>
 										<div class="tabla_gen">
 											<div class="fil">
 												<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
@@ -262,14 +269,14 @@
 												</div>
 											</div>
 											<div class="fil">
-												<div class="cam"><a class="btn-gen" id="configura_inf">Configurar</a></div>
+												<div class="cam"><a class="w3-btn w3-deep-orange" id="configura_inf">Configurar</a></div>
 											</div>
 										</div>
 									</form>
 								</article>
 							<!--Mis informaciones-->
-								<article class="bloque b2">
-									<h4>Mis informaciones</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-container w3-gray"><h4 class="">Mis informaciones</h4></div>
 									<div class="tabla_gen">
 										<!--PARTE: INFORMACIONES-->
 									</div>
@@ -282,8 +289,8 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--Diagnosticar un error-->
-								<article class="bloque b2">
-									<h4>Informar acerca de un error</h4>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-container w3-gray"><h4 class="">Informar acerca de un error</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam">Estado:</div>
@@ -305,7 +312,7 @@
 											<div class="cam"><input type="url" name="inf_cont" placeholder="Escriba la URL de la p&aacute;gina donde encontr&oacute; el error"/></div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="enviar_diag">Enviar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="enviar_diag">Enviar</a></div>
 										</div>
 									</div>
 								</article>
@@ -315,152 +322,155 @@
 				<article class="art_gen" id="art_5" tag="estadisticas">
 					<h3>Estad&iacute;sticas</h3>
 					<section class="dentro_art">
-						<!--Visitas: Hoy-->
-							<article class="bloque b2">
-								<h4>Visitas: Hoy</h4>
-								<div class="tabla_gen">
-									<div class="fil pr">
-										<div class="cam">7am - 12pm</div>
-										<div class="cam">12pm - 6pm</div>
-										<div class="cam">6pm - 10pm</div>
-										<div class="cam">10pm - 7am</div>
+						<!--Artículos de una cabecera-->
+							<!--Visitas: Hoy-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: Hoy</h4></div>
+									<div class="tabla_gen">
+										<div class="fil pr">
+											<div class="cam">7am - 12pm</div>
+											<div class="cam">12pm - 6pm</div>
+											<div class="cam">6pm - 10pm</div>
+											<div class="cam">10pm - 7am</div>
+										</div>
+										<div class="fil">
+											<div class="cam">5 visita(s)</div>
+											<div class="cam">8 visita(s)</div>
+											<div class="cam">2 visita(s)</div>
+											<div class="cam">1 visita(s)</div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">5 visita(s)</div>
-										<div class="cam">8 visita(s)</div>
-										<div class="cam">2 visita(s)</div>
-										<div class="cam">1 visita(s)</div>
+								</article>
+							<!--Visitas: Esta semana-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: Esta semana</h4></div>
+									<div class="tabla_gen">
+										<div class="fil pr">
+											<div class="cam">Lunes</div>
+											<div class="cam">Martes</div>
+											<div class="cam">Mi&eacute;rcoles</div>
+											<div class="cam">Jueves</div>
+											<div class="cam">Viernes</div>
+											<div class="cam">S&aacute;bado</div>
+											<div class="cam">Domingo</div>
+										</div>
+										<div class="fil">
+											<div class="cam">34</div>
+											<div class="cam">342</div>
+											<div class="cam">45</div>
+											<div class="cam">34</div>
+											<div class="cam">43</div>
+											<div class="cam">453</div>
+											<div class="cam">234</div>
+										</div>
 									</div>
-								</div>
-							</article>
-						<!--Visitas: Esta semana-->
-							<article class="bloque b2">
-								<h4>Visitas: Esta semana</h4>
-								<div class="tabla_gen">
-									<div class="fil pr">
-										<div class="cam">Lunes</div>
-										<div class="cam">Martes</div>
-										<div class="cam">Mi&eacute;rcoles</div>
-										<div class="cam">Jueves</div>
-										<div class="cam">Viernes</div>
-										<div class="cam">S&aacute;bado</div>
-										<div class="cam">Domingo</div>
+								</article>
+							<!--Visitas: Este mes-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: Este mes</h4></div>
+									<div class="tabla_gen">
+										<div class="fil pr">
+											<div class="cam">1 semana</div>
+											<div class="cam">2 semana</div>
+											<div class="cam">3 semana</div>
+											<div class="cam">4 semana</div>
+										</div>
+										<div class="fil">
+											<div class="cam">3344</div>
+											<div class="cam">3542</div>
+											<div class="cam">4345</div>
+											<div class="cam">3344</div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">34</div>
-										<div class="cam">342</div>
-										<div class="cam">45</div>
-										<div class="cam">34</div>
-										<div class="cam">43</div>
-										<div class="cam">453</div>
-										<div class="cam">234</div>
+								</article>
+							<!--Visitas: Este año-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: Este a&ntilde;o</h4></div>
+									<div class="tabla_gen">
+										<div class="fil pr">
+											<div class="cam">Enero</div>
+											<div class="cam">Febrero</div>
+											<div class="cam">Marzo</div>
+											<div class="cam">Abril</div>
+											<div class="cam">Mayo</div>
+											<div class="cam">Junio</div>
+										</div>
+										<div class="fil">
+											<div class="cam">25245</div>
+											<div class="cam">832478</div>
+											<div class="cam">5424</div>
+											<div class="cam">435435</div>
+											<div class="cam">45345</div>
+											<div class="cam">45654</div>
+										</div>
+										<div class="fil pr">
+											<div class="cam">Julio</div>
+											<div class="cam">Agosto</div>
+											<div class="cam">Septiembre</div>
+											<div class="cam">Octubre</div>
+											<div class="cam">Noviembre</div>
+											<div class="cam">Diciembre</div>
+										</div>
+										<div class="fil">
+											<div class="cam">213123</div>
+											<div class="cam">345435</div>
+											<div class="cam">3455</div>
+											<div class="cam">234234</div>
+											<div class="cam">123213</div>
+											<div class="cam">56464</div>
+										</div>
 									</div>
-								</div>
-							</article>
-						<!--Visitas: Este mes-->
-							<article class="bloque b2">
-								<h4>Visitas: Este mes</h4>
-								<div class="tabla_gen">
-									<div class="fil pr">
-										<div class="cam">1 semana</div>
-										<div class="cam">2 semana</div>
-										<div class="cam">3 semana</div>
-										<div class="cam">4 semana</div>
-									</div>
-									<div class="fil">
-										<div class="cam">3344</div>
-										<div class="cam">3542</div>
-										<div class="cam">4345</div>
-										<div class="cam">3344</div>
-									</div>
-								</div>
-							</article>
-						<!--Visitas: Este año-->
-							<article class="bloque b2">
-								<h4>Visitas: Este a&ntilde;o</h4>
-								<div class="tabla_gen">
-									<div class="fil pr">
-										<div class="cam">Enero</div>
-										<div class="cam">Febrero</div>
-										<div class="cam">Marzo</div>
-										<div class="cam">Abril</div>
-										<div class="cam">Mayo</div>
-										<div class="cam">Junio</div>
-									</div>
-									<div class="fil">
-										<div class="cam">25245</div>
-										<div class="cam">832478</div>
-										<div class="cam">5424</div>
-										<div class="cam">435435</div>
-										<div class="cam">45345</div>
-										<div class="cam">45654</div>
-									</div>
-									<div class="fil pr">
-										<div class="cam">Julio</div>
-										<div class="cam">Agosto</div>
-										<div class="cam">Septiembre</div>
-										<div class="cam">Octubre</div>
-										<div class="cam">Noviembre</div>
-										<div class="cam">Diciembre</div>
-									</div>
-									<div class="fil">
-										<div class="cam">213123</div>
-										<div class="cam">345435</div>
-										<div class="cam">3455</div>
-										<div class="cam">234234</div>
-										<div class="cam">123213</div>
-										<div class="cam">56464</div>
-									</div>
-								</div>
-							</article>
+								</article>
 					</section>
 				</article>
 			<!--Ajustes-->
 				<article class="art_gen" id="art_6" tag="ajustes">
 					<h3>Ajustes</h3>
 					<section class="dentro_art">
-						<!--Cambiar clave-->
-							<article class="bloque b1">
-								<h4>Cambiar clave</h4>
-								<div class="tabla_gen">
-									<div class="fil">
-										<div class="cam">Clave actual:</div>
-										<div class="cam"><input type="password" name="ant_clave" placeholder="Escriba su actual clave"/></div>
+						<!--Artículos de una cabecera-->
+							<!--Cambiar clave-->
+								<article class="bloque w3-col m16 l6">
+								<div class="w3-container w3-gray"><h4 class="">Cambiar clave</h4></div>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">Clave actual:</div>
+											<div class="cam"><input type="password" name="ant_clave" placeholder="Escriba su actual clave"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Clave nueva:</div>
+											<div class="cam"><input type="password" name="nueva_clave" placeholder="Escriba su nueva clave"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam">Repita su clave actual:</div>
+											<div class="cam"><input type="password" name="repita_clave" placeholder="Reescriba su actual clave"/></div>
+										</div>
+										<div class="fil">
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="editar_clave">Guardar</a></div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">Clave nueva:</div>
-										<div class="cam"><input type="password" name="nueva_clave" placeholder="Escriba su nueva clave"/></div>
-									</div>
-									<div class="fil">
-										<div class="cam">Repita su clave actual:</div>
-										<div class="cam"><input type="password" name="repita_clave" placeholder="Reescriba su actual clave"/></div>
-									</div>
-									<div class="fil">
-										<div class="cam"><a class="btn-gen" id="editar_clave">Guardar</a></div>
-									</div>
-								</div>
-							</article>
+								</article>
 					</section>
 				</article>
 			<!--Ayuda-->
 				<article class="art_gen" id="art_7" tag="ayuda">
 					<h3>Ayuda</h3>
 					<section class="dentro_art">
-						<!--Ayuda general-->
-							<article class="bloque b2">
-								<h4>Ayuda general</h4>
-								<div class="tabla_gen">
-									<div class="fil">
-										<div class="cam">Descargue nuestros PDF's para poder saber todas las informaciones.</div>
+						<!--Artículos de una cabecera-->
+							<!--Ayuda general-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">Ayuda general</h4></div>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
+										</div>
+										<div class="fil">
+											<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/" target="_blank">CPW Online > Informaciones</a></div>
+										</div>
+										<div class="fil">
+											<div class="cam">O comun&iacute;quese con nosotros a trav&eacute;s de nuestras redes sociales.</div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/" target="_blank">CPW Online > Informaciones</a></div>
-									</div>
-									<div class="fil">
-										<div class="cam">O comun&iacute;quese con nosotros a trav&eacute;s de nuestras redes sociales.</div>
-									</div>
-								</div>
-							</article>
+								</article>
 					</section>
 				</article>
 			<!--Acerca de-->
@@ -468,11 +478,11 @@
 					<h3>Acerca de</h3>
 					<section class="dentro_art">
 						<!--Acerca de-->
-							<article class="bloque b2">
-								<h4>¡Somos CPW Online!</h4>
+							<article class="bloque w3-col m6 l6">
+							<div class="w3-container w3-gray"><h4 class="">¡Somos CPW Online&excl;</h4></div>
 								<div class="tabla_gen">
 									<div class="fil">
-										<div class="cam">Descargue nuestros PDF's para poder saber todas las informaciones.</div>
+										<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
 									</div>
 									<div class="fil">
 										<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/#acercade" target="_blank">CPW Online > Informaciones</a>.</div>
@@ -504,6 +514,28 @@
 					<div class="cam">ada2</div>
 				</div>
 			</div>
+			-->
+
+			<!--
+				<article class="bloque w3-col m6 l6">
+					<div class="w3-container w3-gray"><h4>A&ntilde;ade un art&iacute;culo</h4></div>
+				</article>
+				<article class="bloque w3-col m12 l12">
+					<div class="w3-container w3-gray"><h4 class="">Titulo</h4></div>
+					<div class="tabla_gen">
+						<div class="fil">
+							<div class="cam">
+								<a class="w3-btn w3-deep-orange" id="guarda_art">Boton</a>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="bloque w3-col m12 l12">
+					<div class="w3-display-container w3-gray">
+						<h4>Mis art&iacute;culos</h4>
+						<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="articulos"></i>
+					</div>
+				</article>
 			-->
 		</footer>
 		<!--Añadimos los modales-->
