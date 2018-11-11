@@ -5,22 +5,21 @@
 	-->
 	<head>
 		<title>QuickCarrot | CPW Online</title>
-			<?php 
-				//Principal
-					require_once('mysqli_db.php');
-					session_start();
-				//Etiqueta global de donde estamos
-					global $dimension;
-					$dimension = 0;
+		<?php 
+			//Principal
+				require_once('mysqli_db.php');
+				session_start();
+			//Etiqueta global de donde estamos
+				global $dimension;
+				$dimension = 0;
 
-				//Gestionamos el HEAD
-					$dir = "head.php";
-					$dir = calcDimension($dir, $dimension);
-					include_once($dir);
-					echo head($dimension);
-				//Fin gestionamos el HEAD
-
-			?>
+			//Gestionamos el HEAD
+				$dir = "head.php";
+				$dir = calcDimension($dir, $dimension);
+				include_once($dir);
+				echo head($dimension);
+			//Fin gestionamos el HEAD
+		?>
 	</head>
 	<body id="quickCarrot" class="w3-row">
 		<!--Administrador de notificaciones-->
@@ -73,12 +72,12 @@
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
-			<section class="inf_prin w3-container w3-display-container">
-				<div class="menu_boton w3-button w3-display-left">
-					<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
-				</div>
-				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
-			</section>
+				<section class="inf_prin w3-container w3-display-container">
+					<div class="menu_boton w3-button w3-display-left">
+						<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+					</div>
+					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
+				</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
 					<h3>Men&uacute;s</h3>
@@ -493,6 +492,7 @@
 				</article>
 
 		</section>
+
 	<!--Pie-->
 		<footer class="pie">
 			<!--
@@ -538,13 +538,15 @@
 				</article>
 			-->
 		</footer>
+
 		<!--Añadimos los modales-->
 			<?php
 				$dir = "modales.php";
 				$dir = calcDimension($dir, $dimension);
 				include_once($dir);	
 			?>	
-		<!--Fin añadimos los modales-->									
+		<!--Fin añadimos los modales-->
+
 	<?php
 		}
 	?>
