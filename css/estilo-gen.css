@@ -63,7 +63,7 @@
 				display:table;
 				width:100%;
 				font-size:12pt;
-				overflow:hidden;
+				overflow:auto;
 				text-align:left;
 				border-spacing:7px;
 			}
