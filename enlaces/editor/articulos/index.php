@@ -96,7 +96,7 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="e_guarda_art_titulo">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="e_guarda_art_titulo">Guardar</a></div>
 										</div>
 									</div>
 								</article>
@@ -110,10 +110,10 @@
 												<input type="file" name="e_a_imagen"/>
 												<input type="hidden" name="e_a_imagen_url" value="<?=$a_imagen?>"/>
 											</div>
-											<div class="cam"><a class="btn-gen2" id="e_carga_art_imagen">Cambiar imagen</a></div>
+											<div class="cam"><a class="w3-btn w3-gray" id="e_carga_art_imagen">Cambiar imagen</a></div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="e_guarda_art_imagen">Guardar imagen</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="e_guarda_art_imagen">Guardar imagen</a></div>
 										</div>
 									</div>
 								</article>
@@ -127,7 +127,7 @@
 											</div>
 										</div>
 										<div class="fil">
-											<div class="cam"><a class="btn-gen" id="e_guarda_art_des_c">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="e_guarda_art_des_c">Guardar</a></div>
 										</div>
 									</div>
 								</article>
@@ -142,7 +142,7 @@
 										</div>
 										<div class="fil">
 											<div class="cam">
-												<a class="btn-gen" id="e_guarda_art_contenido">Guardar</a>
+												<a class="w3-btn w3-deep-orange" id="e_guarda_art_contenido">Guardar</a>
 											</div>
 										</div>
 									</div>

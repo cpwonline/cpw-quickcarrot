@@ -83,7 +83,7 @@
 									<div class="tabla_gen">
 										<div class="fil">
 											<div class="cam"><a class="btn-gen">Guardar</a></div>
-											<div class="cam"><a class="btn-gen2">Descartar</a></div>
+											<div class="cam"><a class="w3-btn w3-gray">Descartar</a></div>
 										</div>
 									</div>
 								</article>
