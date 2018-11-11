@@ -54,7 +54,7 @@
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
-					<li tag="informaciones"><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
+					<li class="w3-hover-gray" tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a href="#2">Informaciones</a></li>
 				</ul>
 			</nav>
 		</header>

@@ -52,7 +52,7 @@
 			</section>
 			<nav class="menu">
 				<ul class="menu_prin">
-					<li tag="articulos"><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
+						<li class="w3-hover-gray" tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a href="#1">Art&iacute;culos</a></li>
 				</ul>
 			</nav>
 		</header>
