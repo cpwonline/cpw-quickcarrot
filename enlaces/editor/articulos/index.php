@@ -36,24 +36,28 @@
 					//Fin gestionamos el inicioSesion
 				}else{
 		?>
-		<!--Cabecera-->
-			<header class="cabecera w3-col m4 l3">
-				<!--Logo e informacion principal-->
-					<section class="logo w3-container w3-display-container">
-						<!--Boton para cerrar menu-->
-							<div class="menu_boton_x w3-button w3-display-topright">
-								<span class="w3-text-white">X</span>
-							</div>
-						<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
-						<h3>- <?=$_SESSION['u_plan']?> -</h3>
-					</section>
-				<!--Menú-->
-					<nav class="menu">
-						<ul class="menu_prin">
-							<li class="w3-hover-gray" tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a>Art&iacute;culos</a></li>
-						</ul>
-					</nav>
-			</header>
+	<!--Cabecera-->
+		<header class="cabecera w3-col m4 l3">
+			<!--Logo e informacion principal-->
+				<section class="logo w3-container w3-display-container">
+					<!--Boton para cerrar menu-->
+						<div class="menu_boton_x w3-button w3-display-topright">
+							<span class="w3-text-white">X</span>
+						</div>
+					<?php
+						$dir = "images/logo_qc_Fondo-Trans_Letra-Blanca.png";
+						$dir = calcDimension($dir, $dimension);
+					?>
+					<img src="<?=$dir?>" alt="QuickCarrot Logo"/>
+					<h3>- <?=$_SESSION['u_plan']?> -</h3>
+				</section>
+			<!--Menú-->
+				<nav class="menu">
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="articulos" title="&Eacute;ste es el espacio reservado para gestionar los temas que sus lectores reciben a diario."><i class="img_col articulos blan"></i><a href="#1">Art&iacute;culos</a></li>
+					</ul>
+				</nav>
+		</header>
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
@@ -64,7 +68,7 @@
 					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
 				</section>
 			<!--Editor de artículos-->
-				<article class="art_gen" id="art_1" tag="menus">
+				<article class="art_gen" id="art_1" tag="articulos">
 					<h3>Editar un art&iacute;culo</h3>
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
@@ -118,7 +122,7 @@
 									</div>
 								</article>
 							<!--Descripción corta-->
-								<article class="bloque w3-col m6 l6">
+								<article class="bloque w3-col m12 l12">
 									<div class="w3-container w3-gray"><h4 class="">Edite la descripci&oacute;n corta</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">

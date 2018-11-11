@@ -36,24 +36,28 @@
 					//Fin gestionamos el inicioSesion
 				}else{
 		?>
-		<!--Cabecera-->
-			<header class="cabecera w3-col m4 l3">
-				<!--Logo e informacion principal-->
-					<section class="logo w3-container w3-display-container">
-						<!--Boton para cerrar menu-->
-							<div class="menu_boton_x w3-button w3-display-topright">
-								<span class="w3-text-white">X</span>
-							</div>
-						<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
-						<h3>- <?=$_SESSION['u_plan']?> -</h3>
-					</section>
-				<!--Menú-->
-					<nav class="menu">
-						<ul class="menu_prin">
-							<li class="w3-hover-gray" tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
-						</ul>
-					</nav>
-			</header>
+	<!--Cabecera-->
+		<header class="cabecera w3-col m4 l3">
+			<!--Logo e informacion principal-->
+				<section class="logo w3-container w3-display-container">
+					<!--Boton para cerrar menu-->
+						<div class="menu_boton_x w3-button w3-display-topright">
+							<span class="w3-text-white">X</span>
+						</div>
+					<?php
+						$dir = "images/logo_qc_Fondo-Trans_Letra-Blanca.png";
+						$dir = calcDimension($dir, $dimension);
+					?>
+					<img src="<?=$dir?>" alt="QuickCarrot Logo"/>
+					<h3>- <?=$_SESSION['u_plan']?> -</h3>
+				</section>
+			<!--Menú-->
+				<nav class="menu">
+					<ul class="menu_prin">
+						<li class="w3-hover-gray" tag="informaciones" title="Esta secci&oacute;n es para la creaci&oacute;n, modificaci&oacute;n y eliminaci&oacute;n de los banners o secciones de su sitio web. Puede crear interactivos y elegantes bloques y agregarles textos de informaci&oacute;n."><i class="img_col informaciones blan"></i><a>Informaciones</a></li>
+					</ul>
+				</nav>
+		</header>
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
@@ -82,7 +86,7 @@
 									<div class="w3-container w3-gray"><h4 class="">¿Desea guardar&quest;</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam"><a class="btn-gen">Guardar</a></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange">Guardar</a></div>
 											<div class="cam"><a class="w3-btn w3-gray">Descartar</a></div>
 										</div>
 									</div>

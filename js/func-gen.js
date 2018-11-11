@@ -67,9 +67,11 @@ function lista_menus(){
 }
 function abreMenu(q){
 	//Depuramos la variable
-		var res = "";
+		var res = "", h = false;
 		for(var a = 0; a < q.length; a++){
-			if(q[a] == "0" || q[a] == "1" || q[a] == "2" || q[a] == "3" || q[a] == "4" || q[a] == "5" || q[a] == "6" || q[a] == "7" || q[a] == "8" || q[a] == "9"){
+			if(q[a] == "#")
+				h = true;
+			if((q[a] == "0" || q[a] == "1" || q[a] == "2" || q[a] == "3" || q[a] == "4" || q[a] == "5" || q[a] == "6" || q[a] == "7" || q[a] == "8" || q[a] == "9") && h == true){
 				res += q[a];
 			}
 		}

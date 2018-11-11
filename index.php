@@ -44,7 +44,11 @@
 						<div class="menu_boton_x w3-button w3-display-topright">
 							<span class="w3-text-white">X</span>
 						</div>
-					<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
+					<?php
+						$dir = "images/logo_qc_Fondo-Trans_Letra-Blanca.png";
+						$dir = calcDimension($dir, $dimension);
+					?>
+					<img src="<?=$dir?>" alt="QuickCarrot Logo"/>
 					<h3>- <?=$_SESSION['u_plan']?> -</h3>
 				</section>
 			<!--Menú-->
@@ -241,7 +245,7 @@
 						<!--Artículos de una cabecera-->
 							<!--Localización de la información-->
 								<article class="bloque w3-col m6 l6">
-									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones">
+									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones#2">
 										<div class="w3-container w3-gray"><h4>PASO 1: Localizaci&oacute;n de la inf.</h4></div>
 										<div class="tabla_gen">
 											<div class="fil">
