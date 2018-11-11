@@ -5,28 +5,26 @@
 	-->
 	<head>
 		<title>QuickCarrot | CPW Online</title>
-			<?php 
-				//Principal
-					require_once('mysqli_db.php');
-					session_start();
-				//Etiqueta global de donde estamos
-					global $dimension;
-					$dimension = 0;
+		<?php 
+			//Principal
+				require_once('mysqli_db.php');
+				session_start();
+			//Etiqueta global de donde estamos
+				global $dimension;
+				$dimension = 0;
 
-				//Gestionamos el HEAD
-					$dir = "head.php";
-					$dir = calcDimension($dir, $dimension);
-					include_once($dir);
-					echo head($dimension);
-				//Fin gestionamos el HEAD
-
-			?>
+			//Gestionamos el HEAD
+				$dir = "head.php";
+				$dir = calcDimension($dir, $dimension);
+				include_once($dir);
+				echo head($dimension);
+			//Fin gestionamos el HEAD
+		?>
 	</head>
 	<body id="quickCarrot" class="w3-row">
-		<!--Administrador de notificaciones-->
-			<section id="starFly">
-				<div id="pie_starFly"></div>
-			</section>
+		<!--StarFly-->
+			<section id="starFly"><div id="pie_starFly"></div></section>
+		<!--Fin StarFly-->
 		<?php
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
@@ -46,7 +44,11 @@
 						<div class="menu_boton_x w3-button w3-display-topright">
 							<span class="w3-text-white">X</span>
 						</div>
-					<img src="images/logo_qc_Fondo-Trans_Letra-Blanca.png" alt="QuickCarrot Logo"/>
+					<?php
+						$dir = "images/logo_qc_Fondo-Trans_Letra-Blanca.png";
+						$dir = calcDimension($dir, $dimension);
+					?>
+					<img src="<?=$dir?>" alt="QuickCarrot Logo"/>
 					<h3>- <?=$_SESSION['u_plan']?> -</h3>
 				</section>
 			<!--Menú-->
@@ -69,16 +71,15 @@
 					</ul>
 				</nav>
 		</header>
-		
 	<!--Contenedor-->
 		<section class="contenedor w3-col m8 l9 w3-right">
 			<!--Principal-->
-			<section class="inf_prin w3-container w3-display-container">
-				<div class="menu_boton w3-button w3-display-left">
-					<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
-				</div>
-				<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
-			</section>
+				<section class="inf_prin w3-container w3-display-container">
+					<div class="menu_boton w3-button w3-display-left">
+						<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+					</div>
+					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
+				</section>
 			<!--Menús-->
 				<article class="art_gen" id="art_1" tag="menus">
 					<h3>Men&uacute;s</h3>
@@ -234,6 +235,7 @@
 										<!--PARTE: ARTÍCULOS-->
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Informaciones-->
@@ -243,7 +245,7 @@
 						<!--Artículos de una cabecera-->
 							<!--Localización de la información-->
 								<article class="bloque w3-col m6 l6">
-									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones">
+									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones#2">
 										<div class="w3-container w3-gray"><h4>PASO 1: Localizaci&oacute;n de la inf.</h4></div>
 										<div class="tabla_gen">
 											<div class="fil">
@@ -281,6 +283,7 @@
 										<!--PARTE: INFORMACIONES-->
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Diagnóstico de errores-->
@@ -316,6 +319,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Estadísticas-->
@@ -421,6 +425,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Ajustes-->
@@ -449,6 +454,7 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Ayuda-->
@@ -471,27 +477,29 @@
 										</div>
 									</div>
 								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
 			<!--Acerca de-->
 				<article class="art_gen" id="art_8" tag="acercade">
 					<h3>Acerca de</h3>
 					<section class="dentro_art">
-						<!--Acerca de-->
-							<article class="bloque w3-col m6 l6">
-							<div class="w3-container w3-gray"><h4 class="">¡Somos CPW Online&excl;</h4></div>
-								<div class="tabla_gen">
-									<div class="fil">
-										<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
+						<!--Artículos de una cabecera-->
+							<!--Acerca de-->
+								<article class="bloque w3-col m6 l6">
+								<div class="w3-container w3-gray"><h4 class="">¡Somos CPW Online&excl;</h4></div>
+									<div class="tabla_gen">
+										<div class="fil">
+											<div class="cam">Descargue nuestros PDFs para poder saber todas las informaciones.</div>
+										</div>
+										<div class="fil">
+											<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/#acercade" target="_blank">CPW Online > Informaciones</a>.</div>
+										</div>
 									</div>
-									<div class="fil">
-										<div class="cam">Entre en <a href="https://www.cpwonline.com.ve/informacion/#acercade" target="_blank">CPW Online > Informaciones</a>.</div>
-									</div>
-								</div>
-							</article>
+								</article>
+						<!--Fin Artículos de una cabecera-->
 					</section>
 				</article>
-
 		</section>
 	<!--Pie-->
 		<footer class="pie">
@@ -544,7 +552,7 @@
 				$dir = calcDimension($dir, $dimension);
 				include_once($dir);	
 			?>	
-		<!--Fin añadimos los modales-->									
+		<!--Fin añadimos los modales-->
 	<?php
 		}
 	?>
