@@ -63,7 +63,11 @@
 			<!--Principal-->
 				<section class="inf_prin w3-container w3-display-container">
 					<div class="menu_boton w3-button w3-display-left">
-						<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+						<?php
+							$dir = "images/menu_blanco_F-Trans.png";
+							$dir = calcDimension($dir, $dimension);
+						?>
+						<img src="<?=$dir?>" alt="menu_boton" class="menu_boton"/>
 					</div>
 					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
 				</section>

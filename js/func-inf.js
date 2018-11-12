@@ -1,4 +1,6 @@
 $(function(){
+alert("ge");
+
 	//Actualización
 		//Al hacer click en el menú
 			$('#quickCarrot select[name="i_menu"]').change(function(e){
@@ -33,12 +35,40 @@ $(function(){
 								//Plasmado del codigo en el editor
 						}
 				});
-			//PASO 2
-				$('#quickCarrot a#guarda_inf').click(function(e){
-					$("#quickCarrot input[name='datos_cont']").val(CKEDITOR.instances.editor.getData());
+			//Anterior
+				$('#quickCarrot a[tag=inf_anterior]').click(function(e){
+					e.preventDefault();
+					rondaObj(-1);
+				});
+			//Siguiente
+				$('#quickCarrot a[tag=inf_siguiente]').click(function(e){
+					e.preventDefault();
+					rondaObj(1);
 				});
 });
+function rondaObj(van){
+	//Se selecciona el documento
+		doc = document.querySelector('#quickCarrot object#ob_inf').contentWindow.document.querySelector('#l17-01');
+	//Buscamos todos los movibles
+		cant = doc.querySelectorAll(".movible");
 
+	estaba = $('#quickCarrot input[name=inf_cont]').val();
+	$('#quickCarrot input[name=inf_cont]').val(estaba*1+van);
+	var cont = $('#quickCarrot input[name=inf_cont]').val();
+	alert("estaba:"+estaba+" cont:"+cont);
+
+	if(cont >= cant.length){
+		$('#quickCarrot input[name=inf_cont]').val("-1");
+		rondaObj(1);
+	}else if(cont < 0 ){
+		$('#quickCarrot input[name=inf_cont]').val(cant.length);
+		rondaObj(-1);
+	}else{
+		var estoy = cant[cont];
+		$(estoy).css("border", "1cm solid green");
+		$(cant[estaba]).css("border", "none");
+	}
+}
 
 
 

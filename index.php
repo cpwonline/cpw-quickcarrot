@@ -76,7 +76,11 @@
 			<!--Principal-->
 				<section class="inf_prin w3-container w3-display-container">
 					<div class="menu_boton w3-button w3-display-left">
-						<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+						<?php
+							$dir = "images/menu_blanco_F-Trans.png";
+							$dir = calcDimension($dir, $dimension);
+						?>
+						<img src="<?=$dir?>" alt="menu_boton" class="menu_boton"/>
 					</div>
 					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
 				</section>
@@ -245,11 +249,11 @@
 						<!--Artículos de una cabecera-->
 							<!--Localización de la información-->
 								<article class="bloque w3-col m6 l6">
-									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones#2">
-										<div class="w3-container w3-gray"><h4>PASO 1: Localizaci&oacute;n de la inf.</h4></div>
+									<form name="enviar_inf" method="GET" action="enlaces/editor/informaciones#2" target="_blank">
+										<div class="w3-container w3-gray"><h4>Localizaci&oacute;n</h4></div>
 										<div class="tabla_gen">
 											<div class="fil">
-												<div class="cam"><span>A&ntilde;adir informaci&oacute;n en: </span></div>
+												<div class="cam"><span>Editar informaciones en: </span></div>
 												<div class="cam">
 													<select name="i_menu">
 														<option value="">Seleccione...</option>
@@ -276,11 +280,23 @@
 										</div>
 									</form>
 								</article>
-							<!--Mis informaciones-->
+							<!--Qué son las informaciones-->
 								<article class="bloque w3-col m12 l12">
-									<div class="w3-container w3-gray"><h4 class="">Mis informaciones</h4></div>
+									<div class="w3-container w3-gray"><h4 class="">Qu&eacute; son las informaciones</h4></div>
 									<div class="tabla_gen">
-										<!--PARTE: INFORMACIONES-->
+										<div class="fil">
+											<div class="cam">
+												<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
+													<p>Las informaciones son muy importantes en QuickCarrot, se las encontrar&aacute;
+													muchas veces en su p&aacute;gina web; para QuickCarrot las informaciones son 
+													estructuras que se pueden modificar, se pueden agregar o quitar. Al editor
+													de informaciones (si da click en "configurar" lo ver&aacute;) mayormente lo 
+													llamamos editor de p&aacute;ginas web porque como, a veces, las informaciones 
+													ocupan casi todo el espacio de una p&aacute;gina web, entonces lo que se est&aacute;
+													editando es &eacute;sta</p>
+												</div>
+											</div>
+										</div>
 									</div>
 								</article>
 						<!--Fin Artículos de una cabecera-->

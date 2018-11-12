@@ -1,14 +1,4 @@
-#quickCarrot articles.bloques_infos{
-	padding:1.4cm;
-	display:block;
-	float:none;
-	overflow:hidden;
-}
-#quickCarrot articles.bloques_infos section.titulo{
-	width:25%;
-	display:inline-block;
-}
-#quickCarrot articles.bloques_infos section.contenido{
-	width:65%;
-	display:inline-block;
+#quickCarrot div.navegador_omni{
+	position: fixed;
+	top:0;
 }

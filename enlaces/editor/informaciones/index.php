@@ -63,7 +63,11 @@
 			<!--Principal-->
 				<section class="inf_prin w3-container w3-display-container">
 					<div class="menu_boton w3-button w3-display-left">
-						<img src="images/menu_blanco_F-Trans.png" alt="" class="menu_boton"/>
+						<?php
+							$dir = "images/menu_blanco_F-Trans.png";
+							$dir = calcDimension($dir, $dimension);
+						?>
+						<img src="<?=$dir?>" alt="menu_boton" class="menu_boton"/>
 					</div>
 					<h5>Bienvenido <i><?=$_SESSION['u_nombre']?></i> | QuickCarrot &nbsp; <a href="#" class="cerrar_sesion w3-button w3-border">Cerrar sesi&oacute;n</a></h5>
 				</section>
@@ -73,23 +77,40 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--General-->
-								<article class="bloque w3-col m6 l6">
+								<article class="bloque w3-col m12 l12">
 									<div class="w3-container w3-gray"><h4 class="">General</h4></div>
 									<section class="body_2">
 										<?php
-											$dir = "../".calcDimension($i_sub, $dimension);
-											echo '<object type="text/html" data="'.$dir.'" width="100%", height="1000"></object>';
+											if(isset($_GET["i_sub"])){
+												$i_menu = $_GET["i_menu"];
+												$i_sub = $_GET["i_sub"];
+												$dir = "../".calcDimension($i_sub, $dimension);
+												echo '<object id="ob_inf" type="text/html" data="'.$dir.'" width="100%", height="1000"></object>';
+											}else{
+												echo "
+													<div class='w3-panel w3-pale-red w3-leftbar w3-border-red'>
+														<p>Disculpe, ha habido un error (Localizaci&oacute;n)</p>
+													</div>
+												";
+											}
 										?>
 									</section>
 								</article>
+							<!--Navegador de informaciones Omnipresencial-->
+								<div class="navegador_omni w3-bar w3-black">
+									<a href="#" tag="inf_anterior" class="w3-bar-item w3-button w3-padding-16">Anterior</a>
+									<a href="#" tag="inf_siguiente" class="w3-bar-item w3-button w3-padding-16">Siguiente</a>
+									<a href="#" tag="inf_editar" class="w3-bar-item w3-button w3-padding-16">Editar</a>
+									<a href="#" tag="inf_eliminar" class="w3-bar-item w3-button w3-padding-16">Eliminar</a>
+									<a href="#" tag="inf_nuevo" class="w3-bar-item w3-button w3-padding-16">Nuevo</a>
+									<a href="#" tag="inf_guardar" class="w3-bar-item w3-button w3-green w3-right w3-padding-16">Guardar todo</a>
+								</div>
+							<!--Datos-->
 								<article class="bloque w3-col m12 l12">
-									<div class="w3-container w3-gray"><h4 class="">¿Desea guardar&quest;</h4></div>
-									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam"><a class="w3-btn w3-deep-orange">Guardar</a></div>
-											<div class="cam"><a class="w3-btn w3-gray">Descartar</a></div>
-										</div>
-									</div>
+									<div class="w3-container w3-gray"><h4 class="">Datos</h4></div>
+										<ul class="w3-ul w3-hoverable">
+											<li><input name="inf_cont" type="text" value="-1"/></li>
+										</ul>
 								</article>
 						<!--Fin Artículos de una cabecera-->
 					</section>
