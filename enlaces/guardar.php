@@ -104,7 +104,7 @@
 					}
 				}
 		break;
-		case 'articulo':  
+		case 'articulo':
 			$a_titulo = $_POST['a_titulo'];
 			$a_des_c = $_POST['a_des_c'];
 			$a_contenido = $_POST['a_contenido'];

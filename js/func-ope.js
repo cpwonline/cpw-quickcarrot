@@ -114,7 +114,7 @@
 							});
 						//Subir imagen
 							$('#quickCarrot a.subir_imagen').on("click", function(){
-								boton_subirImagen_art(this);
+								boton_subirImagen(this);
 							});
 				});
 			break;
@@ -179,25 +179,41 @@
 					borrar_general(m_m, tipo, frase);
 			}
 		//Subir imagen
-			function boton_subirImagen_art(objeto){
-				var todo = $(objeto).attr('tag'), id1="", titulo1="", tipo1="", cont=0;
-				for(var a = 0; a < todo.length; a++){
-					if(todo[a]!="_")
+			function boton_subirImagen(objeto){
+				var tag = $(objeto).attr('tag'), a_id="", a_titulo="", tipo="", cont=0;
+				for(var a = 0; a < tag.length; a++){
+					if(tag[a]!="_")
 						switch(cont){
 							case 0: 
-								id1 = id1+todo[a];
+								a_id += tag[a];
 								break;
 							case 1:
-								titulo1 = titulo1+todo[a];
+								a_titulo += tag[a];
 								break;
 							case 2:
-								tipo1 = tipo1+todo[a];
+								tipo = tag[a];
 								break;
 						}else
 							cont++;
 				}
-				$('#quickCarrot input[tag="'+id1+'_'+titulo1+'_'+tipo1+'"]').click();
-				iniciar(id1, titulo1, tipo1);
+				//Datos
+					var contArch = $('#quickCarrot input[tag=' + tag + ']');
+					var divProgreso = $('#quickCarrot div.cam[tag=' + tag + ']');
+					var vares = [a_id, a_titulo, tipo, "imagen"];
+				//Hacemos click al input file
+					//$(contArch).click();
+				//Eliminamos el viejo boton
+					$($($(divProgreso).children()).eq(1)).remove();
+				//Añadimos un nuevo boton
+					var btnN = $("<a class='w3-btn w3-deep-orange'></a>").text("Guardar imagen");
+					$(divProgreso).append(btnN);
+				//Añadimos funciones de Js
+					var funcion = "subirImagen(" + contArch + ", " + divProgreso + ", " + vares + ");";
+					$($($(divProgreso).children()).eq(1)).attr("onclick", funcion);
+				//Esperamos a que de click
+					$($($(divProgreso).children()).eq(1)).click(function(e){
+						subirArch(contArch, "enlaces/guardar.php", divProgreso,"image/png", vares);
+					});
 			}
 
 //Función general para borrar
