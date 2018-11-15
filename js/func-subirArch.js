@@ -1,11 +1,11 @@
 ﻿function subirArch(contArch, url, divProgreso, MIME, vares){
     this.iniciarArch = function(){
       //Se llama a subir cuando cambie el estado del input
-        mainArch(contArch);
+        mainArch();
     }
-    this.mainArch = function(e){
+    this.mainArch = function(){
       //Datos
-        var archivos = e.files;
+        var archivos = contArch.files;
         var archivo = archivos[0];
      //Instancias para formulario
         var datos = new FormData();
