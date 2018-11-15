@@ -1,4 +1,4 @@
-<?=include("../mysqli_db.php");?>
+<?=include("../enlaces/mysqli_db.php");?>
 
 <div class="fil pr">
 	<div class="cam">T&iacute;tulo</div>
@@ -27,7 +27,7 @@
 					if(empty($a_imagen)){
 						echo '<div class="cam" tag="'.$a_id.'_'.$a_titulo.'_articulo">
 								<input type="file" name="imagen" tag="'.$a_id.'_'.$a_titulo.'_articulo"/>
-								<a class="btn-gen subir_imagen" tag="'.$a_id.'_'.$a_titulo.'_articulo">Subir  <i class="img_col subir blan"></i></a>
+								<a class="w3-btn w3-deep-orange subir_imagen" tag="'.$a_id.'_'.$a_titulo.'_articulo">Subir  <i class="img_col subir blan"></i></a>
 							</div>';
 					}else{
 						echo '<div class="cam">S&iacute;</div>';

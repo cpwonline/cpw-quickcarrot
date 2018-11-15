@@ -1,4 +1,4 @@
-<?=include("../mysqli_db.php");?>
+<?=include("../enlaces/mysqli_db.php");?>
 
 <div class="fil pr">
 	<div class="cam">T&iacute;tulo:</div>
