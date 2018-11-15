@@ -1,6 +1,9 @@
 <?php
 	require_once('../mysqli_db.php');
 	session_start();
+	if(isset($_POST["vares"])){
+		$_POST["tipo"] = (explode(",", $_POST["vares"]))[2];
+	}
 	switch($_POST['tipo']){
 		case 'menus': 
 			//Datos
@@ -105,19 +108,51 @@
 				}
 		break;
 		case 'articulo':
-			$a_titulo = $_POST['a_titulo'];
-			$a_des_c = $_POST['a_des_c'];
-			$a_contenido = $_POST['a_contenido'];
-			if($a_titulo == "" || $a_contenido ==""){
-				echo "No deben haber campos vac&iacute;os";
-				exit;
-			}
-			$a_usuario = $_SESSION['u_nombre'];
-			$con = $mysqli->query("INSERT INTO articulos (a_titulo, a_des_c,a_contenido, a_usuario, a_freg) VALUES ('".$a_titulo."', '".$a_des_c."','".$a_contenido."', '".$a_usuario."', NOW())");
-			if($con){
-				echo "El art&iacute;culo se ha guardado correctamente | <span>CPW Online</span>";
+			if(isset($_POST["vares"])){
+				$tipo2 = (explode(",", $_POST["vares"]))[3];
 			}else{
-				echo "Fallo al guardar | <span>CPW Online</span>";
+				$tipo2 = "";
+			}
+			switch($tipo2){
+				case "imagen": 
+					//Datos recibidos
+						$id = (explode(",", $_POST["vares"]))[0];
+						$titulo = (explode(",", $_POST["vares"]))[1];
+						$imagen = $_FILES['archivo'];
+					//Realizamos operaciones con variables
+						$url =  '../../articulos/img/'.$_SESSION['u_nombre']."/";
+						$nombre_imagen = $id."_".$imagen['name'];
+						$nombre_completo = $url.$nombre_imagen;
+					//Empezamos el copiado
+						if(!is_dir($url))
+							mkdir($url, 0777, true);
+						if(copy($imagen['tmp_name'], $nombre_completo)){
+							$con = $mysqli->query("UPDATE articulos SET a_imagen = '".$nombre_completo."' WHERE a_id='".$id."' ");
+							if($con){
+								echo "Guardado correctamente.";
+							}else{
+								echo "Hubo un error al guardar (Registro).";
+							}
+						}else{
+							echo "Hubo un error al guardar (Copiado).";
+						}
+					break;
+				default:
+					$a_titulo = $_POST['a_titulo'];
+					$a_des_c = $_POST['a_des_c'];
+					$a_contenido = $_POST['a_contenido'];
+					if($a_titulo == "" || $a_contenido ==""){
+						echo "No deben haber campos vac&iacute;os";
+						exit;
+					}
+					$a_usuario = $_SESSION['u_nombre'];
+					$con = $mysqli->query("INSERT INTO articulos (a_titulo, a_des_c,a_contenido, a_usuario, a_freg) VALUES ('".$a_titulo."', '".$a_des_c."','".$a_contenido."', '".$a_usuario."', NOW())");
+					if($con){
+						echo "El art&iacute;culo se ha guardado correctamente | <span>CPW Online</span>";
+					}else{
+						echo "Fallo al guardar | <span>CPW Online</span>";
+					}
+					break;
 			}
 		break;
 		case 'informacion': 

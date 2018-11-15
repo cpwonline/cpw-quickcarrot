@@ -191,17 +191,21 @@
 								a_titulo += tag[a];
 								break;
 							case 2:
-								tipo = tag[a];
+								tipo += tag[a];
 								break;
 						}else
 							cont++;
 				}
 				//Datos
+					var a = objeto.parentNode;
+					var contArchN = a.childNodes;
+					contArchN = contArchN[1];
+					var divProgresoN = a;
 					var contArch = $('#quickCarrot input[tag=' + tag + ']');
 					var divProgreso = $('#quickCarrot div.cam[tag=' + tag + ']');
 					var vares = [a_id, a_titulo, tipo, "imagen"];
 				//Hacemos click al input file
-					//$(contArch).click();
+					$(contArch).click();
 				//Eliminamos el viejo boton
 					$($($(divProgreso).children()).eq(1)).remove();
 				//Añadimos un nuevo boton
@@ -212,7 +216,7 @@
 					$($($(divProgreso).children()).eq(1)).attr("onclick", funcion);
 				//Esperamos a que de click
 					$($($(divProgreso).children()).eq(1)).click(function(e){
-						subirArch(contArch, "enlaces/guardar.php", divProgreso,"image/png", vares);
+						subirArch(contArchN, "enlaces/guardar.php", divProgresoN, "image/png", vares);
 					});
 			}
 
@@ -482,8 +486,8 @@ $(function(){
 							borrarElemento_starFly(ob_sF, 1, 'xT');
 						});
 				});
-			//Contenido--
-				//Cargar contenido--
+			//Imagen--
+				//Cargar imagen--
 					//Hacer clic
 						$('#quickCarrot #e_carga_art_imagen').click(function(e){
 							var e_a_imagen = document.querySelector('#quickCarrot input[name="e_a_imagen"]');
@@ -498,7 +502,7 @@ $(function(){
 								$("#quickCarrot img[tag=a_imagen_vis]").attr("src", e2.target.result);
 							};
 						}
-				//Guardar contenido
+				//Guardar imagen y reemplzar la anterior
 					$('#quickCarrot #e_guarda_art_imagen').click(function(e){
 						//$('#quickCarrot input[name="e_a_imagen"]').click(function(es){
 							//Animación
