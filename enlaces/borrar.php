@@ -1,5 +1,5 @@
 <?php
-	require_once('../mysqli_db.php');
+	require_once('mysqli_db.php');
 	function delTree($dir){
 		$files = array_diff(scandir($dir), array('.','..'));
 		foreach($files as $file){

@@ -1,5 +1,5 @@
 <?php
-	require_once('../mysqli_db.php');
+	require_once('mysqli_db.php');
 	session_start();
 	if(isset($_POST["vares"])){
 		$_POST["tipo"] = (explode(",", $_POST["vares"]))[2];

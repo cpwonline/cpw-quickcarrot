@@ -1,6 +1,6 @@
 
 <?php
-	require_once('../mysqli_db.php');
+	require_once('mysqli_db.php');
 	session_start();
 	switch($_POST['tipo']){
 		case 'submenus': 

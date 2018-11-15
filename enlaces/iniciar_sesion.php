@@ -1,5 +1,5 @@
 <?php
-	require_once('../mysqli_db.php');
+	require_once('mysqli_db.php');
 	session_start();
 	$u_nombre = palabraSegura($_POST['u_nombre']);
 	$u_clave = palabraSegura($_POST['u_clave']);

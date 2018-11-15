@@ -7,14 +7,14 @@
 		<title>Art&iacute;culos - QuickCarrot | CPW Online</title>
 		<?php 
 			//Principal
-				require_once('../../../mysqli_db.php');
+				require_once('../../../enlaces/mysqli_db.php');
 				session_start();
 			//Etiqueta global de donde estamos
 				global $dimension;
 				$dimension = 3;
 
 			//Gestionamos el HEAD
-				$dir = "head.php";
+				$dir = "enlaces/head.php";
 				$dir = calcDimension($dir, $dimension);
 				include_once($dir);
 				echo head($dimension);
@@ -29,7 +29,7 @@
 			//Comprobado del inicio de sesión
 				if(empty($_SESSION['u_nombre'])){
 					//Gestionamos el inicioSesion
-						$dir = "inicioSesion.php";
+						$dir = "enlaces/inicioSesion.php";
 						$dir = calcDimension($dir, $dimension);
 						include($dir);
 						head($dimension);
@@ -161,7 +161,7 @@
 		</footer>
 		<!--Añadimos los modales-->
 			<?php
-				$dir = "modales.php";
+				$dir = "enlaces/modales.php";
 				$dir = calcDimension($dir, $dimension);
 				include_once($dir);	
 			?>	
