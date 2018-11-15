@@ -11,6 +11,7 @@
 		case 'menus': 
 			//Datos nuevos
 				$m_m = explode("-", $_POST['m_m']);
+				$m_id = $m_m[0];
 				$m_titulo = $_POST['m_titulo'];
 				$m_posicion = $_POST['m_posicion'];
 				$m_url = "m/".$m_titulo."/";
@@ -20,7 +21,7 @@
 			//Datos viejos
 				$dir1 = "../../m/".$m_m[1]."/";
 			//Consulta para śaber si ya se ha registrado
-				$con_r = $mysqli->query("SELECT m_id FROM menus WHERE m_titulo = '".$m_titulo."' ");
+				$con_r = $mysqli->query("SELECT m_id FROM menus WHERE m_titulo = '".$m_titulo."' AND m_id != '".$m_id."' ");
 
 			if($con_r->num_rows !=0){
 				echo "Este nombre ya est&aacute; registrado y pertenece a un men&uacute; | <span>CPW Online</span>";
@@ -57,6 +58,7 @@
 		case 'submenus':
 			//Datos nuevos
 				$s_m = explode("-", $_POST['s_m']);
+				$s_id = $s_m[0];
 				$s_titulo = $_POST['s_titulo'];
 				$s_posicion = $_POST['s_posicion'];
 
@@ -67,7 +69,7 @@
 			//Datos viejos
 				$dir1 = "../../m/".$s_m[1]."/".$s_m[2]."/";
 			//Consulta para śaber si ya se ha registrado
-				$con_r = $mysqli->query("SELECT s_id FROM submenus WHERE s_titulo = '".$s_titulo."' ");
+				$con_r = $mysqli->query("SELECT s_id FROM submenus WHERE s_titulo = '".$s_titulo."' AND s_id != '".$s_id."' ");
 
 			if($con_r->num_rows != 0){
 				echo "Este nombre ya est&aacute; registrado y pertenece a un submen&uacute; | <span>CPW Online</span>";
