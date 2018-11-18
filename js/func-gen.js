@@ -101,4 +101,3 @@ function abreMenu(q){
 //Fin variables generales de StarFly
 //Fin copiado
 
-

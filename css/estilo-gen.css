@@ -224,7 +224,6 @@
 		}
 		#quickCarrot section.contenedor article.art_gen{
 			overflow:hidden;
-			display:none;
 			margin-bottom:.2cm;
 		}
 		#quickCarrot section.contenedor article.art_gen h3:nth-child(1){

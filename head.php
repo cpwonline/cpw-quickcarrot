@@ -36,8 +36,9 @@
 				<script src="'.$dir.'js/func-subirArch.js"></script>
 				<script src="'.$dir.'vendor/ckeditor/ckeditor.js"/></script>
 				<script src="'.$dir.'js/ck-editor.js"/></script>
-				<script src="'.$dir.'js/main.js"/></script>
+				<script src="'.$dir.'js/main-ck.js"/></script>
 				<script src="'.$dir.'starfly/js/func-gen.js"/></script>
+
 		';
 		return $sup.$inf;
 	}

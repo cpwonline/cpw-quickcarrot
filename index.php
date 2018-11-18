@@ -328,21 +328,10 @@
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
 							<!--Visitas: Hoy-->
-								<article class="bloque w3-col m6 l6">
+								<article class="bloque w3-col m12 l12">
 								<div class="w3-container w3-gray"><h4 class="">Visitas: Hoy</h4></div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">7am - 12pm</div>
-											<div class="cam">12pm - 6pm</div>
-											<div class="cam">6pm - 10pm</div>
-											<div class="cam">10pm - 7am</div>
-										</div>
-										<div class="fil">
-											<div class="cam">5 visita(s)</div>
-											<div class="cam">8 visita(s)</div>
-											<div class="cam">2 visita(s)</div>
-											<div class="cam">1 visita(s)</div>
-										</div>
+										<div id="charti"></div>
 									</div>
 								</article>
 							<!--Visitas: Esta semana-->
@@ -390,7 +379,7 @@
 							<!--Visitas: Este año-->
 								<article class="bloque w3-col m6 l6">
 								<div class="w3-container w3-gray"><h4 class="">Visitas: Este a&ntilde;o</h4></div>
-									<div class="tabla_gen">
+									<div class="tabla_gen agno">
 										<div class="fil pr">
 											<div class="cam">Enero</div>
 											<div class="cam">Febrero</div>
@@ -546,13 +535,23 @@
 				</article>
 			-->
 		</footer>
-		<!--Añadimos los modales-->
+		<!--Añadimos archivos finales-->
 			<?php
-				$dir = "modales.php";
-				$dir = calcDimension($dir, $dimension);
-				include_once($dir);	
+				//Modales
+					$dir = "modales.php";
+					$dir = calcDimension($dir, $dimension);
+					include_once($dir);	
+				//Script de estadísticas
+					$dir = "js/frappe-charts.min.js";
+					$dir = calcDimension($dir, $dimension);
+					$dir2 = "js/func-st.js";
+					$dir2 = calcDimension($dir2, $dimension);
+					echo '
+						<script src="'.$dir.'"></script>
+						<script src="'.$dir2.'"></script>
+					';
 			?>	
-		<!--Fin añadimos los modales-->
+		<!--Fin añadimos archivos finales-->
 	<?php
 		}
 	?>
