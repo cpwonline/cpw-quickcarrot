@@ -1,5 +1,5 @@
 ﻿<?php
-    require_once('../mysqli_db.php');
+    require_once('mysqli_db.php');
     session_start();
     if(isset($_POST["null"])){
         $con = $mysqli->query("SELECT * FROM estadisticas");

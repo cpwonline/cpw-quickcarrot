@@ -491,7 +491,7 @@
 		<!--Añadimos archivos finales-->
 			<?php
 				//Modales
-					$dir = "modales.php";
+					$dir = "enlaces/modales.php";
 					$dir = calcDimension($dir, $dimension);
 					include_once($dir);	
 				//Script de estadísticas
