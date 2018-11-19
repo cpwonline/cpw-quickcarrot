@@ -25,8 +25,8 @@
             }
         //Función para recargar las estadísticas
             function recSt(){
-                //Hoy
-                    const d_hoy = {
+                //Ayer
+                    const d_ayer = {
                         labels: ["12am-4am", "4am-8am", "8am-12pm", "12pm-4pm",
                             "4pm-8pm", "8pm-12am"
                         ],
@@ -44,10 +44,10 @@
                         ]
                     };
         
-                    const c_hoy = new frappe.Chart("#e_hoy", {  // or a DOM element,
+                    const c_ayer = new frappe.Chart("#e_ayer", {  // or a DOM element,
                                                                 // new Chart() in case of ES6 module with above usage
-                        title: "Estadísticas de hoy",
-                        data: d_hoy,
+                        title: "Estadísticas de ayer",
+                        data: d_ayer,
                         type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
                         height: 250,
                         colors: ['#7cd6fd', '#743ee2']
@@ -134,37 +134,37 @@
                         colors: ['#7cd6fd', '#743ee2']
                     });
             }
-    //Consulta de datos
-        //Todo
-            //Llamada AJAX
-                $.post("enlaces/st.php", {null:null}, function(r){
-                    //Separamos los datos en cuatro partes
-                        todo = sepVal(r, ".");
-                        principal = sepVal(todo[0], ",");
-                        otros = sepVal(todo[1], ",");
-                    //Hallamos los datos separándolos
-                        //Principal
-                            for(var a = 0; a < principal.length; a++){
-                                switch(a){
-                                    case 0:
-                                        v1 = sepVal(principal[a], "-", true);
-                                        u1 = sepVal(otros[a], "-", true);
-                                        break;
-                                    case 1:
-                                        v2 = sepVal(principal[a], "-", true);
-                                        u2 = sepVal(otros[a], "-", true);
-                                        break;
-                                    case 2:
-                                        v3 = sepVal(principal[a], "-", true);
-                                        u3 = sepVal(otros[a], "-", true);
-                                        break;
-                                    case 3:
-                                        v4 = sepVal(principal[a], "-", true);
-                                        u4 = sepVal(otros[a], "-", true);
-                                        break;
-                                }
-                            }
-                            //for(var a = 0; a < v1.length; a++){alert(typeof v1[a]);}
-                            recSt();
-                });
-    
+        //Consulta de datos
+            function verEst(){
+                //Todo
+                    //Llamada AJAX
+                        $.post("enlaces/st.php", {null:null}, function(r){
+                            //Separamos los datos en cuatro partes
+                                todo = sepVal(r, ".");
+                                principal = sepVal(todo[0], ",");
+                                otros = sepVal(todo[1], ",");
+                            //Hallamos los datos separándolos
+                                //Principal
+                                    for(var a = 0; a < principal.length; a++){
+                                        switch(a){
+                                            case 0:
+                                                v1 = sepVal(principal[a], "-", true);
+                                                u1 = sepVal(otros[a], "-", true);
+                                                break;
+                                            case 1:
+                                                v2 = sepVal(principal[a], "-", true);
+                                                u2 = sepVal(otros[a], "-", true);
+                                                break;
+                                            case 2:
+                                                v3 = sepVal(principal[a], "-", true);
+                                                u3 = sepVal(otros[a], "-", true);
+                                                break;
+                                            case 3:
+                                                v4 = sepVal(principal[a], "-", true);
+                                                u4 = sepVal(otros[a], "-", true);
+                                                break;
+                                        }
+                                    }
+                                    recSt();
+                        });
+            }

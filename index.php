@@ -327,30 +327,42 @@
 					<h3>Estad&iacute;sticas</h3>
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
-							<!--Visitas: Hoy-->
+							<!--Visitas: Ayer-->
 								<article class="bloque w3-col m12 l12">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Ayer</h4></div>
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Ayer</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
-										<div id="e_hoy"></div>
+										<div id="e_ayer"></div>
 									</div>
 								</article>
 							<!--Visitas: Esta semana-->
 								<article class="bloque w3-col m12 l12">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: semana pasada</h4></div>
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Semana pasada</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
 										<div id="e_semana"></div>
 									</div>
 								</article>
 							<!--Visitas: Este mes-->
 								<article class="bloque w3-col m12 l12">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: mes pasado</h4></div>
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Mes pasado</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
 										<div id="e_mes"></div>
 									</div>
 								</article>
 							<!--Visitas: Este año-->
 								<article class="bloque w3-col m12 l12">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: A&ntilde;o pasado</h4></div>
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: A&ntilde;o pasado</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen agno">
 										<div id="e_agno"></div>
 									</div>

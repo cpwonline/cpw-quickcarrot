@@ -83,6 +83,9 @@
 							});
 				});
 			break;
+			case "estadisticas":
+				verEst();
+				break;
 			case "todo":
 				$.post("partes_act/menus.php", {tipo:tipo}, function(r){
 					$('#quickCarrot div.tabla_gen.menus').html(r);
