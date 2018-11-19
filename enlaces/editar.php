@@ -161,6 +161,16 @@
 					break;
 			}
 			break;
+			case "diagnosticos":
+				$d_id = $_POST['m_m'];
+				$d_resuelto = 1;
+				//Marcar como resuelto
+				$con = $mysqli->query("UPDATE diagnosticos SET d_resuelto = '".$d_resuelto."' WHERE d_id = '".$d_id."'");
+				if($con){
+						echo 'Marcado como resuelto.';
+				}else
+					echo "Fallo al editar | <span>CPW Online</span>";
+				break;
 
 	}
 ?>

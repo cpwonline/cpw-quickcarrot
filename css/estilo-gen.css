@@ -75,6 +75,7 @@
 				border:1px solid #ccc;
 				max-width:4cm;
 				background:none;
+				width:100%;
 			}
 			#quickCarrot div.tabla_gen textarea{
 				padding:.7cm;
@@ -82,6 +83,7 @@
 				height:5cm;
 				font-size:10pt;
 				background:none;
+				width:100%;
 			}
 			#quickCarrot div.tabla_gen input[type="file"]{
 				display:none;

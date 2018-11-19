@@ -155,6 +155,22 @@
 					break;
 			}
 		break;
+		case "diagnostico":
+			$d_titulo = $_POST['d_titulo'];
+			$d_estado = $_POST['d_estado'];
+			$d_cont = $_POST['d_cont'];
+			if($d_titulo == "" || $d_cont == ""){
+				echo "No deben haber campos vac&iacute;os";
+				exit;
+			}
+			$d_usuario = $_SESSION['u_nombre'];
+			$con = $mysqli->query("INSERT INTO diagnosticos (d_titulo, d_estado, d_cont, d_usuario, d_freg) VALUES ('".$d_titulo."', '".$d_estado."','".$d_cont."', '".$d_usuario."', NOW())");
+			if($con){
+				echo "El diagn&oacute;stico se ha enviado correctamente, espere la respuesta de los desarrolladores. | <span>CPW Online</span>";
+			}else{
+				echo "Fallo al enviar | <span>CPW Online</span>";
+			}
+			break;
 		case 'informacion': 
 			$i_menu = $_POST['i_menu'];
 			$i_sub = $_POST['i_sub'];

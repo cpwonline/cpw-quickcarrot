@@ -1,5 +1,6 @@
 <?php
 	require_once('mysqli_db.php');
+	session_start();
 	function delTree($dir){
 		$files = array_diff(scandir($dir), array('.','..'));
 		foreach($files as $file){
@@ -81,11 +82,11 @@
 					echo "Ha habido un error al borrar (Imagen).";
 					
 		break;
-		case 'informacion': 
-			$i_id = $_POST['i_id'];
-			$con = $mysqli->query("DELETE FROM informaciones WHERE i_id = '".$i_id."' ");
+		case 'diagnosticos': 
+			$d_id = $_POST['m_m'];
+			$con = $mysqli->query("DELETE FROM diagnosticos WHERE d_id = '".$d_id."' AND d_usuario = '".$_SESSION["u_nombre"]."' ");
 			if($con)
-				echo "La informaci&oacute;n ha sido borrado con &eacute;xito.";
+				echo "El diagn&oacute;stico ha sido borrado con &eacute;xito.";
 			else
 				echo "Ha habido un error al borrar.";
 		break;

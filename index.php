@@ -296,9 +296,13 @@
 									<div class="w3-container w3-gray"><h4 class="">Informar acerca de un error</h4></div>
 									<div class="tabla_gen">
 										<div class="fil">
+											<div class="cam">T&iacute;tulo:</div>
+											<div class="cam"><input type="text" name="d_titulo" placeholder="T&iacute;tulo corto del error" maxlength="200"/></div>
+										</div>
+										<div class="fil">
 											<div class="cam">Estado:</div>
 											<div class="cam">
-												<select name="inf_pos">
+												<select name="d_estado">
 													<option value="Normal">Normal</option>
 													<option value="Preocupante">Preocupante</option>
 													<option value="Urgente">Urgente</option>
@@ -308,14 +312,41 @@
 										</div>
 										<div class="fil">
 											<div class="cam">Describa el error:</div>
-											<div class="cam"><textarea name="inf_cont" placeholder="Sea detallista"></textarea></div>
+											<div class="cam"><textarea name="d_cont" placeholder="Sea detallista"></textarea></div>
 										</div>
 										<div class="fil">
-											<div class="cam">URL del error:</div>
-											<div class="cam"><input type="url" name="inf_cont" placeholder="Escriba la URL de la p&aacute;gina donde encontr&oacute; el error"/></div>
+											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_diag">Enviar</a></div>
 										</div>
+									</div>
+								</article>
+							<!--Mis diagnósticos-->
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Mis diagn&oacute;sticos</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="diagnosticos"></i>
+									</div>
+									<div class="tabla_gen diagnosticos">
+										<!--PARTE: DIAGNÓSTICOS-->
+									</div>
+								</article>
+							<!--Acerca de los diagnósticos-->
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-container w3-gray"><h4 class="">¿Sabes qu&eacute; son los diagn&oacute;sticos&quest;</h4></div>
+									<div class="tabla_gen">
 										<div class="fil">
-											<div class="cam"><a class="w3-btn w3-deep-orange" id="enviar_diag">Enviar</a></div>
+											<div class="cam">
+												<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
+													<p>
+														Los diagn&oacute;sticos de errores son reportes que el usuario hace para informarle
+														a los usuarios acerca de un problema que ha detectado en el sitio web, QuickCarrot,
+														entre otros lugares. Este reporte llegar&aacute; a los desarrolladores como un correo
+														electr&oacute;nico. Si su error ha sido resuelto, debe de hacer click al bot&oacute;
+														que dice <i><b>Marcar como resuelto</b></i>, para as&iacute; indicarle a los desarrolladores
+														que todo anda bien, si no lo hace, estar&aacute; indicando que a&uacute;n el problema
+														persiste.
+													</p>
+												</div>
+											</div>
 										</div>
 									</div>
 								</article>

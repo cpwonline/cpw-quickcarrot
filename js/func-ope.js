@@ -86,6 +86,19 @@
 			case "estadisticas":
 				verEst();
 				break;
+			case "diagnosticos":
+				$.post("partes_act/diagnosticos.php", {tipo:tipo}, function(r){
+					$('#quickCarrot div.tabla_gen.diagnosticos').html(r);
+						//Borrar
+							$("#quickCarrot div.tabla_gen.diagnosticos i.borrar_diag").on("click", function(){
+								boton_borrar_diag(this);
+							});
+						//Marcar como resuelto
+							$("#quickCarrot div.tabla_gen.diagnosticos a.listo_diag").on("click", function(){
+								boton_listo_diag(this);
+							});
+				});
+				break;
 			case "todo":
 				$.post("partes_act/menus.php", {tipo:tipo}, function(r){
 					$('#quickCarrot div.tabla_gen.menus').html(r);
@@ -118,6 +131,17 @@
 						//Subir imagen
 							$('#quickCarrot a.subir_imagen').on("click", function(){
 								boton_subirImagen(this);
+							});
+				});
+				$.post("partes_act/diagnosticos.php", {tipo:tipo}, function(r){
+					$('#quickCarrot div.tabla_gen.diagnosticos').html(r);
+						//Borrar
+							$("#quickCarrot div.tabla_gen.diagnosticos i.borrar_diag").on("click", function(){
+								boton_borrar_diag(this);
+							});
+						//Marcar como resuelto
+							$("#quickCarrot div.tabla_gen.diagnosticos a.listo_diag").on("click", function(){
+								boton_listo_diag(this);
 							});
 				});
 			break;
@@ -220,6 +244,30 @@
 				//Esperamos a que de click
 					$($($(divProgreso).children()).eq(1)).click(function(e){
 						subirArch(contArchN, "enlaces/guardar.php", divProgresoN, "image/png", vares);
+					});
+			}
+	//Diagnósticos
+		//Borrar
+			function boton_borrar_diag(objeto){
+				//Animación
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+				//Recolección de datos
+					var m_m = $(objeto).attr("tag");
+					var tipo = "diagnosticos";
+					var frase = "el diagn&oacute;stico?";
+					borrar_general(m_m, tipo, frase);
+			}
+		//Marcar como resuelto
+			function boton_listo_diag(objeto){
+				//Animación
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+				//Recolección de datos
+					var m_m = $(objeto).attr("tag");
+					var tipo = "diagnosticos";
+				//Llamada AJAX
+					$.post("enlaces/editar.php", {m_m:m_m, tipo:tipo},function(r){
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
 			}
 
@@ -416,6 +464,21 @@ $(function(){
 					var tipo = "articulo";
 				//Llamada AJAX
 					$.post("enlaces/guardar.php", {a_titulo:a_titulo, a_des_c:a_des_c, a_contenido:a_contenido, tipo:tipo},function(r){
+						nuevoMsj_starFly(r, ob_sF);
+						borrarElemento_starFly(ob_sF, 1, 'xT');
+					});
+			});
+		//Diagnósticos--------------------------------------------------
+			$('#quickCarrot #guarda_diag').click(function(e){
+				//Animación					
+					ob_sF = starFly('Notificación', 'Espere | CPW Online', 2, 5000);//Not. que se quita manualmente con código
+				//Recolección de datos
+					var d_titulo = $('#quickCarrot input[name="d_titulo"]').val();
+					var d_estado = $('#quickCarrot select[name="d_estado"]').val();
+					var d_cont = $('#quickCarrot textarea[name="d_cont"]').val();
+					var tipo = "diagnostico";
+				//Llamada AJAX
+					$.post("enlaces/guardar.php", {d_titulo:d_titulo, d_estado:d_estado, d_cont:d_cont, tipo:tipo},function(r){
 						nuevoMsj_starFly(r, ob_sF);
 						borrarElemento_starFly(ob_sF, 1, 'xT');
 					});
