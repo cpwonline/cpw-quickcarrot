@@ -327,102 +327,44 @@
 					<h3>Estad&iacute;sticas</h3>
 					<section class="dentro_art">
 						<!--Artículos de una cabecera-->
-							<!--Visitas: Hoy-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Hoy</h4></div>
+							<!--Visitas: Ayer-->
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Ayer</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">7am - 12pm</div>
-											<div class="cam">12pm - 6pm</div>
-											<div class="cam">6pm - 10pm</div>
-											<div class="cam">10pm - 7am</div>
-										</div>
-										<div class="fil">
-											<div class="cam">5 visita(s)</div>
-											<div class="cam">8 visita(s)</div>
-											<div class="cam">2 visita(s)</div>
-											<div class="cam">1 visita(s)</div>
-										</div>
+										<div id="e_ayer"></div>
 									</div>
 								</article>
 							<!--Visitas: Esta semana-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Esta semana</h4></div>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Semana pasada</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">Lunes</div>
-											<div class="cam">Martes</div>
-											<div class="cam">Mi&eacute;rcoles</div>
-											<div class="cam">Jueves</div>
-											<div class="cam">Viernes</div>
-											<div class="cam">S&aacute;bado</div>
-											<div class="cam">Domingo</div>
-										</div>
-										<div class="fil">
-											<div class="cam">34</div>
-											<div class="cam">342</div>
-											<div class="cam">45</div>
-											<div class="cam">34</div>
-											<div class="cam">43</div>
-											<div class="cam">453</div>
-											<div class="cam">234</div>
-										</div>
+										<div id="e_semana"></div>
 									</div>
 								</article>
 							<!--Visitas: Este mes-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Este mes</h4></div>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: Mes pasado</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">1 semana</div>
-											<div class="cam">2 semana</div>
-											<div class="cam">3 semana</div>
-											<div class="cam">4 semana</div>
-										</div>
-										<div class="fil">
-											<div class="cam">3344</div>
-											<div class="cam">3542</div>
-											<div class="cam">4345</div>
-											<div class="cam">3344</div>
-										</div>
+										<div id="e_mes"></div>
 									</div>
 								</article>
 							<!--Visitas: Este año-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Este a&ntilde;o</h4></div>
-									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">Enero</div>
-											<div class="cam">Febrero</div>
-											<div class="cam">Marzo</div>
-											<div class="cam">Abril</div>
-											<div class="cam">Mayo</div>
-											<div class="cam">Junio</div>
-										</div>
-										<div class="fil">
-											<div class="cam">25245</div>
-											<div class="cam">832478</div>
-											<div class="cam">5424</div>
-											<div class="cam">435435</div>
-											<div class="cam">45345</div>
-											<div class="cam">45654</div>
-										</div>
-										<div class="fil pr">
-											<div class="cam">Julio</div>
-											<div class="cam">Agosto</div>
-											<div class="cam">Septiembre</div>
-											<div class="cam">Octubre</div>
-											<div class="cam">Noviembre</div>
-											<div class="cam">Diciembre</div>
-										</div>
-										<div class="fil">
-											<div class="cam">213123</div>
-											<div class="cam">345435</div>
-											<div class="cam">3455</div>
-											<div class="cam">234234</div>
-											<div class="cam">123213</div>
-											<div class="cam">56464</div>
-										</div>
+								<article class="bloque w3-col m12 l12">
+									<div class="w3-display-container w3-gray">
+										<h4>Visitas: A&ntilde;o pasado</h4>
+										<i class="w3-padding-large w3-display-right img_col actualizar neg boton" tag="estadisticas"></i>
+									</div>
+									<div class="tabla_gen agno">
+										<div id="e_agno"></div>
 									</div>
 								</article>
 						<!--Fin Artículos de una cabecera-->
@@ -546,13 +488,23 @@
 				</article>
 			-->
 		</footer>
-		<!--Añadimos los modales-->
+		<!--Añadimos archivos finales-->
 			<?php
-				$dir = "enlaces/modales.php";
-				$dir = calcDimension($dir, $dimension);
-				include_once($dir);	
+				//Modales
+					$dir = "modales.php";
+					$dir = calcDimension($dir, $dimension);
+					include_once($dir);	
+				//Script de estadísticas
+					$dir = "js/frappe-charts.min.js";
+					$dir = calcDimension($dir, $dimension);
+					$dir2 = "js/func-st.js";
+					$dir2 = calcDimension($dir2, $dimension);
+					echo '
+						<script src="'.$dir.'"></script>
+						<script src="'.$dir2.'"></script>
+					';
 			?>	
-		<!--Fin añadimos los modales-->
+		<!--Fin añadimos archivos finales-->
 	<?php
 		}
 	?>

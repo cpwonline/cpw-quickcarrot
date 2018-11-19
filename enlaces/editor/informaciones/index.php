@@ -99,13 +99,23 @@
 		<footer class="pie">
 			
 		</footer>
-		<!--Añadimos los modales-->
+		<!--Añadimos archivos finales-->
 			<?php
-				$dir = "enlaces/modales.php";
-				$dir = calcDimension($dir, $dimension);
-				include_once($dir);	
+				//Modales
+					$dir = "modales.php";
+					$dir = calcDimension($dir, $dimension);
+					include_once($dir);	
+				//Script de estadísticas
+					$dir = "js/frappe-charts.min.js";
+					$dir = calcDimension($dir, $dimension);
+					$dir2 = "js/func-st.js";
+					$dir2 = calcDimension($dir2, $dimension);
+					echo '
+						<script src="'.$dir.'"></script>
+						<script src="'.$dir2.'"></script>
+					';
 			?>	
-		<!--Fin añadimos los modales-->
+		<!--Fin añadimos archivos finales-->
 	<?php
 		}
 	?>
