@@ -329,89 +329,30 @@
 						<!--Artículos de una cabecera-->
 							<!--Visitas: Hoy-->
 								<article class="bloque w3-col m12 l12">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Hoy</h4></div>
+								<div class="w3-container w3-gray"><h4 class="">Visitas: Ayer</h4></div>
 									<div class="tabla_gen">
-										<div id="charti"></div>
+										<div id="e_hoy"></div>
 									</div>
 								</article>
 							<!--Visitas: Esta semana-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Esta semana</h4></div>
+								<article class="bloque w3-col m12 l12">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: semana pasada</h4></div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">Lunes</div>
-											<div class="cam">Martes</div>
-											<div class="cam">Mi&eacute;rcoles</div>
-											<div class="cam">Jueves</div>
-											<div class="cam">Viernes</div>
-											<div class="cam">S&aacute;bado</div>
-											<div class="cam">Domingo</div>
-										</div>
-										<div class="fil">
-											<div class="cam">34</div>
-											<div class="cam">342</div>
-											<div class="cam">45</div>
-											<div class="cam">34</div>
-											<div class="cam">43</div>
-											<div class="cam">453</div>
-											<div class="cam">234</div>
-										</div>
+										<div id="e_semana"></div>
 									</div>
 								</article>
 							<!--Visitas: Este mes-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Este mes</h4></div>
+								<article class="bloque w3-col m12 l12">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: mes pasado</h4></div>
 									<div class="tabla_gen">
-										<div class="fil pr">
-											<div class="cam">1 semana</div>
-											<div class="cam">2 semana</div>
-											<div class="cam">3 semana</div>
-											<div class="cam">4 semana</div>
-										</div>
-										<div class="fil">
-											<div class="cam">3344</div>
-											<div class="cam">3542</div>
-											<div class="cam">4345</div>
-											<div class="cam">3344</div>
-										</div>
+										<div id="e_mes"></div>
 									</div>
 								</article>
 							<!--Visitas: Este año-->
-								<article class="bloque w3-col m6 l6">
-								<div class="w3-container w3-gray"><h4 class="">Visitas: Este a&ntilde;o</h4></div>
+								<article class="bloque w3-col m12 l12">
+								<div class="w3-container w3-gray"><h4 class="">Visitas: A&ntilde;o pasado</h4></div>
 									<div class="tabla_gen agno">
-										<div class="fil pr">
-											<div class="cam">Enero</div>
-											<div class="cam">Febrero</div>
-											<div class="cam">Marzo</div>
-											<div class="cam">Abril</div>
-											<div class="cam">Mayo</div>
-											<div class="cam">Junio</div>
-										</div>
-										<div class="fil">
-											<div class="cam">25245</div>
-											<div class="cam">832478</div>
-											<div class="cam">5424</div>
-											<div class="cam">435435</div>
-											<div class="cam">45345</div>
-											<div class="cam">45654</div>
-										</div>
-										<div class="fil pr">
-											<div class="cam">Julio</div>
-											<div class="cam">Agosto</div>
-											<div class="cam">Septiembre</div>
-											<div class="cam">Octubre</div>
-											<div class="cam">Noviembre</div>
-											<div class="cam">Diciembre</div>
-										</div>
-										<div class="fil">
-											<div class="cam">213123</div>
-											<div class="cam">345435</div>
-											<div class="cam">3455</div>
-											<div class="cam">234234</div>
-											<div class="cam">123213</div>
-											<div class="cam">56464</div>
-										</div>
+										<div id="e_agno"></div>
 									</div>
 								</article>
 						<!--Fin Artículos de una cabecera-->
