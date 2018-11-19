@@ -125,11 +125,7 @@
 								<article class="bloque w3-col m12 l12">
 									<div class="w3-container w3-gray"><h4 class="">Edite la descripci&oacute;n corta</h4></div>
 									<div class="tabla_gen">
-										<div class="fil">
-											<div class="cam">
-												<textarea name="e_a_des_c" maxlength="200"><?=$a_des_c?></textarea>
-											</div>
-										</div>
+										<textarea name="e_a_des_c" maxlength="200"><?=$a_des_c?></textarea>
 										<div class="fil">
 											<div class="cam"><a class="w3-btn w3-deep-orange" id="e_guarda_art_des_c">Guardar</a></div>
 										</div>
