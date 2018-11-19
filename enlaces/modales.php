@@ -12,7 +12,7 @@
                 <div class="cf footer">
                     <section class="cont_a">
                         <a class="w3-btn w3-gray" onclick="$('#quickCarrot #conf_borrar_gen').css('display','none');" tag="cancelar">Cancelar</a>
-                        <a class="w3-btn w3-deep-orange" tag="si" href="#">S&iacute;</a>
+                        <a class="w3-btn w3-deep-orange" tag="si">S&iacute;</a>
                     </section>
                 </div>
             </div>
