@@ -1,5 +1,6 @@
 <?php
 	require_once('mysqli_db.php');
+	include("enviarCorreo.php");
 	session_start();
 	if(isset($_POST["vares"])){
 		$_POST["tipo"] = (explode(",", $_POST["vares"]))[2];
@@ -164,11 +165,29 @@
 				exit;
 			}
 			$d_usuario = $_SESSION['u_nombre'];
+
 			$con = $mysqli->query("INSERT INTO diagnosticos (d_titulo, d_estado, d_cont, d_usuario, d_freg) VALUES ('".$d_titulo."', '".$d_estado."','".$d_cont."', '".$d_usuario."', NOW())");
 			if($con){
-				echo "El diagn&oacute;stico se ha enviado correctamente, espere la respuesta de los desarrolladores. | <span>CPW Online</span>";
+				//Enviar un correo
+					$mensaje = "
+						Se ha detectado un error en: ".$_SERVER["SERVER_ADDR"]." <br>
+						Estado: ".$d_estado."<br>
+						Mensaje del usuario:<br>
+						".$d_cont."
+					";
+					$asunto = $d_titulo. " - Diagn&oacute;stico de errores";
+					$para = "support@cpwonline.com.ve";
+					$de = "support@cpwonline.com.ve";
+					
+					$rep1 = new enviarCorreo($mensaje, $asunto, $de, $para);
+					
+					if($rep1->enviarM())
+						echo "El diagn&oacute;stico se ha enviado correctamente, espere la respuesta de los desarrolladores. | <span>CPW Online</span>";
+					else{
+						echo "Fallo al enviar (Correo) | <span>CPW Online</span>";
+					}
 			}else{
-				echo "Fallo al enviar | <span>CPW Online</span>";
+				echo "Fallo al enviar (Registro) | <span>CPW Online</span>";
 			}
 			break;
 		case 'informacion': 

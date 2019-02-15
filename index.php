@@ -312,7 +312,7 @@
 										</div>
 										<div class="fil">
 											<div class="cam">Describa el error:</div>
-											<div class="cam"><textarea name="d_cont" placeholder="Sea detallista"></textarea></div>
+											<div class="cam"><textarea name="d_cont" placeholder="Sea detallista" maxlength="1000"></textarea></div>
 										</div>
 										<div class="fil">
 											<div class="cam"><a class="w3-btn w3-deep-orange" id="guarda_diag">Enviar</a></div>
@@ -338,12 +338,12 @@
 												<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue">
 													<p>
 														Los diagn&oacute;sticos de errores son reportes que el usuario hace para informarle
-														a los usuarios acerca de un problema que ha detectado en el sitio web, QuickCarrot,
+														a los desarrolladores acerca de un problema que ha detectado en el sitio web, QuickCarrot,
 														entre otros lugares. Este reporte llegar&aacute; a los desarrolladores como un correo
-														electr&oacute;nico. Si su error ha sido resuelto, debe de hacer click al bot&oacute;
-														que dice <i><b>Marcar como resuelto</b></i>, para as&iacute; indicarle a los desarrolladores
+														electr&oacute;nico. Si su error ha sido resuelto, debe de hacer click al bot&oacute;n
+														que dice <i><b>Marcar como resuelto</b></i>, para as&iacute; indicar
 														que todo anda bien, si no lo hace, estar&aacute; indicando que a&uacute;n el problema
-														persiste.
+														a&uacute;n persiste.
 													</p>
 												</div>
 											</div>

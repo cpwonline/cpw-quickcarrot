@@ -10,7 +10,7 @@
 			}
 	}else{
 		/*Conexión a la base de datos local*/
-			$mysqli = new mysqli('localhost', 'josefelixrc', '26552160', 'web_general');
+			$mysqli = new mysqli('localhost', 'root', '26552160', 'cpwonline_qc_db');
 			if($mysqli->connect_errno){
 				echo "\n Fallo al conectar a la base de datos.\n";
 				echo "\n".$mysqli->connect_errno."\n";
