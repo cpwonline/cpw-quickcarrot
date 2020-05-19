@@ -1,0 +1,601 @@
+<!--
+	Autor: Jose F Rivas C
+	Title: Main system
+-->
+
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title id="webTitle">Titulo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="../css/W3.CSS">
+		<link rel="stylesheet" href="../css/design_gen.css">
+		<script src="../js/jquery-3.3.1.js"></script>
+		<script src="../js/vue.min.js"></script>
+		<script src="../js/func_gen.js"></script>
+		<script src="../js/func_ope.js"></script>
+	</head>
+	<body id="fams w3-row w3-display-container">
+		<div id="id" tag="main"></div>
+		<div class="result w3-container w3-padding"></div>
+		<!--Barra de menú lateral izquierda-->
+			<nav class="contNav w3-container w3-col l1 m1 w3-green w3-display-topleft" style="height:100%;">
+				<h5>FAMS</h5>
+				<ul class="ulPages w3-ul w3-hoverable w3-center w3-display-middle">
+					<li class="w3-padding" tag="divPage1" title="P&aacute;gina principal">
+						<img src="../img/home.svg" class="w3-bar-item">
+					</li>
+					<li class="w3-padding" tag="divPage2" title="Reportes">
+						<img src="../img/reports.svg" class="w3-bar-item">
+					</li>
+					<li class="w3-padding" tag="divPage3" title="L&iacute;neas telef&oacute;nicas">
+						<img src="../img/phoneLines.svg" class="w3-bar-item">
+					</li>
+					<li class="w3-padding" tag="divPage4" title="Solicitudes">
+						<img src="../img/requests.svg" class="w3-bar-item">
+					</li>
+				</ul>
+			</nav>
+		<!--Principal-->
+			<main class="contMain w3-display-topleft w3-col l11 w3-container w3-row" style="margin-left:8.33%;">
+				<!--Cabecera de principal-->
+					<header class="contHeader w3-row w3-container w3-padding w3-cell-row w3-margin-bottom">
+						<!--Sección de título-->
+							<section class="w3-container w3-cell">
+								<h2 class="h2Title"></h2>
+							</section>
+						<!--Sección de búsqueda-->
+							<section class="sectionSearch w3-cell w3-cell-middle">
+								<div class="w3-container w3-border-bottom w3-white w3-display-container">
+									<input type="search" name="search" class="w3-input w3-threequarter" placeholder="Type here">
+									<a class="w3-button" href="#" title="Buscar">
+										<img src="../img/search.svg" class="w3-bar-item" style="width:24px;">
+									</a>
+									<ul class="ulResult w3-ul w3-card-4 w3-hide">
+										<li class="w3-button w3-block"><span>#1234 Will Wever <strong class="w3-red">(Vencido)</strong></span></li>
+										<li class="w3-button w3-block"><span>#5678 Frank, C.A.  <strong class="w3-green">(Activo)</strong></span></li>
+										<li class="w3-button w3-block"><span>#9012 Juan Noguera  <strong class="w3-yellow">(Por activar)</strong></span></li>
+									</ul>
+								</div>
+							</section>
+						<!--Sección de opciones del usuario-->
+							<section  class="w3-container w3-cell w3-cell-middle w3-center">
+								<div class="w3-button" title="Mi perfil">
+									<img src="../img/user.svg" style="width:25px;">
+								</div>
+								<div class="w3-button" title="Configuraciones">
+									<img src="../img/settings.svg" style="width:25px;">
+								</div>
+								<div class="w3-button buttonLogout" tag="&iquest;Desea cerrar sesi&oacute;n&quest;" title="Cerrar sesi&oacute;n">
+									<img src="../img/logout.svg" style="width:25px;">
+								</div>
+							</section>
+					</header>
+				<!--Cuerpo y desarrollo de principal-->
+					<article class="contArticle w3-container w3-col l9">
+						<!--Página 1-->
+							<div id="divPage1" class="divPage">
+								<!--Sección 1-->
+									<section class="contS1 w3-card">
+										<!--Tabla de clientes (Afiliaciones)-->
+											<header class="w3-container w3-green w3-display-container">
+												<h3>Clientes (Afiliaciones)</h3>
+												<div class="w3-display-topright">
+													<a class="buttonAddClient w3-button"><img src="../img/add.svg" style="width:25px;"></a>
+													<a class="w3-button" onclick="update('clients');"><img src="../img/update.svg" style="width:25px;"></a>
+												</div>
+											</header>
+											<div class="w3-container w3-padding">
+												<table class="clients w3-table-all w3-striped w3-border w3-padding w3-tiny">
+													<!-- Carga automática -->
+												</table>
+											</div>
+											<header class="w3-container w3-light-grey">
+												<h6>Notas al pie</h6>
+											</header>
+									</section>
+							</div>
+						<!--Página 2-->
+							<div id="divPage2" class="divPage">
+								<!--Sección 1-->
+									<section class="contS1 w3-card sectionReports">
+										<!--Tabla reportes importantes-->
+											<header class="w3-container w3-green w3-display-container">
+												<h3>Reportes importantes</h3>
+											</header>
+											<main class="w3-container w3-padding">
+												<div class="w3-bar divTabs w3-border w3-margin-bottom">
+													<button class="w3-bar-item w3-button" tag="vencidos">Vencidos <strong class="w3-red w3-padding">5</strong></button>
+													<button class="w3-bar-item w3-button" tag="vencer">Por vencer</button>
+													<button class="w3-bar-item w3-button" tag="activar">Por activar <strong class="w3-red w3-padding">2</strong></button>
+													<button class="w3-bar-item w3-button" tag="vt">Visita t&eacute;cnica</button>
+													<button class="w3-bar-item w3-button" tag="pm">Pago de mensualidad</button>
+													<button class="w3-bar-item w3-button" tag="sc">Sin conexi&oacute;n</button>
+												</div>
+												<div class="w3-container">
+													<!--Tab 1: Vencidos-->
+														<div class="w3-display-container w3-border divTab" tag="vencidos">
+															<h2 class="w3-red w3-container">Vencidos</h2>
+															<ol class="w3-ol">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+													<!--Tab 2: Por vencer-->
+														<div class="w3-display-container w3-border divTab" tag="vencer">
+															<h2 class="w3-yellow w3-container">Por vencer</h2>
+															<ol class="w3-ol">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+													<!--Tab 3: Por activar-->
+														<div class="w3-display-container w3-border divTab" tag="activar">
+															<h2 class="w3-red w3-container">Por activar</h2>
+															<ol class="w3-ol">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+													<!--Tab 4: Visita técnica-->
+														<div class="w3-display-container w3-border divTab" tag="vt">
+															<h2 class="w3-yellow w3-container">Visita t&eacute;cnica</h2>
+															<ol class="w3-ol">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+													<!--Tab 5: Pago de mensualidad-->
+														<div class="w3-display-container w3-border divTab" tag="pm">
+															<h2 class="w3-yellow w3-container">Pago de mensualidad</h2>
+															<ol class="w3-ol">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+													<!--Tab 6: Sin conexión-->
+														<div class="w3-display-container w3-border divTab" tag="sc">
+															<h2 class="w3-yellow w3-container">Sin conexi&oacute;n</h2>
+															<ol class="w3-ol listWithoutConnection">
+																<!-- Carga automática -->
+															</ol>
+														</div>
+												</div>
+											</main>
+											<header class="w3-container w3-light-grey">
+												<h6>Notas al pie</h6>
+											</header>
+									</section>
+							</div>
+						<!--Página 3-->
+							<div id="divPage3" class="divPage">
+								<!--Sección 1-->
+									<section class="contS1 w3-card">
+										<!--Tabla de líneas telefónicas-->
+											<header class="w3-container w3-green w3-display-container">
+												<h3>L&iacute;neas telef&oacute;nicas</h3>
+												<div class="w3-display-topright">
+													<a class="buttonAddPhoneLine w3-button"><img src="../img/add.svg" style="width:25px;"></a>
+													<a class="w3-button" onclick="update('phoneLine');"><img src="../img/update.svg" style="width:25px;"></a>
+												</div>
+											</header>
+											<div class="w3-container w3-padding">
+												<table class="phoneLine w3-table-all w3-striped w3-border w3-padding w3-tiny">
+													<!-- Carga automática -->
+												</table>
+											</div>
+											<header class="w3-container w3-light-grey">
+												<h6>Notas al pie</h6>
+											</header>
+									</section>
+							</div>
+						<!--Página 4-->
+							<div id="divPage4" class="divPage">
+								<!--Sección 1-->
+									<section class="contS1 w3-card">
+										<!--Tabla de solicitudes-->
+											<header class="w3-container w3-green w3-display-container">
+												<h3>Solicitudes</h3>
+												<div class="w3-display-topright">
+													<a class="buttonAddRequest w3-button"><img src="../img/add.svg" style="width:25px;"></a>
+													<a class="w3-button" onclick="update('requests');"><img src="../img/update.svg" style="width:25px;"></a>
+												</div>
+											</header>
+											<div class="w3-container w3-padding">
+												<table class="requests w3-table-all w3-striped w3-border w3-padding w3-tiny">
+													<!-- Carga automática -->
+												</table>
+											</div>
+											<header class="w3-container w3-light-grey">
+												<h6>Notas al pie</h6>
+											</header>
+									</section>
+							</div>
+					</article>
+				<!--Barra lateral derecha de principal-->
+					<aside class="contAside w3-container w3-col l3 w3-light-grey">
+						<!--Sección 1: One-->
+							<section class="w3-card w3-margin-bottom">
+								<header class="w3-container w3-gray">
+									<h4>N&uacute;meros telef&oacute;nicos importantes</h4>
+								</header>
+								<div class="w3-container">
+									<ol class="w3-ol">
+										<li>Sra. Mar&iacute;a (1): 0282-1234567</li>
+										<li>Sra. Mar&iacute;a (2): 0282-2592394</li>
+										<li>Sra. Mar&iacute;a (3): 0282-2345511</li>
+									</ol>
+								</div>
+								<footer class="w3-container w3-gray w3-padding">
+									<span>Footer</span>
+								</footer>
+							</section>
+						<!--Sección 2: Two-->
+							<section class="w3-card w3-margin-bottom">
+								<header class="w3-container w3-gray">
+									<h4>Fechas importantes</h4>
+								</header>
+								<div class="w3-container">
+									<ol class="w3-ol">
+										<li>11-02-2008: Naci&oacute; Foto Anaco</li>
+									</ol>
+									<p></p>
+								</div>
+								<footer class="w3-container w3-gray w3-padding">
+									<span>Footer</span>
+								</footer>
+							</section>
+					</aside>
+					<!--Modal de adición de cliente-->
+						<div id="modAddClient" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>A&ntilde;adir cliente</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<!-- Personal del cliente -->
+										<label class="w3-text-blue"><b>Nombres y apellidos del cliente</b></label>
+										<input class="w3-input w3-border" type="text" name="affClient">
+										<label class="w3-text-blue"><b>C&eacute;dula, asaporte o RIF</b></label>
+										<select class="w3-select" name="affIdentityType">
+											<option value="C&eacute;dula" selected>C&eacute;dula</option>
+											<option value="RIF">RIF</option>
+											<option value="Pasaporte">Pasaporte</option>
+										</select>
+										<input class="w3-input w3-border" type="text" name="affIdentity">
+									<!-- Pago inicial-->
+										<label class="w3-text-blue"><b>Pago inicial</b></label>
+										<input class="w3-input w3-border" type="number" name="affPaymentMade">
+									<!-- Tipo de cuenta -->
+										<label class="w3-text-blue"><b>Tipo de cuenta</b></label>
+										<select class="w3-select" name="affAccountType">
+											<option value="Residencial" selected>Residencial</option>
+											<option value="Jur&iacute;dico">Jur&iacute;dico</option>
+										</select>
+									<!-- Tipo de internet -->
+										<label class="w3-text-blue"><b>Internet</b></label>
+										<select class="w3-select" name="affInternetType">
+											<option value="ABA">ABA</option>
+											<option value="Mixto">Mixto</option>
+											<option value="Fibra &oacute;ptica">Fibra &oacute;ptica</option>
+										</select>
+									<!-- Plan (velocidad) -->
+										<label class="w3-text-blue"><b>Plan (Velocidad)</b></label>
+										<select class="w3-select" name="affPlan">
+											<option value="1MB" selected>1MB</option>
+											<option value="2MB">2MB</option>
+											<option value="3MB">3MB</option>
+											<option value="4MB">4MB</option>
+											<option value="5MB">5MB</option>
+											<option value="6MB">6MB</option>
+											<option value="7MB">7MB</option>
+											<option value="8MB">8MB</option>
+											<option value="9MB">9MB</option>
+											<option value="10MB">10MB</option>
+										</select>
+										<label class="w3-text-blue"><b>Precio del plan</b></label>
+										<input class="w3-input w3-border" type="number" name="affPlanPrice">
+									<!-- Instalación -->
+										<label class="w3-text-blue"><b>Instalaci&oacute;n</b></label>
+										<select class="w3-select" name="affInstallation">
+											<option value="6MTS">6MTS</option>
+											<option value="10MTS">10MTS</option>
+											<option value="12MTS">12MTS</option>
+										</select>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Registrar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de cliente detallado-->
+						<div id="modClientDetailed" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Ver cliente detalladamente</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<table class="clientDetailed w3-table-all w3-striped w3-border w3-padding w3-tiny">
+										<!-- Carga automática -->
+									</table>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Registrar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de edición de cliente-->
+						<div id="modEditClient" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Editar cliente</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<!-- Personal del cliente -->
+										<label class="w3-text-blue"><b>Nombres y apellidos del cliente</b></label>
+										<input class="w3-input w3-border" type="text" name="affClientE">
+										<label class="w3-text-blue"><b>C&eacute;dula, asaporte o RIF</b></label>
+										<select class="w3-select" name="affIdentityTypeE">
+											<option value="C&eacute;dula" selected>C&eacute;dula</option>
+											<option value="RIF">RIF</option>
+											<option value="Pasaporte">Pasaporte</option>
+										</select>
+										<input class="w3-input w3-border" type="text" name="affIdentityE">
+									<!-- Pago inicial-->
+										<label class="w3-text-blue"><b>Pago inicial</b></label>
+										<input class="w3-input w3-border" type="number" name="affPaymentMadeE">
+									<!-- Tipo de cuenta -->
+										<label class="w3-text-blue"><b>Tipo de cuenta</b></label>
+										<select class="w3-select" name="affAccountTypeE">
+											<option value="Residencial" selected>Residencial</option>
+											<option value="Jur&iacute;dico">Jur&iacute;dico</option>
+										</select>
+									<!-- Tipo de internet -->
+										<label class="w3-text-blue"><b>Internet</b></label>
+										<select class="w3-select" name="affInternetTypeE">
+											<option value="ABA">ABA</option>
+											<option value="Mixto">Mixto</option>
+											<option value="Fibra &oacute;ptica">Fibra &oacute;ptica</option>
+										</select>
+									<!-- Plan (velocidad) -->
+										<label class="w3-text-blue"><b>Plan (Velocidad)</b></label>
+										<select class="w3-select" name="affPlanE">
+											<option value="1MB" selected>1MB</option>
+											<option value="2MB">2MB</option>
+											<option value="3MB">3MB</option>
+											<option value="4MB">4MB</option>
+											<option value="5MB">5MB</option>
+											<option value="6MB">6MB</option>
+											<option value="7MB">7MB</option>
+											<option value="8MB">8MB</option>
+											<option value="9MB">9MB</option>
+											<option value="10MB">10MB</option>
+										</select>
+										<label class="w3-text-blue"><b>Precio del plan</b></label>
+										<input class="w3-input w3-border" type="number" name="affPlanPriceE">
+										<label class="w3-text-blue"><b>Moneda</b></label>
+										<input class="w3-input w3-border" type="text" name="affCoinE">
+									<!-- Instalación -->
+										<label class="w3-text-blue"><b>Instalaci&oacute;n</b></label>
+										<select class="w3-select" name="affInstallationE">
+											<option value="6MTS">6MTS</option>
+											<option value="10MTS">10MTS</option>
+											<option value="12MTS">12MTS</option>
+										</select>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Editar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de notas del cliente-->
+						<div id="modClientNotes" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Notas del cliente</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<!--Filtro para las notas-->
+										<section class="w3-container">
+											<label>Filtrar por status: </label>
+											<select class="w3-select" name="filterClientStatus">
+												<option value='<strong class="w3-red">Sin conexi&oacute;n</strong>' selected>Sin conexi&oacute;n</option>
+												<option value='<strong class="w3-red">Usuario por activar</strong>'>Usuario por activar</option>
+												<option value='<strong class="w3-yellow">Visita t&eacute;cnica</strong>'>Visita t&eacute;cnica</option>
+												<option value='<strong class="w3-yellow">Presupuesto</strong>'>Presupuesto</option>
+												<option value='<strong class="w3-green">Venta</strong>'>Venta</option>
+												<option value='<strong class="w3-yellow">Pago de mensualidad</strong>'>Pago de mensualidad</option>
+												<option value='<strong class="w3-green">Activo</strong>'>Activo</option>
+												<option value='<strong class="w3-yellow">Pago procesado</strong>'>Pago procesado</option>
+												<option value='<strong class="w3-yellow">Actualizar</strong>'>Actualizar</option>
+												<option value='<strong class="w3-red">Sin respuestas</strong>'>Sin respuesta</option>
+											</select>
+											<label>Filtrar por internet:</label>
+											<select class="w3-select" name="filterClientInternet">
+												<option value="NA" selected>NA</option>
+												<option value="ABA">ABA</option>
+												<option value="Mixto">Mixto</option>
+												<option value="Fibra optica">Fibra &oacute;ptica</option>
+											</select>
+										</section>
+									<!--Tabla de notas del cliente-->
+										<table class="notes w3-table-all w3-striped w3-border w3-padding w3-small">
+											<!-- Carga automática -->
+										</table>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonAddNote">A&ntilde;adir nota</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de adición de notas-->
+						<div id="modAddNote" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>A&ntilde;adir una nota</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<label class="w3-text-blue"><b>Cliente</b></label>
+									<h3 class="affClient"></h3>
+									<label class="w3-text-blue"><b>Status</b></label>
+									<select class="w3-select" name="noteStatus">
+										<option value='<strong class="w3-red">Sin conexi&oacute;n</strong>' selected>Sin conexi&oacute;n</option>
+										<option value='<strong class="w3-red">Usuario por activar</strong>'>Usuario por activar</option>
+										<option value='<strong class="w3-yellow">Visita t&eacute;cnica</strong>'>Visita t&eacute;cnica</option>
+										<option value='<strong class="w3-yellow">Presupuesto</strong>'>Presupuesto</option>
+										<option value='<strong class="w3-green">Venta</strong>'>Venta</option>
+										<option value='<strong class="w3-yellow">Pago de mensualidad</strong>'>Pago de mensualidad</option>
+										<option value='<strong class="w3-green">Activo</strong>'>Activo</option>
+										<option value='<strong class="w3-yellow">Pago procesado</strong>'>Pago procesado</option>
+										<option value='<strong class="w3-yellow">Actualizar</strong>'>Actualizar</option>
+										<option value='<strong class="w3-red">Sin respuestas</strong>'>Sin respuesta</option>
+									</select>
+									<label class="w3-text-blue"><b>Estado</b></label>
+									<select class="w3-select" name="noteState">
+										<option value="NA" selected>NA</option>
+										<option value="Hecho">Hecho</option>
+										<option value="En espera">En espera</option>
+										<option value="Fallido">Fallido</option>
+									</select>
+									<label class="w3-text-blue"><b>Descripci&oacute;n</b></label>
+									<textarea class="w3-input w3-border" name="noteDescription"></textarea>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Guardar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de confirmación-->
+						<div id="modConfirmation" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Confirmaci&oacute;n</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<h2 class="w3-container w3-padding content"></h2>
+									<h2 class="w3-hide content2"></h2>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonYes">Aceptar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de adición de líneas telefónicas-->
+						<div id="modAddPhoneLine" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>A&ntilde;adir una l&iacute;nea telef&oacute;nica</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<label class="w3-text-blue"><b>N&uacute;mero telef&oacute;nico</b></label>
+									<input class="w3-input w3-border" type="phone" name="plNumber">
+									<label class="w3-text-blue"><b>Lugar donde est&aacute; la l&iacute;nea</b></label>
+									<input class="w3-input w3-border" type="text" name="plPlace">
+									<label class="w3-text-blue"><b>Puerto</b></label>
+									<input class="w3-input w3-border" type="number" name="plPort">
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Guardar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de edición de líneas telefónicas-->
+						<div id="modEditPhoneLine" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Editar una l&iacute;nea telef&oacute;nica</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<label class="w3-text-blue"><b>N&uacute;mero telef&oacute;nico</b></label>
+									<input class="w3-input w3-border" type="phone" name="plNumberE">
+									<label class="w3-text-blue"><b>Lugar donde est&aacute; la l&iacute;nea</b></label>
+									<input class="w3-input w3-border" type="text" name="plPlaceE">
+									<label class="w3-text-blue"><b>Puerto</b></label>
+									<input class="w3-input w3-border" type="number" name="plPortE">
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Guardar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de adición de solicitudes-->
+						<div id="modAddRequest" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>A&ntilde;adir una solicitud</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<label class="w3-text-blue"><b>Asunto</b></label>
+									<input class="w3-input w3-border" type="text" name="reSubject">
+									<label class="w3-text-blue"><b>Tipo</b></label>
+									<select class="w3-select" name="reType">
+										<option value="Programaci&oacute;n">Programaci&oacute;n</option>
+										<option value="Administrac&oacute;n">Administrativa</option>
+										<option value="T&eacute;cnico">T&eacute;cnico</option>
+										<option value="Atenci&oacute;n al cliente" selected>Atenci&oacute;n al cliente</option>
+									</select>
+									<label class="w3-text-blue"><b>Status</b></label>
+									<select class="w3-select" name="reStatus">
+										<option value='<strong class="w3-red">Urgente</strong>'><strong class="w3-red">Urgente</strong></option>
+										<option value='<strong class="w3-orange">Alto</strong>'><strong class="w3-orange">Alto</strong></option>
+										<option value='<strong class="w3-blue">Normal</strong>' selected><strong class="w3-blue">Normal</strong></option>
+										<option value='<strong class="w3-grey">Bajo</strong>'><strong class="w3-grey">Bajo</strong></option>
+									</select>
+									<label class="w3-text-blue"><b>Descripci&oacute;n</b></label>
+									<textarea class="w3-input w3-border" name="reDescription"></textarea>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Guardar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+					<!--Modal de edición de solicitudes-->
+						<div id="modEditRequest" class="w3-modal">
+							<div class="w3-modal-content w3-card-4 w3-animate-opacity">
+								<header class="w3-container w3-teal"> 
+									<span onclick="closeModal(this);" class="w3-button w3-display-topright">&times;</span>
+									<h2>Editar una solicitud</h2>
+								</header>
+								<div class="w3-container w3-padding">
+									<label class="w3-text-blue"><b>Asunto</b></label>
+									<input class="w3-input w3-border" type="text" name="reSubjectE">
+									<label class="w3-text-blue"><b>Tipo</b></label>
+									<select class="w3-select" name="reTypeE">
+										<option value="Programaci&oacute;n">Programaci&oacute;n</option>
+										<option value="Administrac&oacute;n">Administrativa</option>
+										<option value="T&eacute;cnico">T&eacute;cnico</option>
+										<option value="Atenci&oacute;n al cliente">Atenci&oacute;n al cliente</option>
+									</select>
+									<label class="w3-text-blue"><b>Status</b></label>
+									<select class="w3-select" name="reStatusE">
+										<option value='<strong class="w3-red">Urgente</strong>'><strong class="w3-red">Urgente</strong></option>
+										<option value='<strong class="w3-orange">Alto</strong>'><strong class="w3-orange">Alto</strong></option>
+										<option value='<strong class="w3-blue">Normal</strong>' selected><strong class="w3-blue">Normal</strong></option>
+										<option value='<strong class="w3-grey">Bajo</strong>'><strong class="w3-grey">Bajo</strong></option>
+									</select>
+									<label class="w3-text-blue"><b>Descripci&oacute;n</b></label>
+									<textarea class="w3-input w3-border" name="reDescriptionE"></textarea>
+								</div>
+								<footer class="w3-container w3-teal w3-padding">
+									<button class="w3-button w3-blue buttonSave">Guardar</button>
+									<button class="w3-button w3-grey" onclick="closeModal(this);">Cancelar</button>
+								</footer>
+							</div>
+						</div>
+			</main>
+	</body>
+</html>

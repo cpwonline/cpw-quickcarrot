@@ -22,6 +22,7 @@
 			$_SESSION['u_control'] = $row['u_control'];
 			$_SESSION['u_estado'] = $row['u_estado'];
 			$_SESSION['u_plan'] = $row['u_plan'];
+			$_SESSION['u_correo'] = $row['u_correo'];
 			echo '7correcto';
 		}else{
 			echo "Disculpe, este usuario est&aacute; bloqueado. Comun&iacute;quese con los desarrolladores.";

@@ -1,0 +1,72 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:Helvetica, Arial, sans-serif;
+	color:#444;
+}
+.result{
+	position:fixed;
+	bottom:0;
+	right:0;
+	width:auto;
+	text-align:center;
+	z-index:1000000000;
+	background:#BBB;
+	color:#444;
+}
+nav.contNav{
+	position:fixed;
+}
+nav.contNav ul li{
+	cursor:pointer;
+	margin-top:30px;
+	border:none;
+	border-radius:9px;
+}
+nav.contNav ul li img{
+	width:25px;
+}
+main.contMain header.contHeader section{
+	width:33%;
+}
+main.contMain header.contHeader section:nth-child(2) input{
+	border:none;
+}
+main.contMain section.sectionSearch ul.ulResult{
+	position:relative;
+}
+main.contMain section.sectionOptUsers div{
+	background:#453;
+}
+main.contMain div.divPage{
+	display:none;
+}
+main.contMain section.sectionSearch ul.ulResult{
+	position:absolute;
+	bottom:1;
+	left:0;
+	z-index:10000;
+	background:#fff;
+}
+main.contMain section.contS1{
+	margin-bottom:50px;
+}
+main.contMain section.sectionReports div.divTab{
+	display:none;
+}
+#fams article.contLogin{
+	display:block;
+	width:40%;
+	padding:50px 20px;
+	background:#FFF;
+	margin: 50px 30% 50px 30%;
+	border-radius: 0 100px 0 100px;
+	border:none;
+}
+#fams .contLogin .loginMain h2{
+	font-size:22px;
+	color:#51FF65;
+	text-align:center;
+	margin-bottom:20px;
+	font-weight:bold;
+}
